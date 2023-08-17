@@ -46,11 +46,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/math_text/</loc>
-         <lastmod>2023-08-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://example.com/misc_faq/</loc>
          <lastmod>2023-08-17</lastmod>
          <changefreq>daily</changefreq>
