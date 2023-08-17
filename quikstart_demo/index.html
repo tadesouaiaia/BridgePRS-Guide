@@ -63,12 +63,16 @@
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Toy-data Demo</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#demo-1-continuous-trait">Demo 1: Continuous Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#continuous-result">Continuous Result</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#demo-1-result">Demo 1: Result</a>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#demo-2-binary-trait">Demo 2: Binary Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#binary-result">Binary Result</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#demo-1-result_1">Demo 1: Result</a>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#directory-result">Directory Result:</a>
     </li>
@@ -124,47 +128,46 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="toy-data-demo">Toy-data Demo</h1>
-<p>In this demo we will use bridgePRS to combine information from primary and model populations to improve PRS results in the primary population, 
-with a single command that mirrors the <a href="../detail_args/">step-by-step</a> instructions explained the <a href="../detail_requirements/">detailed guide</a>. 
-In we consider a trait in a small sample size primary population of African ancestry where GWAS data is also available from a larger 
-sample size population of European ancestry. </p>
+<p>In this demo we will use bridgePRS to combine information from primary and model populations to improve primary PRS results using a single 
+command that mirrors the <a href="../detail_args/">step-by-step</a> instructions described in our <a href="../detail_requirements/">detailed guide</a>. 
+In this tutorial our small sample size primary population is of African ancestry and and GWAS data is available from a larger sample 
+size population of European ancestry. </p>
 <h2 id="demo-1-continuous-trait">Demo 1: Continuous Trait</h2>
 <p>Our continuous trait data can be found in the following population configuration files: </p>
+<ul>
+<li>data/afr.cont.config </li>
+<li>data/eur.cont.config</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Easyrun Command</p>
 <p>Assuming, the requirements have been validated in the <a href="../quikstart_prep/">previous step</a>, BridgePRS can be run using toy-data with the following command: 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out --pop_configs data/afr.pop.config data/eur.pop.config --pop_names AFR EUR --specifications data/options.config --verbose  
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out --pop_configs data/afr.cont.config data/eur.cont.config --pop_names AFR EUR --specifications data/options.config --verbose 
 </pre></div></p>
 </div>
 <p>This command will sequentially run the <a href="../detail_args/">five steps</a> described in our <a href="../detail_requirements/">detailed guide</a>:  </p>
 <ul>
-<li><code>prs-single:</code>   Run PRS using the target population only (AFR). </li>
-<li><code>build-model:</code> Estimate SNP weights &amp; Prior Params from a model pop (EUR). </li>
+<li><code>prs-single:</code>   Run PRS using the primary population only (AFR). </li>
+<li><code>build-model:</code> Estimate SNP weights &amp; prior params from model pop (EUR). </li>
 <li><code>prs-port:</code> Run target-PRS using the model snp weights. </li>
 <li><code>prs-prior:</code>   Run target-PRS using model prior distributions. </li>
 <li><code>analyze combine</code>  Combine results to produce a weighted target PRS result.</li>
 </ul>
-<h2 id="demo-1-result">Demo 1: Result</h2>
+<h3 id="continuous-result">Continuous Result</h3>
 <p>The final result can be summarized in the figure created in <code>out/data/res.png</code> </p>
 <p><img alt="Screenshot" src="../img/combo1.png" /></p>
 <h2 id="demo-2-binary-trait">Demo 2: Binary Trait</h2>
-<p>In our first toy data example we consider a continuous trait in a small sample size primary population of African ancestry 
-where GWAS data is also available from a larger sample size population of European ancestry. </p>
+<p>In our next example we will use the following population configuration files: </p>
+<ul>
+<li>data/afr.bin.config </li>
+<li>data/eur.bin.config</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Easyrun Command</p>
-<p>Assuming, the requirements have been validated in the <a href="../quikstart_prep/">previous step</a>, BridgePRS can be run using toy-data with the following command: 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out --pop_configs data/afr.pop.config data/eur.pop.config --pop_names AFR EUR --specifications data/options.config --verbose  
-</pre></div></p>
+<p>A similar easyrun command can be run on the binary trait data: </p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out --pop_configs data/afr.bin.config data/eur.bin.config --pop_names AFR EUR --specifications data/options.config --verbose  
+</pre></div>
 </div>
-<p>This command will sequentially run the <a href="../detail_args/">five steps</a> described in our <a href="../detail_requirements/">detailed guide</a>:  </p>
-<ul>
-<li><code>prs-single:</code>   Run PRS using the target population only (AFR). </li>
-<li><code>build-model:</code> Estimate SNP weights &amp; Prior Params from a model pop (EUR). </li>
-<li><code>prs-port:</code> Run target-PRS using the model snp weights. </li>
-<li><code>prs-prior:</code>   Run target-PRS using model prior distributions. </li>
-<li><code>analyze combine</code>  Combine results to produce a weighted target PRS result.</li>
-</ul>
-<h2 id="demo-1-result_1">Demo 1: Result</h2>
+<h3 id="binary-result">Binary Result</h3>
 <p>The final result can be summarized in the figure created in <code>out/data/res.png</code> </p>
 <p><img alt="Screenshot" src="../img/combo1.png" /></p>
 <h2 id="directory-result">Directory Result:</h2>
