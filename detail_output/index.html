@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/detail_output/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Output Data - BridgePRS</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Output Data";
+        var mkdocs_page_input_path = "detail_output.md";
+        var mkdocs_page_url = "/detail_output/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113286405-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> BridgePRS
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Toy-data Demo</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../detail_requirements/">Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../detail_input/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../detail_commands/">Subprograms</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Output Data</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-snp-weights">1) SNP Weights</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-prediction-files-bfile">2) Prediction Files  --bfile</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../detail_shell/">Using Bash</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../misc_faq/">Frequently Asked Questions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../misc_log/">Update Log</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">BridgePRS</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Guide &raquo;</li>
+      <li>Output Data</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="output-data">Output Data</h1>
+<p>For every PRS invocation of BridgePRS (single, port, and prior) BridgePRS produces the following 
+output files.  Weighted combined versions of each files of also produced by BridgePRS. </p>
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">file extension</th>
+<th align="center">Brief Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">SNP Weights</td>
+<td align="center">.snp_weights.dat</td>
+<td align="center">Snp weights</td>
+</tr>
+<tr>
+<td align="center">PRS Values</td>
+<td align="center">.preds.dat</td>
+<td align="center">yo</td>
+</tr>
+<tr>
+<td align="center">Summary Result</td>
+<td align="center">.snp_weights.dat</td>
+<td align="center">Snp weights</td>
+</tr>
+</tbody>
+</table>
+<p>The column headers correspond to the following: </p>
+<h2 id="1-snp-weights">1) SNP Weights</h2>
+<p>GWAS summary statistics must be provided as a whitespace delimited file containing association analysis results for SNPs on the base phenotype.
+BridgePRS has no problem reading in a gzipped base file (need to have a <strong>.gz</strong> suffix).</p>
+<p>If your base data follows other formats, then the column headers can be provided using the <code>--chr</code>, <code>--A1</code>, <code>--A2</code>, <code>--stat</code>, <code>--snp</code>, <code>--bp</code>, <code>--pvalue</code> options</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>BridgePRS requires the base file to contain information of the effective allele (<code>--A1</code>), effect size estimates (<code>--stat</code>), p-value for association (<code>--pvalue</code>), and the SNP ID (<code>--snp</code>).
+If the input file does not contain a column header, the column can be specified using their index (start counting from 0) with the <code>--index</code> flag.</p>
+</div>
+<p>For example, with the following input format:</p>
+<table>
+<thead>
+<tr>
+<th align="center">SNP</th>
+<th align="center">CHR</th>
+<th align="center">BP</th>
+<th align="center">A1</th>
+<th align="center">A2</th>
+<th align="center">OR</th>
+<th align="center">SE</th>
+<th align="center">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">rs3094315</td>
+<td align="center">1</td>
+<td align="center">752566</td>
+<td align="center">A</td>
+<td align="center">G</td>
+<td align="center">0.9912</td>
+<td align="center">0.0229</td>
+<td align="center">0.7009</td>
+</tr>
+<tr>
+<td align="center">rs3131972</td>
+<td align="center">1</td>
+<td align="center">752721</td>
+<td align="center">A</td>
+<td align="center">G</td>
+<td align="center">1.007</td>
+<td align="center">0.0228</td>
+<td align="center">0.769</td>
+</tr>
+<tr>
+<td align="center">rs3131971</td>
+<td align="center">1</td>
+<td align="center">752894</td>
+<td align="center">T</td>
+<td align="center">C</td>
+<td align="center">1.003</td>
+<td align="center">0.0232</td>
+<td align="center">0.8962</td>
+</tr>
+</tbody>
+</table>
+<p>the parameters can be</p>
+<p><code>--snp SNP --chr CHR --bp BP --A1 A1 --A2 A2 --stat OR</code>
+or</p>
+<p>Strand flips are automatically detected and accounted for.</p>
+<h2 id="2-prediction-files-bfile">2) Prediction Files  <code>--bfile</code></h2>
+<p>BridgePRS requires a target dataset in PLINK binary format consisting of three files: <strong>.bed</strong>, <strong>.bim</strong>, and a <strong>.fam</strong> file - 
+where bed contains the compressed genotype data, bim contains the SNP information and fam contains the family information. 
+Currently only SNP major PLINK format are supported  (default output of the latest PLINK program).</p>
+<p>The <strong>.bed</strong> and <strong>.bim</strong> file must have the same prefix.</p>
+<p>If the <strong>.fam</strong> file follow a different prefix from the <strong>.bed</strong> and <strong>bim</strong> file, it can be specified using
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>--target &lt;bim bed prefix&gt;,&lt;fam file&gt;
+</pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The fam file MUST contains the correct number of samples or BridgePRS will crash</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../detail_commands/" class="btn btn-neutral float-left" title="Subprograms"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../detail_args/" class="btn btn-neutral float-right" title="All Arguments">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../detail_commands/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../detail_args/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+      <script src="../javascripts/details.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
