@@ -122,24 +122,42 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="requirements">Requirements</h1>
-<p>Assuming that you have downloaded the BridgePRS package and make the bridgePRS file executable, as described in our 
-<a href="quikstart_prep">quickstart tutorial</a>, we begin by describing the BridgePRS installer. </p>
+<p>BridgePRS depends on R, plink, and a python wrapper.  In this section we describe these requirements in detail. </p>
 <h2 id="bridgeprs-installer">BridgePRS Installer</h2>
 <div class="admonition note">
-<p class="admonition-title">Checking System Requirements</p>
-<p>BridgePRS depends on R, plink, and python.  In the following section will will describe these 
-requirements in detail and how they can be installed. Alternatively, you can type: 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS check requirements  
+<p class="admonition-title">The BridgePRS Installer</p>
+<p>If BridgePRS has been downloaded and made executable (as described in our <a href="quikstart_prep">quickstart tutorial</a>) 
+then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
+install missing software:  </p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">$ ./bridgePRS check requirements</label><div class="tabbed-content"></div>
+</div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BridgePRS Begins... 
+Bridge Command-Line: ../../bridgePRS check requirements
+Module: check
+    Command: requirements
+           System:  cores=7,  platform=linux,  plinkpath=src/Python/Xtra,  rpath=src/Rscripts
+           Options:  fst=0.15,  outpath=out,  tgpath=/home/tade/Current/bridgePRS/repo/BridgePRS/data/sampleKg
+             JOB1: Checking Requirements.....................................................
+                   Python Found: /usr/bin/python3
+                   Matplotlib: Found
+                   R Found: /usr/bin/R
+                   R Version: 3.6.3
+                   R packages: Up To Date
+
+Complete
 </pre></div>
-and bridgePRS will check your system and prompt you to install missing software.</p>
 </div>
 <h2 id="r">R</h2>
-<p>BridgePRS requires that <a href="https://www.r-project.org/">R</a> (<strong>version 3.6.3+</strong>) be installed.</p>
-<p>BridgePRS requires the following libraries: BEDMatrix, R.utils, boot, data.table, doMC, glmnet, MASS, optparse, and parallel</p>
+<p>BridgePRS requires that the following <a href="https://www.r-project.org/">R</a> (<strong>version 3.6.3+</strong>) libraries be installed: 
+BEDMatrix, R.utils, boot, data.table, doMC, glmnet, MASS, optparse, and parallel.</p>
 <h2 id="plink">Plink</h2>
-<p>BridgePRS requires plink </p>
+<p>BridgePRS requires a version of plink compatible with your machine. (<a href="https://www.cog-genomics.org/plink/">download</a>)
+By default BridgePRS includes a version of plink for Linux and MacOs.   </p>
 <h2 id="python">Python</h2>
-<p>BridgePRS requires python. </p>
+<p>The BridgePRS wrapper requires python3+ (<a href="https://www.python.org/downloads/">download</a>) and the matplotlib 
+package (<a href="https://matplotlib.org/stable/users/installing/index.html">download</a>) is required for plotting, which 
+is optional.  If python3+ is not available, BridgePRS can be ran using shell scripts, as described in the 
+README file.   </p>
               
             </div>
           </div><footer>

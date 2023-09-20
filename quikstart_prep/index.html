@@ -69,10 +69,6 @@
     <li class="toctree-l2"><a class="reference internal" href="#4-demo-continuous-trait">4) Demo: Continuous Trait</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#5-demo-binary-trait">5) Demo:  Binary Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#binary-result">Binary Result</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#directory-result">Directory Result:</a>
     </li>
@@ -131,29 +127,36 @@
               
                 <h1 id="before-running">Before Running</h1>
 <h2 id="1-preparation">1) Preparation</h2>
-<p>After <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">Downloading</a> and unzipping BridgePRS 
-in a suitable directory (referred to as <code>$BridgeDir</code>) you will observe the following file structure: </p>
+<p>After <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">downloading</a> and unzipping BridgePRS 
+into a suitable directory on your machine (referred to as <code>$BridgeDir</code>) you will observe the following file structure: </p>
 <div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">$ ls</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span> bridgePRS data<span style="color: #666666">/</span> src<span style="color: #666666">/</span> LICENSE README.md 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  bridgePRS 
+  data<span style="color: #666666">/</span> 
+  src<span style="color: #666666">/</span> 
+  LICENSE 
+  README.md  
 </pre></div>
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Using the terminal, type the following command from within the directory:</p>
-<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>    chmod +x bridgePRS 
+<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>=== $ chmod +x bridgePRS 
 </pre></div>
 to make the bridgePRS file executable </p>
 </div>
 <h2 id="2-requirements">2) Requirements</h2>
 <p>Next, confirm that the required libraries and binaries are installed and available by following the detailed 
 instructions in <a href="../detail_requirements/">Requirements.</a> Alternatively, you can type: </p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS check requirements  
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">$./bridgePRS check requirements</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>    BridgePRS Begins... 
 </pre></div>
-<p>to bridgePRS to check your system and prompt you to install missing requires. </p>
+</div>
+</div>
+<p>and bridgePRS to check your system and prompt/direct you to install any missing dependencies. </p>
 <h2 id="3-toy-data">3) Toy Data</h2>
-<p>In this tutorial we use <a href="../detail_input/">configuration files</a> that tell the program were population 
-specific data is located.  For more information on making configuration files, see <a href="../detail_input/">Input Data</a>.</p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">$ ls ${Bridgedir}/data</label><div class="tabbed-content">
+<p>In this tutorial we use sample <a href="../detail_input/">configuration files</a> that tell the program were population 
+specific data is located.  For more information on configuration files, see <a href="../detail_input/">Input Data</a>.</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">$ ls data/</label><div class="tabbed-content">
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span> <span style="color: #666666">.</span><span style="color: #008000; font-weight: bold">...</span>
  afr_bin.config     afr_cont.config  
  eur_bin.config     eur_cont.config  
@@ -168,11 +171,12 @@ specific data is located.  For more information on making configuration files, s
 <h2 id="4-demo-continuous-trait">4) Demo: Continuous Trait</h2>
 <div class="admonition tip">
 <p class="admonition-title">Easyrun Command</p>
-<p>Assuming, the requirements have been validated in the <a href="./">previous step</a>, BridgePRS can be run using toy-data with the following command: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out1 --pop_config ../../tdata/afr_config.cont.txt ../../tdata/eur_config.cont.txt -p AFR EUR --verbose
+<p>Assuming, the requirements have been validated in the <a href="./">previous step</a>, BridgePRS can be run using toy-data and sample thousand genomes data 
+with the following command: 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>    bridgePRS easyrun go -o out1 --pop_config tdata/afr_cont.config tdata/eur_cont.config --tgpath tdata/sampleKg
 </pre></div></p>
 </div>
-<p>This command will sequentially run the <a href="../detail_args/">five steps</a> described in our <a href="../detail_requirements/">detailed guide</a>:  </p>
+<p>This command will sequentially run the <a href="../detail_commands/">five subprograms</a> described in detail in our <a href="../detail_commands/">here</a>:  </p>
 <ul>
 <li><code>prs-single:</code>   Run PRS using the primary population only (AFR). </li>
 <li><code>build-model:</code> Estimate SNP weights &amp; prior params from model pop (EUR). </li>
@@ -180,7 +184,7 @@ specific data is located.  For more information on making configuration files, s
 <li><code>prs-prior:</code>   Run target-PRS using model prior distributions. </li>
 <li><code>analyze combine</code>  Combine results to produce a weighted target PRS result.</li>
 </ul>
-<p>The final result can be summarized in the figure created in <code>out/data/res.png</code> </p>
+<p>And create a final summary in <code>out1/AFR_summary.png</code>: </p>
 <p><img alt="Screenshot" src="../img/combo1.png" /></p>
 <h2 id="5-demo-binary-trait">5) Demo:  Binary Trait</h2>
 <p>In our next example we will use the following population configuration files: </p>
@@ -191,12 +195,11 @@ specific data is located.  For more information on making configuration files, s
 <div class="admonition tip">
 <p class="admonition-title">Easyrun Command</p>
 <p>A similar easyrun command can be run on the binary trait data: </p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out --pop_configs data/afr.bin.config data/eur.bin.config --pop_names AFR EUR --specifications data/options.config --verbose  
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out2 --pop_config tdata/afr_bin.config tdata/eur_bin.config --tgpath tdata/sampleKg
 </pre></div>
+<p>To create a final summary in <code>out2/AFR_summary.png</code>: </p>
 </div>
-<h3 id="binary-result">Binary Result</h3>
-<p>The final result can be summarized in the figure created in <code>out/data/res.png</code> </p>
-<p><img alt="Screenshot" src="../img/combo1.png" /></p>
+<p><img alt="Screenshot" src="../img/combo2.png" /></p>
 <h2 id="directory-result">Directory Result:</h2>
 <p>The directory structure created by this command is shown below: </p>
 <p><img alt="Screenshot" src="../img/pipeline.png" /></p>
