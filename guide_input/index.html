@@ -13,7 +13,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Input Data";
-        var mkdocs_page_input_path = "detail_input.md";
+        var mkdocs_page_input_path = "guide_input.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,24 +52,24 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Running BridgePRS</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_requirements/">Requirements</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Input Data</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#background-data-thousand-genomes">Background Data: Thousand Genomes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ld-reference-data-1000-genomes">LD Reference Data: 1000 Genomes</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#trait-data-gwas-sumstats-and-phenotype-data">Trait Data: GWAS Sumstats and Phenotype Data</a>
     </li>
@@ -77,23 +77,23 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-sumstats-data">1) Sumstats Data</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-phenotype-files-phenotype_files">2) Phenotype Files  --phenotype_files</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-phenotype-files">2) Phenotype Files</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-qc-snp-list-snp_file">3) QC SNP List --snp_file</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-thinned-snp-list-snp_file">4) Thinned SNP List --snp_file</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-qc-snp-list">3) QC SNP List</a>
     </li>
         </ul>
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_output/">Output Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_args/">All Arguments</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_shell/">Using Bash</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -120,7 +120,7 @@
           <li>Guide &raquo;</li>
       <li>Input Data</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/detail_input.md"
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_input.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -130,64 +130,52 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="input-data">Input Data</h1>
-<h2 id="background-data-thousand-genomes">Background Data: Thousand Genomes</h2>
-<p>BridgePRS estimates SNP-specific LD in the clumping step from multi-population target data in PLINK binary format. </p>
-<p>BridgePRS includes sample thousand genome data (<strong>BRIDGEDIR/data/kg_sample</strong>) for super-groups (AFR and EUR).  A 
-full dataset and corresponding population-id lists (<strong>AFR.ids.txt</strong>, <strong>EUR.ids.txt</strong>, <strong>EAS.ids.txt</strong>, <strong>SAS.ids.txt</strong>) can be 
-downloaded <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">here</a> and unzipped into <strong>BRIDGEDIR/data/kg_ref</strong> to enable 
-full use of BridgePRS for the above populations (AFR, EUR, EAS, SAS). </p>
-<p>User supplied background data can be used by pointing to a folder with the flag <code>--tgPath</code> that containing by-chromosome PLINK binary format 
-(three files per chromosome <strong>.bed</strong>, <strong>.bim</strong>, and a <strong>.fam</strong> file - where bed contains the compressed genotype data, bim contains the SNP information and fam contains the family information) 
-and lists of population ids in txt format (<strong>POP.ids.txt</strong>). </p>
+<h2 id="ld-reference-data-1000-genomes">LD Reference Data: 1000 Genomes</h2>
+<p>BridgePRS estimates SNP-specific LD in the clumping step from an population target data in PLINK binary format.  By default, the main 
+BridgePRS includes a sample LD reference panel (<strong>BRIDGEDIR/data/1000G_sample</strong>) for population super-groups <strong>AFR</strong> and <strong>EUR</strong> that is 
+suitable for the <a href="quikstart.md">quick start tutorial</a>. </p>
+<p>A folder containing the full 1000 Genomes LD reference panel for populations <strong>AFR</strong>, <strong>EUR</strong>, <strong>EAS</strong>, <strong>SAS</strong>, and <strong>AMR</strong> can be downloaded 
+<a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">here</a> and unzipped into <strong>BRIDGEDIR/data/1000G_ref</strong> to enable full usage 
+of BridgePRS. </p>
+<p>To run BridgePRS using a custom LD reference please see <a href="../guide_customization/">customization</a>. </p>
 <h2 id="trait-data-gwas-sumstats-and-phenotype-data">Trait Data: GWAS Sumstats and Phenotype Data</h2>
-<p><strong>Primary Population</strong> </p>
-<p>For the primary population (where the trait is being estimated) BridgePRS requires that 
-the following data be supplied using command line arguments or a configuration file:  </p>
+<p><strong>Primary Data</strong> </p>
+<p>For the primary population (where the trait is being estimated) BridgePRS requires GWAS summary stats
+and two phenotype files (for test and validation): </p>
 <table>
 <thead>
 <tr>
 <th align="center">Name</th>
-<th align="center">Files</th>
 <th align="center">Command Line flag</th>
-<th align="center">Description</th>
 <th align="center">Required</th>
+<th align="center">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center">Sumstats</td>
-<td align="center">1 per chr</td>
 <td align="center">--sumstats_prefix</td>
-<td align="center">GWAS data</td>
 <td align="center">Yes</td>
+<td align="center">GWAS Summary Statsd</td>
 </tr>
 <tr>
 <td align="center">Phenotypes</td>
-<td align="center">2</td>
-<td align="center">--pheno_files</td>
-<td align="center">Test/Validation Phenotype Files</td>
-<td align="center">Yes</td>
+<td align="center">--phenotype_files</td>
+<td align="center">Primary Pop Only</td>
+<td align="center">Test And Validation Phenotype Files</td>
 </tr>
 <tr>
 <td align="center">Snp List</td>
-<td align="center">0-1</td>
 <td align="center">--snp_file</td>
-<td align="center">List qc of snp ids</td>
 <td align="center">No</td>
-</tr>
-<tr>
-<td align="center">Pop Config</td>
-<td align="center">0-1</td>
-<td align="center">--pop_config</td>
-<td align="center">File pointing to the above inputs</td>
-<td align="center">No</td>
+<td align="center">List QCed SNP ids</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Creating a Configuration File</p>
 <p>The following command will validate the input data supplied on the command line 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS check data -o out --pop AFR --phenotype y 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS check data -o out --pop AFR 
                        --sumstats_prefix data/pop_africa/sumstats/afr.chr
                        --phenotype_files data/pop_africa/phenotypes/afr_test.dat data/pop_africa/phenotypes/afr_validation.dat
 </pre></div>
@@ -199,27 +187,24 @@ And produce a configuration file for an african population that mirrors the supp
  SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>afr.chr
  PHENOTYPE_FILES<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat,pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_validation.dat
  SNP_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>snps.txt
- PHENOTYPE<span style="color: #666666">=</span>y
 </pre></div>
 </div>
 <p><strong>Model Population</strong> </p>
-<p>For the model population (used to produce prior distributions) BridgePRS can incorporate 
-model GWAS and phenotype data if it is available.  If it is not available then, the primary 
-population files can be substituted in as shown in the following configuration files: </p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">With GWAS Data</label><div class="tabbed-content">
+<p>For the model population (used to produce prior distributions) BridgePRS requries GWAS summary stats 
+and one phenotype file (if available).  If it is not available then the test file 
+from the primary population can be substituted, as shown in the two configuration files: </p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">With Phenotype Data</label><div class="tabbed-content">
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR 
 SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
 PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>eur_test.dat
 SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
-PHENOTYPE<span style="color: #666666">=</span>y
 </pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Without GWAS Data</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Without Phenotype Data</label><div class="tabbed-content">
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR
-SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>afr.chr
+SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
 PHENOTYPE_FILES<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat
-SNP_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>snps.txt
-PHENOTYPE<span style="color: #666666">=</span>y
+SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
 </pre></div>
 </div>
 </div>
@@ -332,7 +317,7 @@ An example of a sumstats file with default column headers is shown: </p>
 </tr>
 </tbody>
 </table>
-<h3 id="2-phenotype-files-phenotype_files">2) Phenotype Files  <code>--phenotype_files</code></h3>
+<h3 id="2-phenotype-files">2) Phenotype Files</h3>
 <p>Phenotype files can be provided to BridgePRS using the <code>--phenotype_files</code> flag. 
 This must be a tab / space delimited file and missing data <strong>must</strong> be represented by either <code>NA</code> or <code>-9</code> (only for binary traits).
 The first two column of the phenotype file should be the FID and the IID, and the rest can be phenotypes/covariates:  </p>
@@ -393,18 +378,14 @@ after the <code>--covariates</code> flag: </p>
 <p class="admonition-title">Warning</p>
 <p>The column name(s) should not contain <em>space</em> nor <em>comma</em></p>
 </div>
-<h3 id="3-qc-snp-list-snp_file">3) QC SNP List <code>--snp_file</code></h3>
-<p>When the target sample is small (e.g. &lt; 500 samples), an external reference panel can be used
-to improve the LD estimation for clumping.</p>
-<h3 id="4-thinned-snp-list-snp_file">4) Thinned SNP List <code>--snp_file</code></h3>
-<p>When the target sample is small (e.g. &lt; 500 samples), an external reference panel can be used
-to improve the LD estimation for clumping.</p>
+<h3 id="3-qc-snp-list">3) QC SNP List</h3>
+<p>To select only SNPS that have passed QC, you can provide a file using the <code>--snp_file</code> flag. </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../detail_requirements/" class="btn btn-neutral float-left" title="Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../detail_commands/" class="btn btn-neutral float-right" title="Subprograms">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../guide_requirements/" class="btn btn-neutral float-left" title="Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_commands/" class="btn btn-neutral float-right" title="Subprograms">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -431,10 +412,10 @@ to improve the LD estimation for clumping.</p>
         </span>
     
     
-      <span><a href="../detail_requirements/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../guide_requirements/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../detail_commands/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_commands/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

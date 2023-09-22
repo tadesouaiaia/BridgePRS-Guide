@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Requirements - BridgePRS</title>
+    <title>Result - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Requirements";
-        var mkdocs_page_input_path = "detail_requirements.md";
+        var mkdocs_page_name = "Result";
+        var mkdocs_page_input_path = "quikstart_result.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,40 +52,34 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Running BridgePRS</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Result</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Requirements</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#bridgeprs-installer">BridgePRS Installer</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#r">R</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#plink">Plink</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#python">Python</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_input/">Input Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_output/">Output Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_args/">All Arguments</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_shell/">Using Bash</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -109,10 +103,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Guide &raquo;</li>
-      <li>Requirements</li>
+          <li>Quick Start Tutorial &raquo;</li>
+      <li>Result</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/detail_requirements.md"
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_result.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -121,49 +115,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="requirements">Requirements</h1>
-<p>BridgePRS depends on R, plink, and a python wrapper.  In this section we describe these requirements in detail. </p>
-<h2 id="bridgeprs-installer">BridgePRS Installer</h2>
-<div class="admonition note">
-<p class="admonition-title">The BridgePRS Installer</p>
-<p>If BridgePRS has been downloaded and made executable (as described in our <a href="quikstart_prep">quickstart tutorial</a>) 
-then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
-install missing software:  </p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">$ ./bridgePRS check requirements</label><div class="tabbed-content"></div>
-</div>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BridgePRS Begins... 
-Bridge Command-Line: ../../bridgePRS check requirements
-Module: check
-    Command: requirements
-           System:  cores=7,  platform=linux,  plinkpath=src/Python/Xtra,  rpath=src/Rscripts
-           Options:  fst=0.15,  outpath=out,  tgpath=/home/tade/Current/bridgePRS/repo/BridgePRS/data/sampleKg
-             JOB1: Checking Requirements.....................................................
-                   Python Found: /usr/bin/python3
-                   Matplotlib: Found
-                   R Found: /usr/bin/R
-                   R Version: 3.6.3
-                   R packages: Up To Date
-
-Complete
-</pre></div>
-</div>
-<h2 id="r">R</h2>
-<p>BridgePRS requires that the following <a href="https://www.r-project.org/">R</a> (<strong>version 3.6.3+</strong>) libraries be installed: 
-BEDMatrix, R.utils, boot, data.table, doMC, glmnet, MASS, optparse, and parallel.</p>
-<h2 id="plink">Plink</h2>
-<p>BridgePRS requires a version of plink compatible with your machine. (<a href="https://www.cog-genomics.org/plink/">download</a>)
-By default BridgePRS includes a version of plink for Linux and MacOs.   </p>
-<h2 id="python">Python</h2>
-<p>The BridgePRS wrapper requires python3+ (<a href="https://www.python.org/downloads/">download</a>) and the matplotlib 
-package (<a href="https://matplotlib.org/stable/users/installing/index.html">download</a>) is required for plotting, which 
-is optional.  If python3+ is not available, BridgePRS can be ran using shell scripts, as described in the 
-README file.   </p>
+                <h1 id="interpreting-results">Interpreting Results</h1>
+<p>The easyrun command sequentially runs the <a href="detail_commands.md">five subprograms</a> described in detail in our <a href="detail_commands.md">here</a> and 
+the output directory (eg. <strong>out1</strong> and <strong>out2</strong>): </p>
+<ol>
+<li><code>prs-single:</code>   Run PRS using the primary population only (AFR). </li>
+<li><code>build-model:</code>     Estimate SNP weights &amp; prior params from model pop (EUR). </li>
+<li><code>prs-port:</code>     Run target-PRS using the model snp weights. </li>
+<li><code>prs-prior:</code>       Run target-PRS using model prior distributions. </li>
+<li><code>analyze combine</code>  Combine results to produce a weighted target PRS result.</li>
+</ol>
+<p>And produces output in the following five subdirectories: </p>
+<ol>
+<li><strong>prs-single_AFR/quantify/:</strong> Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+<li><strong>model_EUR/prior:</strong>          Model Priors </li>
+<li><strong>prs-port_AFR/quantify/:</strong>   Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+<li><strong>prs-prior_AFR/quantify/:</strong>  Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+<li><strong>prs-combined_AFR/:</strong>        Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+</ol>
+<p>The directory structure created by this command is shown below: FR</p>
+<p><img alt="Screenshot" src="../img/pipeline.png" /></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../detail_background/" class="btn btn-neutral float-left" title="Background"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../detail_input/" class="btn btn-neutral float-right" title="Input Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_demo/" class="btn btn-neutral float-left" title="Demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_background/" class="btn btn-neutral float-right" title="Background">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -190,10 +167,10 @@ README file.   </p>
         </span>
     
     
-      <span><a href="../detail_background/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../quikstart_demo/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../detail_input/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_background/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
