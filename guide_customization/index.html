@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/detail_commands/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Subprograms - BridgePRS</title>
+    <title>Customization - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Subprograms";
-        var mkdocs_page_input_path = "detail_commands.md";
-        var mkdocs_page_url = "/detail_commands/";
+        var mkdocs_page_name = "Customization";
+        var mkdocs_page_input_path = "guide_customization.md";
+        var mkdocs_page_url = null;
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -52,44 +52,36 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Toy-data Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_requirements/">Requirements</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_input/">Input Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_args/">All Arguments</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Customization</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-bridgeprs-prs-single">1) BridgePRS prs-single</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-bridgeprs-build-model">2) BridgePRS build-model</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-bridgeprs-prs-port">3) BridgePRS prs-port</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-bridgeprs-prs-prior">4) BridgePRS prs-prior</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-bridgeprs-result-combine">5) BridgePRS result combine</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ld-reference-data-custom-data">LD Reference Data: Custom Data</a>
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_output/">Output Data</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_shell/">Using Bash</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -114,8 +106,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Guide &raquo;</li>
-      <li>Subprograms</li>
+      <li>Customization</li>
     <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_customization.md"
+          class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -123,69 +117,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="subprograms">Subprograms</h1>
-<p>BridgePRS consists of five related multi-function subprograms: </p>
-<p>1) <strong>BridgePRS prs-single</strong><br />
-2) <strong>BridgePRS build-model</strong><br />
-3) <strong>BridgePRS prs-port</strong>  <br />
-4) <strong>BridgePRS prs-prior</strong> <br />
-5) <strong>BridgePRS analyze combine</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">Subprogram</th>
-<th align="center">Input</th>
-<th align="center">Subcommands</th>
-<th align="center">Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>prs-single</strong></td>
-<td align="center">Primary Pop Data</td>
-<td align="center">clump,eval,test,predict</td>
-<td align="center">prs-result</td>
-</tr>
-<tr>
-<td align="center"><strong>build-model</strong></td>
-<td align="center">Model Pop Data</td>
-<td align="center">clump,eval,test,prior</td>
-<td align="center">model-params</td>
-</tr>
-<tr>
-<td align="center"><strong>prs-port</strong></td>
-<td align="center">Primary Pop + Model Result</td>
-<td align="center">port,predict</td>
-<td align="center">prs-result</td>
-</tr>
-<tr>
-<td align="center"><strong>prs-prior</strong></td>
-<td align="center">Primary Pop + Model Result</td>
-<td align="center">inform,test,predict</td>
-<td align="center">prs-result</td>
-</tr>
-<tr>
-<td align="center"><strong>analyze</strong></td>
-<td align="center">PRS Result Files</td>
-<td align="center">combine,plot</td>
-<td align="center">weighted prs-result</td>
-</tr>
-</tbody>
-</table>
-<p>These programs can be called consecutively using the easyrun master-program 
-which will create the following directory structure: </p>
-<p><img alt="Screenshot" src="../img/pipeline.png" /></p>
-<h2 id="1-bridgeprs-prs-single">1) BridgePRS prs-single</h2>
-<h2 id="2-bridgeprs-build-model">2) BridgePRS build-model</h2>
-<h2 id="3-bridgeprs-prs-port">3) BridgePRS prs-port</h2>
-<h2 id="4-bridgeprs-prs-prior">4) BridgePRS prs-prior</h2>
-<h2 id="5-bridgeprs-result-combine">5) BridgePRS result combine</h2>
+                <h1 id="input-data">Input Data</h1>
+<h2 id="ld-reference-data-custom-data">LD Reference Data: Custom Data</h2>
+<p>BridgePRS estimates SNP-specific LD in the clumping step from multi-population target data in PLINK binary format. </p>
+<p>BridgePRS includes sample thousand genome data (<strong>BRIDGEDIR/data/kg_sample</strong>) for super-groups (AFR and EUR).  A 
+full dataset and corresponding population-id lists (<strong>AFR.ids.txt</strong>, <strong>EUR.ids.txt</strong>, <strong>EAS.ids.txt</strong>, <strong>SAS.ids.txt</strong>) can be 
+downloaded <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">here</a> and unzipped into <strong>BRIDGEDIR/data/kg_ref</strong> to enable 
+full use of BridgePRS for the above populations (AFR, EUR, EAS, SAS). </p>
+<p>To pass user supplied LD reference data, for a custom population named <strong>POP</strong>, please create folder (named <strong>pop_ld</strong>) which includes: </p>
+<ul>
+<li>A <strong>.bed</strong>, <strong>.bim</strong>, and <strong>.fam</strong> file for each chromosome with format "chr"[1-22]".ext"</li>
+<li><strong>POP.ids.txt</strong>, a txt file that lists all the sample IDs for your population</li>
+</ul>
+<p>Then use the command line argument <code>--ldPath</code> to point to the location of this folder on your computer. </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../detail_input/" class="btn btn-neutral float-left" title="Input Data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../detail_output/" class="btn btn-neutral float-right" title="Output Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../guide_args/" class="btn btn-neutral float-left" title="All Arguments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_shell/" class="btn btn-neutral float-right" title="Using Bash">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -207,11 +157,15 @@ which will create the following directory structure: </p>
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+        <span>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
     
-      <span><a href="../detail_input/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+      <span><a href="../guide_args/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../detail_output/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_shell/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/quikstart_demo/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Toy-data Demo - BridgePRS</title>
+    <title>Demo - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Toy-data Demo";
+        var mkdocs_page_name = "Demo";
         var mkdocs_page_input_path = "quikstart_demo.md";
-        var mkdocs_page_url = "/quikstart_demo/";
+        var mkdocs_page_url = null;
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -52,44 +52,34 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Toy-data Demo</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Demo</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#demo-1-continuous-trait">Demo 1: Continuous Trait</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#demo-1-result">Demo 1: Result</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#demo-2-binary-trait">Demo 2: Binary Trait</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#demo-1-result_1">Demo 1: Result</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#directory-result">Directory Result:</a>
-    </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_requirements/">Requirements</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_input/">Input Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_output/">Output Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_args/">All Arguments</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_shell/">Using Bash</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -114,8 +104,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Quick Start Tutorial &raquo;</li>
-      <li>Toy-data Demo</li>
+      <li>Demo</li>
     <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_demo.md"
+          class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -123,59 +115,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="toy-data-demo">Toy-data Demo</h1>
-<p>In this demo we will use bridgePRS to combine information from primary and model populations to improve PRS results in the primary population, 
-with a single command that mirrors the <a href="../detail_args/">step-by-step</a> instructions explained the <a href="../detail_requirements/">detailed guide</a>. 
-In we consider a trait in a small sample size primary population of African ancestry where GWAS data is also available from a larger 
-sample size population of European ancestry. </p>
-<h2 id="demo-1-continuous-trait">Demo 1: Continuous Trait</h2>
-<p>Our continuous trait data can be found in the following population configuration files: </p>
-<div class="admonition tip">
+                <h2 id="1-continuous-trait-y">1) Continuous Trait [ "y" ]</h2>
+<div class="admonition tips">
 <p class="admonition-title">Easyrun Command</p>
-<p>Assuming, the requirements have been validated in the <a href="../quikstart_prep/">previous step</a>, BridgePRS can be run using toy-data with the following command: 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out --pop_configs data/afr.pop.config data/eur.pop.config --pop_names AFR EUR --specifications data/options.config --verbose  
+<p>After installing and verfying the <a href="../quikstart_prep/">requirements</a>, run BridgePRS on the toy phenotype "y" with the following command: 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y 
 </pre></div></p>
 </div>
-<p>This command will sequentially run the <a href="../detail_args/">five steps</a> described in our <a href="../detail_requirements/">detailed guide</a>:  </p>
-<ul>
-<li><code>prs-single:</code>   Run PRS using the target population only (AFR). </li>
-<li><code>build-model:</code> Estimate SNP weights &amp; Prior Params from a model pop (EUR). </li>
-<li><code>prs-port:</code> Run target-PRS using the model snp weights. </li>
-<li><code>prs-prior:</code>   Run target-PRS using model prior distributions. </li>
-<li><code>analyze combine</code>  Combine results to produce a weighted target PRS result.</li>
-</ul>
-<h2 id="demo-1-result">Demo 1: Result</h2>
-<p>The final result can be summarized in the figure created in <code>out/data/res.png</code> </p>
+<p>A summary figure will be created in <code>out1/AFR_summary.png</code>: </p>
 <p><img alt="Screenshot" src="../img/combo1.png" /></p>
-<h2 id="demo-2-binary-trait">Demo 2: Binary Trait</h2>
-<p>In our first toy data example we consider a continuous trait in a small sample size primary population of African ancestry 
-where GWAS data is also available from a larger sample size population of European ancestry. </p>
-<div class="admonition tip">
+<h2 id="2-binary-trait-ybinary">2) Binary Trait [ "y.binary" ]</h2>
+<div class="admonition tips">
 <p class="admonition-title">Easyrun Command</p>
-<p>Assuming, the requirements have been validated in the <a href="../quikstart_prep/">previous step</a>, BridgePRS can be run using toy-data with the following command: 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bridgePRS easyrun go -o out --pop_configs data/afr.pop.config data/eur.pop.config --pop_names AFR EUR --specifications data/options.config --verbose  
+<p>Run BridgePRS on the toy binary phenotype "y.binary" with the following command: 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$./bridgePRS easyrun go -o out2 --pop_configs data/afr.config data/eur.config --phenotype y.binary
 </pre></div></p>
 </div>
-<p>This command will sequentially run the <a href="../detail_args/">five steps</a> described in our <a href="../detail_requirements/">detailed guide</a>:  </p>
-<ul>
-<li><code>prs-single:</code>   Run PRS using the target population only (AFR). </li>
-<li><code>build-model:</code> Estimate SNP weights &amp; Prior Params from a model pop (EUR). </li>
-<li><code>prs-port:</code> Run target-PRS using the model snp weights. </li>
-<li><code>prs-prior:</code>   Run target-PRS using model prior distributions. </li>
-<li><code>analyze combine</code>  Combine results to produce a weighted target PRS result.</li>
-</ul>
-<h2 id="demo-1-result_1">Demo 1: Result</h2>
-<p>The final result can be summarized in the figure created in <code>out/data/res.png</code> </p>
-<p><img alt="Screenshot" src="../img/combo1.png" /></p>
-<h2 id="directory-result">Directory Result:</h2>
-<p>The directory structure created by this command is shown below: </p>
-<p><img alt="Screenshot" src="../img/pipeline.png" /></p>
+<p>A summary figure will be created in <code>out2/AFR_summary.png</code>: </p>
+<p><img alt="Screenshot" src="../img/combo2.png" /></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../quikstart_prep/" class="btn btn-neutral float-left" title="Before Running"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../detail_background/" class="btn btn-neutral float-right" title="Background">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_prep/" class="btn btn-neutral float-left" title="Prep"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../quikstart_result/" class="btn btn-neutral float-right" title="Result">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -197,11 +160,15 @@ where GWAS data is also available from a larger sample size population of Europe
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+        <span>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
     
       <span><a href="../quikstart_prep/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../detail_background/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../quikstart_result/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

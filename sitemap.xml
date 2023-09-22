@@ -1,73 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://example.com/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/about/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/detail_args/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/detail_background/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/detail_commands/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/detail_input/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/detail_output/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/detail_requirements/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/detail_shell/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/math_text/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/misc_faq/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/misc_log/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/quikstart_demo/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/quikstart_prep/</loc>
-         <lastmod>2023-08-17</lastmod>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>None</loc>
+         <lastmod>2023-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

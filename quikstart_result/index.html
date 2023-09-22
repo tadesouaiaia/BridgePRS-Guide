@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/detail_shell/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Using Bash - BridgePRS</title>
+    <title>Result - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Using Bash";
-        var mkdocs_page_input_path = "detail_shell.md";
-        var mkdocs_page_url = "/detail_shell/";
+        var mkdocs_page_name = "Result";
+        var mkdocs_page_input_path = "quikstart_result.md";
+        var mkdocs_page_url = null;
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -52,34 +52,34 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Toy-data Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Result</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_requirements/">Requirements</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_input/">Input Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_output/">Output Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_args/">All Arguments</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Using Bash</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -103,9 +103,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Guide &raquo;</li>
-      <li>Using Bash</li>
+          <li>Quick Start Tutorial &raquo;</li>
+      <li>Result</li>
     <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_result.md"
+          class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -113,14 +115,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="using-bridgeprs-without-python">Using BridgePRS without Python</h1>
-<p>Explain this. </p>
+                <h1 id="interpreting-results">Interpreting Results</h1>
+<p>The easyrun command sequentially runs the <a href="detail_commands.md">five subprograms</a> described in detail in our <a href="detail_commands.md">here</a> and 
+the output directory (eg. <strong>out1</strong> and <strong>out2</strong>): </p>
+<ol>
+<li><code>prs-single:</code>   Run PRS using the primary population only (AFR). </li>
+<li><code>build-model:</code>     Estimate SNP weights &amp; prior params from model pop (EUR). </li>
+<li><code>prs-port:</code>     Run target-PRS using the model snp weights. </li>
+<li><code>prs-prior:</code>       Run target-PRS using model prior distributions. </li>
+<li><code>analyze combine</code>  Combine results to produce a weighted target PRS result.</li>
+</ol>
+<p>And produces output in the following five subdirectories: </p>
+<ol>
+<li><strong>prs-single_AFR/quantify/:</strong> Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+<li><strong>model_EUR/prior:</strong>          Model Priors </li>
+<li><strong>prs-port_AFR/quantify/:</strong>   Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+<li><strong>prs-prior_AFR/quantify/:</strong>  Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+<li><strong>prs-combined_AFR/:</strong>        Weights/Predictions (*snp_weights.dat, *preds.dat) </li>
+</ol>
+<p>The directory structure created by this command is shown below: FR</p>
+<p><img alt="Screenshot" src="../img/pipeline.png" /></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../detail_args/" class="btn btn-neutral float-left" title="All Arguments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../misc_faq/" class="btn btn-neutral float-right" title="Frequently Asked Questions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_demo/" class="btn btn-neutral float-left" title="Demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_background/" class="btn btn-neutral float-right" title="Background">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -142,11 +162,15 @@
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+        <span>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
     
-      <span><a href="../detail_args/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+      <span><a href="../quikstart_demo/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../misc_faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_background/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
