@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Using Bash - BridgePRS</title>
+    <title>Customization - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Using Bash";
-        var mkdocs_page_input_path = "detail_shell.md";
+        var mkdocs_page_name = "Customization";
+        var mkdocs_page_input_path = "guide_customization.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,32 +52,36 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Running BridgePRS</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_requirements/">Requirements</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_input/">Input Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_output/">Output Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_args/">All Arguments</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Using Bash</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Customization</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ld-reference-data-custom-data">LD Reference Data: Custom Data</a>
+    </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -102,9 +106,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Guide &raquo;</li>
-      <li>Using Bash</li>
+      <li>Customization</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/detail_shell.md"
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_customization.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -113,14 +117,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="using-bridgeprs-without-python">Using BridgePRS without Python</h1>
-<p>Explain this. </p>
+                <h1 id="input-data">Input Data</h1>
+<h2 id="ld-reference-data-custom-data">LD Reference Data: Custom Data</h2>
+<p>BridgePRS estimates SNP-specific LD in the clumping step from multi-population target data in PLINK binary format. </p>
+<p>BridgePRS includes sample thousand genome data (<strong>BRIDGEDIR/data/kg_sample</strong>) for super-groups (AFR and EUR).  A 
+full dataset and corresponding population-id lists (<strong>AFR.ids.txt</strong>, <strong>EUR.ids.txt</strong>, <strong>EAS.ids.txt</strong>, <strong>SAS.ids.txt</strong>) can be 
+downloaded <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">here</a> and unzipped into <strong>BRIDGEDIR/data/kg_ref</strong> to enable 
+full use of BridgePRS for the above populations (AFR, EUR, EAS, SAS). </p>
+<p>To pass user supplied LD reference data, for a custom population named <strong>POP</strong>, please create folder (named <strong>pop_ld</strong>) which includes: </p>
+<ul>
+<li>A <strong>.bed</strong>, <strong>.bim</strong>, and <strong>.fam</strong> file for each chromosome with format "chr"[1-22]".ext"</li>
+<li><strong>POP.ids.txt</strong>, a txt file that lists all the sample IDs for your population</li>
+</ul>
+<p>Then use the command line argument <code>--ldPath</code> to point to the location of this folder on your computer. </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../detail_args/" class="btn btn-neutral float-left" title="All Arguments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../misc_faq/" class="btn btn-neutral float-right" title="Frequently Asked Questions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../guide_args/" class="btn btn-neutral float-left" title="All Arguments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_shell/" class="btn btn-neutral float-right" title="Using Bash">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -147,10 +162,10 @@
         </span>
     
     
-      <span><a href="../detail_args/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../guide_args/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../misc_faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_shell/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

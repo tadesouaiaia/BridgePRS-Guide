@@ -54,30 +54,32 @@
     </ul>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="quikstart_prep/">Running BridgePRS</a>
+                  <li class="toctree-l1"><a class="reference internal" href="quikstart_prep/">Prep</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="quikstart_demo/">Demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="quikstart_result/">Result</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="detail_background/">Background</a>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="detail_requirements/">Requirements</a>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_requirements/">Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="detail_input/">Input Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="detail_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_commands/">Subprograms</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="detail_output/">Output Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_output/">Output Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="detail_args/">All Arguments</a>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_args/">All Arguments</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="detail_shell/">Using Bash</a>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -138,7 +140,7 @@
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Latest Update</p>
+<p class="admonition-title">Latest Updates</p>
 <h1 id="2023-09-15-v017">2023-09-15 (v0.1.7)</h1>
 <ul>
 <li>We have added sample thousand genomes data. </li>
@@ -146,25 +148,32 @@
 </ul>
 </div>
 <h1 id="quick-start">Quick Start</h1>
-<p>To get started right away using supplied toy data and sample thousand genomes data, please use our <a href="quikstart_prep/">Quick Start Tutorial.</a></p>
-<h1 id="requirements">Requirements</h1>
-<p>BridgePRS depends on R libraries and python3. For more information refer to <a href="detail_requirements/">Requirements.</a> </p>
-<h1 id="detailed-guide">Detailed Guide</h1>
-<p>Our detailed documentation is included in our complete <a href="detail_background/">Guide.</a></p>
-<div class="admonition important">
-<p class="admonition-title">Citation</p>
-<p>Please cite our BridgePRS <a href="https://pubmed.ncbi.nlm.nih.gov/36865148/">manuscript</a>:</p>
-<p>Hoggart C, Choi SW, García-González J, Souaiaia T, Preuss M, O'Reilly P. BridgePRS : A powerful trans-ancestry Polygenic Risk Score method. bioRxiv [Preprint]. 
-2023 Feb 21:2023.02.17.528938. doi: 10.1101/2023.02.17.528938. PMID: 36865148; PMCID: PMC9979992.</p>
+<p>To get started right away using supplied toy data and sample thousand genomes data, please use our <a href="quikstart_prep/">Quick Start Tutorial</a>.</p>
+<h1 id="information">Information</h1>
+<ul>
+<li>BridgePRS is a software package written in R (main) and Python (wrapper) that depends on Plink (by <a href="https://www.cog-genomics.org/software">Christopher Chang</a>). 
+  For more information on installing dependencies, please refer to <a href="detail_requirements.md">Requirements</a>. </li>
+<li>To learn more about BridgePRS see our complete <a href="detail_background.md">Guide.</a></li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Citation: Our Manuscript is in press at <a href="yo">Nature Genetics</a></p>
+<p>Please cite our <a href="https://pubmed.ncbi.nlm.nih.gov/36865148/">preprint</a>:</p>
+<p>Hoggart C, Choi SW, García-González J, Souaiaia T, Preuss M, O'Reilly P. BridgePRS : A powerful trans-ancestry Polygenic Risk Score method.
+bioRxiv (2023). doi: 10.1101/2023.02.17.528938. </p>
 </div>
-<h2 id="support">Support</h2>
-<p>This wiki should contain all the basic instruction for the use of BridgePRS.
-If you have problems, please feel free to submit an issue <a href="https://github.com/tadesouaiaia/BridgePRS-guide/issues">here</a> or visit our <a href="https://groups.google.com/forum/#!forum/bridgePRS">google group</a>.</p>
+<h2 id="contact">Contact</h2>
+<p>For questions about the methodology, this website, or our manuscript please contact <a href="http://www.pauloreilly.info/">Dr Clive Hoggary</a>, 
+<a href="http://www.pauloreilly.info/">Tade</a>, or <a href="http://www.pauloreilly.info/">Dr Paul O'Reilly</a>. </p>
+<h2 id="issues">Issues</h2>
+<p>This wiki should cover basic usage for BridgePRS. 
+If you have problems, please feel free to submit an issues <a href="https://github.com/tadesouaiaia/BridgePRS-guide/issues">here</a> or visit our <a href="https://groups.google.com/forum/#!forum/bridgePRS">google group</a>.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We would like to thank Brian Fulton Howard for his expert programming advice. </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="quikstart_prep/" class="btn btn-neutral float-right" title="Prep">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -192,7 +201,7 @@ If you have problems, please feel free to submit an issue <a href="https://githu
     
     
     
-      <span><a href="about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="quikstart_prep/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
@@ -213,5 +222,5 @@ If you have problems, please feel free to submit an issue <a href="https://githu
 
 <!--
 MkDocs version : 1.3.1
-Build Date UTC : 2023-09-20 15:29:14.354961+00:00
+Build Date UTC : 2023-09-22 07:39:24.644706+00:00
 -->

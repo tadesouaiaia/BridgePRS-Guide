@@ -13,7 +13,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Output Data";
-        var mkdocs_page_input_path = "detail_output.md";
+        var mkdocs_page_input_path = "guide_output.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,36 +52,36 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
-              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Running BridgePRS</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_background/">Background</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_requirements/">Requirements</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_input/">Input Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Output Data</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#1-snp-weights">1) SNP Weights</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-prediction-files-bfile">2) Prediction Files  --bfile</a>
-    </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_args/">All Arguments</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_args/">All Arguments</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../detail_shell/">Using Bash</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_shell/">Using Bash</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
@@ -108,7 +108,7 @@
           <li>Guide &raquo;</li>
       <li>Output Data</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/detail_output.md"
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_output.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -148,15 +148,7 @@ output files.  Weighted combined versions of each files of also produced by Brid
 </table>
 <p>The column headers correspond to the following: </p>
 <h2 id="1-snp-weights">1) SNP Weights</h2>
-<p>GWAS summary statistics must be provided as a whitespace delimited file containing association analysis results for SNPs on the base phenotype.
-BridgePRS has no problem reading in a gzipped base file (need to have a <strong>.gz</strong> suffix).</p>
-<p>If your base data follows other formats, then the column headers can be provided using the <code>--chr</code>, <code>--A1</code>, <code>--A2</code>, <code>--stat</code>, <code>--snp</code>, <code>--bp</code>, <code>--pvalue</code> options</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>BridgePRS requires the base file to contain information of the effective allele (<code>--A1</code>), effect size estimates (<code>--stat</code>), p-value for association (<code>--pvalue</code>), and the SNP ID (<code>--snp</code>).
-If the input file does not contain a column header, the column can be specified using their index (start counting from 0) with the <code>--index</code> flag.</p>
-</div>
-<p>For example, with the following input format:</p>
+<p>BridgePRS provides outfile files of SNP weights. </p>
 <table>
 <thead>
 <tr>
@@ -203,28 +195,12 @@ If the input file does not contain a column header, the column can be specified 
 </tr>
 </tbody>
 </table>
-<p>the parameters can be</p>
-<p><code>--snp SNP --chr CHR --bp BP --A1 A1 --A2 A2 --stat OR</code>
-or</p>
-<p>Strand flips are automatically detected and accounted for.</p>
-<h2 id="2-prediction-files-bfile">2) Prediction Files  <code>--bfile</code></h2>
-<p>BridgePRS requires a target dataset in PLINK binary format consisting of three files: <strong>.bed</strong>, <strong>.bim</strong>, and a <strong>.fam</strong> file - 
-where bed contains the compressed genotype data, bim contains the SNP information and fam contains the family information. 
-Currently only SNP major PLINK format are supported  (default output of the latest PLINK program).</p>
-<p>The <strong>.bed</strong> and <strong>.bim</strong> file must have the same prefix.</p>
-<p>If the <strong>.fam</strong> file follow a different prefix from the <strong>.bed</strong> and <strong>bim</strong> file, it can be specified using
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>--target &lt;bim bed prefix&gt;,&lt;fam file&gt;
-</pre></div></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The fam file MUST contains the correct number of samples or BridgePRS will crash</p>
-</div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../detail_commands/" class="btn btn-neutral float-left" title="Subprograms"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../detail_args/" class="btn btn-neutral float-right" title="All Arguments">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../guide_commands/" class="btn btn-neutral float-left" title="Subprograms"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_args/" class="btn btn-neutral float-right" title="All Arguments">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -251,10 +227,10 @@ Currently only SNP major PLINK format are supported  (default output of the late
         </span>
     
     
-      <span><a href="../detail_commands/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../guide_commands/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../detail_args/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_args/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
