@@ -1,12 +1,16 @@
 
 
 
-![Screenshot](img/screenshot.png) 
+
+[//]: # (![Screenshot](img/bridge_logo1.png) 
+[//]: # (![Screenshot](img/bridge_logo2.png)
+ 
+![Screenshot](img/bridge_logo2.png) 
+
+[//]: # (![Screenshot](img/bridge_logo3.png) 
 
 
 BridgePRS is a trans-ancestry software that improves PRS in diverse populations. 
-
-
 
 # Package Downloads 
 | Operating System | Link |
@@ -21,15 +25,15 @@ BridgePRS is a trans-ancestry software that improves PRS in diverse populations.
     - update log can be found [here](misc_log.md)
 
 # Quick Start
-To get started right away using supplied toy data and sample thousand genomes data, please use our [Quick Start Tutorial](quikstart_prep.md).
+- Get started right away using sample data with our [Quick Start Tutorial!](quikstart_prep.md).
+- Completing the tutorial and [training](quikstart_training.md) is often sufficient to begin using BridgePRS!
+
 
 
 # Information 
 - BridgePRS is a software package written in R (main) and Python (wrapper) that depends on Plink (by [Christopher Chang](https://www.cog-genomics.org/software)). 
-  For more information on installing dependencies, please refer to [Requirements](detail_requirements.md). 
-- To learn more about BridgePRS see our complete [Guide.](detail_background.md)
-
-
+  For more information on installing dependencies, please refer to [Requirements](guide_requirements.md). 
+- To learn more about BridgePRS see our complete [Guide.](guide_background.md)
 
 
 !!! Caution "Citation: Our Manuscript is in press at [Nature Genetics](yo)"  
@@ -42,7 +46,7 @@ To get started right away using supplied toy data and sample thousand genomes da
 
 
 ## Contact 
-For questions about the methodology, this website, or our manuscript please contact [Dr Clive Hoggary](http://www.pauloreilly.info/), 
+For questions about the methodology, this website, or our manuscript please contact [Dr Clive Hoggart](http://www.pauloreilly.info/), 
 [Tade](http://www.pauloreilly.info/), or [Dr Paul O'Reilly](http://www.pauloreilly.info/). 
 
 

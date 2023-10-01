@@ -1,25 +1,25 @@
+![Screenshot](img/slim/quikstart_logo3.png)
 
 # Interpreting Results 
 
-The easyrun command sequentially runs the [five subprograms](detail_commands.md) described in detail in our [here](detail_commands.md) and 
-the output directory (eg. **out1** and **out2**): 
+The easyrun command used in the previous step sequentially runs five different [subprograms](guide_subprograms.md) in 
+output directory supplied on the command line (eg. **out1** and **out2**): 
 
-1. `prs-single:   `   Run PRS using the primary population only (AFR). 
-2. `build-model:`     Estimate SNP weights & prior params from model pop (EUR). 
-3. `prs-port:   `     Run target-PRS using the model snp weights. 
-4. `prs-prior:`       Run target-PRS using model prior distributions. 
-5. `analyze combine`  Combine results to produce a weighted target PRS result.
+1. `prs-single:   `   [Run PRS using the target population only (AFR).](guide_subprograms.md#prs-single) 
+2. `build-model:`     [Estimate SNP weights & prior params from model pop (EUR).](guide_subprograms.md#build-model)
+3. `prs-port:   `     [Run target-PRS using the model snp weights.](guide_subprograms#prs-port) 
+4. `prs-prior:`       [Run target-PRS using model prior distributions.](guide_subprograms#prs-prior)  
+5. `analyze`          [Combine results to produce a weighted target PRS result.](guide_subprograms#prs-prior) 
 
 And produces output in the following five subdirectories: 
 
-1. **prs-single_AFR/quantify/:** Weights/Predictions (*snp_weights.dat, *preds.dat) 
-2. **model_EUR/prior:**          Model Priors 
-3. **prs-port_AFR/quantify/:**   Weights/Predictions (*snp_weights.dat, *preds.dat) 
-4. **prs-prior_AFR/quantify/:**  Weights/Predictions (*snp_weights.dat, *preds.dat) 
-5. **prs-combined_AFR/:**        Weights/Predictions (*snp_weights.dat, *preds.dat) 
+1. **prs-single_AFR/quantify/:** Weights, predictions, and performance metrics. 
+2. **model_EUR/prior:**          Model weights and priors. 
+3. **prs-port_AFR/quantify/:**   Weights, predictions, and performance metrics. 
+4. **prs-prior_AFR/quantify/:**  Weights, predictions, and performance metrics. 
+5. **prs-combined_AFR/:**        Analysis that combined the previous four steps. 
 
-
-The directory structure created by this command is shown below: FR
+The directory structure created by this command is shown below: 
 
 ![Screenshot](img/pipeline.png)
 

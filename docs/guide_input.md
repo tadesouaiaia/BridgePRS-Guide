@@ -1,4 +1,6 @@
+![Screenshot](img/slim/guide_logo3.png) 
 # Input Data
+
 
 ## LD Reference Data: 1000 Genomes 
 
@@ -18,9 +20,9 @@ To run BridgePRS using a custom LD reference please see [customization](guide_cu
 
 ## Trait Data: GWAS Sumstats and Phenotype Data
 
-**Primary Data** 
+**Target Data** 
 
-For the primary population (where the trait is being estimated) BridgePRS requires GWAS summary stats
+For the target population (where the trait is being estimated) BridgePRS requires GWAS summary stats
 and two phenotype files (for test and validation): 
 
 
@@ -29,7 +31,7 @@ and two phenotype files (for test and validation):
 |Name|Command Line flag|Required|Description|
 |:-:|:-:|:-:|:-:|
 |Sumstats|--sumstats_prefix|Yes|GWAS Summary Statsd|
-|Phenotypes|--phenotype_files|Primary Pop Only|Test And Validation Phenotype Files|
+|Phenotypes|--phenotype_files|Target Pop Only|Test And Validation Phenotype Files|
 |Snp List|--snp_file|No|List QCed SNP ids| 
 
 !!! tip "Creating a Configuration File"
@@ -53,7 +55,7 @@ and two phenotype files (for test and validation):
 
 For the model population (used to produce prior distributions) BridgePRS requries GWAS summary stats 
 and one phenotype file (if available).  If it is not available then the test file 
-from the primary population can be substituted, as shown in the two configuration files: 
+from the target population can be substituted, as shown in the two configuration files: 
 
 
 === "With Phenotype Data"

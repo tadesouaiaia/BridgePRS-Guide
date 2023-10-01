@@ -1,3 +1,4 @@
+![Screenshot](img/slim/guide_logo7.png) 
 # Input Data
 
 ## LD Reference Data: Custom Data 

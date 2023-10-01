@@ -1,3 +1,4 @@
+![Screenshot](img/slim/guide_logo5.png) 
 # Output Data
 
 

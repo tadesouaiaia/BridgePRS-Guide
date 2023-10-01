@@ -1,3 +1,4 @@
+![Screenshot](img/slim/guide_logo2.png)
 
 # Requirements 
 
@@ -51,26 +52,20 @@ If python3+ is available, all other dependencies can be ran using the BridgePRS
 !!! Note "The BridgePRS Installer" 
 
 
-    If BridgePRS has been downloaded and made executable (as described in our [quickstart tutorial](quikstart_prep)) 
+    If BridgePRS has been downloaded and made executable (as described in our [quickstart tutorial](quikstart_prep.md)) 
     then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
     install missing software:  
     
     === "$ ./bridgePRS check requirements" 
 
     ```
-    BridgePRS Begins... 
-    Bridge Command-Line: ../../bridgePRS check requirements
-    Module: check
-        Command: requirements
-               System:  cores=7,  platform=linux,  plinkpath=src/Python/Xtra,  rpath=src/Rscripts
-               Options:  fst=0.15,  outpath=out,  tgpath=/home/tade/Current/bridgePRS/repo/BridgePRS/data/sampleKg
-                 JOB1: Checking Requirements.....................................................
-                       Python Found: /usr/bin/python3
-                       Matplotlib: Found
-                       R Found: /usr/bin/R
-                       R Version: 3.6.3
-                       R packages: Up To Date
-
+    BridgePRS Begins at Sat Sep 30 23:45:46 2023 
+    Bridge Command-Line:  ../bridgePRS check requirements
+    Checking Requirements:
+               System:  platform=linux,  cores(available)=8,          cores(used)=1       (TIP: Using More Than One Core Will Improve Performace (e.g. ---cores 7))
+                Plink:  found=true,      path=/home/tade/Bin/plink
+                    R:  found=true,      path=/usr/bin/R,             version=3.6.3       (packages=up to date)                                            
+              Python3:  found=true,      path=/usr/bin/python3,     matplotlib=true
     Complete
     ```
 

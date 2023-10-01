@@ -1,3 +1,4 @@
+![Screenshot](img/slim/misc_logo2.png) 
 
 #Update Log 
 

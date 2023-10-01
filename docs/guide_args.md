@@ -1,4 +1,6 @@
-This page contains all command available in PRSice. 
+![Screenshot](img/slim/guide_logo6.png) 
+
+This page contains all command available in BridgePRS. 
 
 !!! tips
     
@@ -39,9 +41,9 @@ This page contains all command available in PRSice.
 - `--verbose`  Toggle Verbose Mode On   
 
 
-- `--skipAnalysis`  Skip Post-Pipeline Analysis (Plotting) 
+- `--noPlots`  Skip Post-Pipeline Analysis (Plotting) 
 
-- `--repeatSteps`  Repeat previously completed steps
+- `--restart`  Repeat previously completed steps
 
 
 ## Parameter Arguments 

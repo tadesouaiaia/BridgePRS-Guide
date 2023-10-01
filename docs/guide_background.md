@@ -1,5 +1,4 @@
-i![Screenshot](img/bridgeSun.png)
-
+![Screenshot](img/slim/guide_logo1.png)
 
 
 
@@ -59,7 +58,7 @@ then validated on an out of sample dataset of genotypes and phenotypes.
 **The BridgePRS Solution**
 
 - BridgePRS solves this problem by first running producing three different PRS-models. 
-    - PRS ran using only the primary (Non-European) dataset  
+    - PRS ran using only the target (Non-European) dataset  
     - PRS ran using SNP-weights calculated from the European Model 
     - PRS ran using a prior effect-size distribution from the European Model  
 - Then BridgePRS combines these results to produce a weighted PRS solution. 
