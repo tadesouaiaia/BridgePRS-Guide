@@ -62,6 +62,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_training/">Training</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
@@ -71,7 +73,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
@@ -115,24 +117,56 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="1-continuous-trait-y">1) Continuous Trait [ "y" ]</h2>
+                <p><img alt="Screenshot" src="../img/slim/quikstart_logo2.png" /></p>
+<h2 id="configuration-files">Configuration Files</h2>
+<p>The target and model <a href="../guide_input/">configuration files</a> used in this tutorial point to all the files required to 
+run BridgePRS:  </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">target: data/afr.config</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>AFR
+LDPOP<span style="color: #666666">=</span>AFR
+SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
+GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>afr_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat,pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_validation.dat
+SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
+</pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">model: data/eur.config</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR
+LDPOP<span style="color: #666666">=</span>EUR
+SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
+SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
+GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>eur_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>eur_test.dat
+</pre></div>
+</div>
+</div>
+<p>The phenotype files include two variables (<strong>"y"</strong> and <strong>"y.binary"</strong>) used in the tutorial.  </p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">$ head -n1 pop_africa/phenotypes/afr_test.dat</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #666666">.</span>
+FID IID y y.binary
+</pre></div>
+</div>
+</div>
+<h2 id="demo-1-continuous-trait-y">Demo 1: Continuous Trait [ "y" ]</h2>
 <div class="admonition tips">
 <p class="admonition-title">Easyrun Command</p>
-<p>After installing and verfying the <a href="../quikstart_prep/">requirements</a>, run BridgePRS on the toy phenotype "y" with the following command: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y 
+<p>Run BridgePRS on the toy phenotype "y" with the following command: 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y 
 </pre></div></p>
 </div>
-<p>A summary figure will be created in <code>out1/AFR_summary.png</code>: </p>
+<p>And verify that the summary figure <code>out1/bridgeSummary.png</code> is created: </p>
 <p><img alt="Screenshot" src="../img/combo1.png" /></p>
-<h2 id="2-binary-trait-ybinary">2) Binary Trait [ "y.binary" ]</h2>
+<h2 id="demo-2-binary-trait-ybinary">Demo 2: Binary Trait [ "y.binary" ]</h2>
+<p>Next make sure you are able to repeat the process with a binary phenotype. </p>
 <div class="admonition tips">
 <p class="admonition-title">Easyrun Command</p>
 <p>Run BridgePRS on the toy binary phenotype "y.binary" with the following command: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$./bridgePRS easyrun go -o out2 --pop_configs data/afr.config data/eur.config --phenotype y.binary
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS easyrun go -o out2 --pop_configs data/afr.config data/eur.config --phenotype y.binary
 </pre></div></p>
 </div>
-<p>A summary figure will be created in <code>out2/AFR_summary.png</code>: </p>
-<p><img alt="Screenshot" src="../img/combo2.png" /></p>
+<h2 id="next-up">Next Up:</h2>
+<p>On the page we will discuss the results that bridgePRS generates and on the following page we will include 
+two challenge problems to make sure your expertise at bridgePRS is peak level. </p>
               
             </div>
           </div><footer>

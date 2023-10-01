@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>About - BridgePRS</title>
+    <title>Mac specific - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "About";
-        var mkdocs_page_input_path = "about.md";
+        var mkdocs_page_name = "Mac specific";
+        var mkdocs_page_input_path = "mac_specific.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -60,6 +60,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_training/">Training</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
@@ -69,7 +71,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
@@ -101,9 +103,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>About</li>
+      <li>Mac specific</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/about.md"
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/mac_specific.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -112,29 +114,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="Screenshot" src="../img/bridgeSun.png" /> </p>
-<p>BridgePRS is a trans-ancestry PRS software which improves polygenic risk score analysis in diverse populations. </p>
+                <p><img alt="Screenshot" src="../img/mac_plink.png" /></p>
+<h1 id="plink-developer-cannot-be-verified">Plink: Developer Cannot Be Verified</h1>
+<p>If you see this error, <strong>Do not click: Move To Trash</strong>. </p>
+<p>Instead click on the top right hand corner of the box, or stop running BridgePRS and follow these instructions 
+to give your system permission to call plink from BridgePRS:  </p>
+<h2 id="1-default-settings">1- Default Settings</h2>
+<p>By default macOS allows you to open apps from the official Mac App Store only, If you have this set as your default 
+you can change this if you: </p>
 <ol>
-<li>Calculating PRS using Ridge Regression</li>
-<li>Porting a PRS model from one population to another</li>
-<li>Using European data as a prior to improve PRS in diverse populations</li>
-<li>Results plotted in several formats  </li>
+<li>Open System Preferences.</li>
+<li>Go to the Security &amp; Privacy tab.</li>
+<li>Click on the lock and enter your password.</li>
+<li>Change settings to include identified developers (see below): </li>
 </ol>
-<div class="admonition important">
-<p class="admonition-title">Citation</p>
-<p>Please cite our publication in Nature Genetics: </p>
-<p><strong>BridgePRS</strong> </p>
+<p><img alt="Screenshot" src="../img/mac_plink2.png" /></p>
+<h2 id="2-allowing-exceptions">2- Allowing Exceptions</h2>
+<p>Expanding permissions to include "identified developers" is required but not sufficient.  To obtain 
+further permission to run <strong>Plink</strong> or any other unapproved program you can:  </p>
+<ol>
+<li>Open System Preferences.</li>
+<li>Go to Security &amp; Privacy and select the General tab.</li>
+<li>If this has happened within the hour, this page will give you an override button to open <strong>Open Anyway</strong>. </li>
+<li>Enter you password as above and click this button.</li>
+<li>You will be asked to once more which will create an exception allowing you to run Plink in the future. </li>
+</ol>
+<p><img alt="Screenshot" src="../img/mac_plink3.jpg" /></p>
+<h2 id="3-downstream-bridgeprs-errors">3- Downstream BridgePRS Errors</h2>
+<p>If you have moved plink to the trash you will have to recover it, additionally the empty 
+files created by a failed attempt to run Plink can cause problems if BridgePRS tries to recover your progress. </p>
+<div class="admonition tip">
+<p class="admonition-title">Restarting a bridgePRS run</p>
+<p>You can avoid this problem by manually deleting your output directory and starting over, or by using the restart flag: 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y --restart
+</pre></div>
+This will force bridgePRS to restart every subprogram from the beginning.     </p>
 </div>
-<h2 id="authors">Authors</h2>
-<p>For more details on the authors, see:</p>
-<ul>
-<li><a href="http://www.pauloreilly.info/">Dr Clive Hoggart</a></li>
-<li><a href="http://www.pauloreilly.info/">Tade</a></li>
-<li><a href="http://www.pauloreilly.info/">Dr Paul O'Reilly</a></li>
-</ul>
-<h2 id="acknowledgement">Acknowledgement</h2>
-<p>BridgePRS is a software package written in R (main) and Python (wrapper, plotting).
-The code relies on PLINK by <a href="https://www.cog-genomics.org/software">Christopher Chang</a>.</p>
+<p><img alt="Screenshot" src="../img/bridgeSun.png" /></p>
               
             </div>
           </div><footer>
