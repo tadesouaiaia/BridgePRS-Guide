@@ -73,7 +73,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
@@ -121,35 +121,39 @@
 <h2 id="training">Training</h2>
 <p>In the previous two examples the target population was a non-specific African (<strong>AFR</strong>) population 
 and the model population  was European (<strong>EUR</strong>).  In these examples each population had a corresponding:  </p>
-<ol>
+<ul>
 <li>LD Reference Panel (Used for Clumping) </li>
 <li>GWAS Summary Stats </li>
 <li>Genotype/Phenotype Data </li>
-</ol>
+</ul>
 <p>This example may be unrealistic given real-world constraints and the realities of data sharing. 
 Here we will consider will consider using BridgePRS in more realistic scenarios.  The data 
 for these challenges is included in <code>data/challenges/</code>.</p>
 <h2 id="challenge-1">Challenge 1:</h2>
 <p><strong>I have access to genotype/phenotype data (&lt;1000 samples, continuous phenotype) from a diverse population in Central Africa (data/challenges/CAF). 
-I would like ot run PRS as accurately as possible, but my dataset is not large enough to conduct GWAS, and the only available data is:</strong></p>
+I would like ot run PRS as accurately as possible, but my dataset is not large enough to conduct GWAS, however, I do have access to a moderately 
+sized GWAS in a related West African population (1) and access to large-scale GWAS data from a European population (2).  How can I do this?</strong></p>
+<p><strong>Available Data:</strong> </p>
 <ol>
-<li>Moderately sized GWAS in a moderately related West African population (<strong>/data/challenges/yoruba/sumstats/</strong>) </li>
-<li>Large GWAS run in a distantly related European population (<strong>data/challenges/UKB/sumstats</strong>)  </li>
+<li>Related GWAS Moderately sized GWAS (<strong>challenges/yoruba/sumstats/</strong>) </li>
+<li>Large European GWAS (<strong>challenges/UKB/sumstats/</strong>) </li>
+<li>1000G Reference Panel</li>
 </ol>
+<p>Can you fill out the configuration files to carry this out? </p>
 <div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Target Config File</label><div class="tabbed-content">
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
-LDPOP<span style="color: #666666">=</span> 
+LDPOP<span style="color: #666666">=</span>
 SUMSTATS_PREFIX<span style="color: #666666">=</span>
-GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_genotypes
-PHENOTYPE_FILES<span style="color: #666666">=</span>pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat,pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat
+GENOTYPE_PREFIX<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat,pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat
 </pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">[Answer]</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
-LDPOP<span style="color: #666666">=</span> 
-SUMSTATS_PREFIX<span style="color: #666666">=</span>
-GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_genotypes
-PHENOTYPE_FILES<span style="color: #666666">=</span>pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat,pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>CAF
+LDPOP<span style="color: #666666">=</span>AFR 
+SUMSTATS_PREFIX<span style="color: #666666">=</span>yoruba<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>chr 
+GENOTYPE_PREFIX<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat,pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat
 </pre></div>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Model Config FIle</label><div class="tabbed-content">
@@ -161,25 +165,55 @@ PHENOTYPE_FILES<span style="color: #666666">=</span>
 </pre></div>
 </div>
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Answer</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
-LDPOP<span style="color: #666666">=</span> 
-SUMSTATS_PREFIX<span style="color: #666666">=</span>
-GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_genotypes
-PHENOTYPE_FILES<span style="color: #666666">=</span>pop_caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR
+LDPOP<span style="color: #666666">=</span>EUR
+SUMSTATS_PREFIX<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>chr
+GENOTYPE_PREFIX<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat
 </pre></div>
 </div>
 </div>
-<h2 id="challenge-1_1">Challenge 1:</h2>
-<p><strong>I have access to genotype/phenotype data (&lt;1000 samples, continuous phenotype) from a diverse population in Central Africa (data/challenges/CAF). 
-I would like ot run PRS as accurately as possible, but my dataset is not large enough to conduct GWAS, and the only available data is:</strong></p>
+<h2 id="challenge-2">Challenge 2:</h2>
+<p>**I have access to GWAS data (1) and  genotype/phenotype (2) data (&gt;2000 samples, binary phenotype) from a moderate sized population in Eastern Europe (data/challenges/UKR). 
+I have reason to believe that this population has unique LD structure and would like to incorporate this into my model.  I also have GWAS and genotype/phenotype data from the UKB biobank 
+that I wish to use to improve my results, how should I do this? </p>
 <ol>
-<li>Moderately sized GWAS in a moderately related West African population (<strong>/data/challenges/yoruba/sumstats/</strong>) </li>
-<li>Large GWAS run in a distantly related European population (<strong>data/challenges/UKB/sumstats</strong>)  </li>
+<li>Target GWAS     (<strong>challenges/UKR/sumstats/</strong>) </li>
+<li>Target Genotype/Phenotype Data  (<strong>challenges/UKR/genotype/chr, challenges/UKR/phenotype.test,challenges/UKR/phenotype.valid</strong>) </li>
+<li>Model European GWAS (<strong>challenges/UKB/sumstats/</strong>) </li>
+<li>Model Genotype/Phenotype Data  (<strong>challenges/UKB/genotype/chr, challenges/UKB/phenotype.test</strong>) </li>
 </ol>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Target Config File</label><div class="tabbed-content">
-<p>```R
-POP=
-LDPOP= </p>
+<div class="tabbed-set" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Target Config File</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>UKR
+LDPOP<span style="color: #666666">=</span>
+SUMSTATS_PREFIX<span style="color: #666666">=</span>
+GENOTYPE_PREFIX<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_test.dat,pop_ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_validation.dat
+</pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">[Answer]</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>ukr
+LDPOP<span style="color: #666666">=</span>ukr<span style="color: #666666">*</span>
+SUMSTATS_PREFIX<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>chr 
+GENOTYPE_PREFIX<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_test.dat,pop_ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_validation.dat
+</pre></div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Model Config FIle</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
+LDPOP<span style="color: #666666">=</span> 
+SUMSTATS_PREFIX<span style="color: #666666">=</span>
+GENOTYPE_PREFIX<span style="color: #666666">=</span>
+PHENOTYPE_FILES<span style="color: #666666">=</span>
+</pre></div>
+</div>
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">Answer</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>UKB
+LDPOP<span style="color: #666666">=</span>EUR 
+SUMSTATS_PREFIX<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>chr 
+GENOTYPE_PREFIX<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukb_test.dat
+</pre></div>
 </div>
 </div>
               

@@ -13,7 +13,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Subprograms";
-        var mkdocs_page_input_path = "guide_commands.md";
+        var mkdocs_page_input_path = "guide_subprograms.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -73,15 +73,15 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Subprograms</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-bridgeprs-prs-single">1) BridgePRS prs-single</a>
+    <li class="toctree-l2"><a class="reference internal" href="#prs-single">prs-single</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-bridgeprs-build-model">2) BridgePRS build-model</a>
+    <li class="toctree-l2"><a class="reference internal" href="#build-model">build-model</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-bridgeprs-prs-port">3) BridgePRS prs-port</a>
+    <li class="toctree-l2"><a class="reference internal" href="#prs-port">prs-port</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-bridgeprs-prs-prior">4) BridgePRS prs-prior</a>
+    <li class="toctree-l2"><a class="reference internal" href="#prs-prior">prs-prior</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-bridgeprs-result-combine">5) BridgePRS result combine</a>
+    <li class="toctree-l2"><a class="reference internal" href="#analyze">analyze</a>
     </li>
     </ul>
                   </li>
@@ -118,7 +118,7 @@
           <li>Guide &raquo;</li>
       <li>Subprograms</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_commands.md"
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_subprograms.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -147,44 +147,53 @@
 <tbody>
 <tr>
 <td align="center"><strong>prs-single</strong></td>
-<td align="center">Primary Pop Data</td>
-<td align="center">clump,eval,test,predict</td>
+<td align="center">Target Pop Data</td>
+<td align="center"><strong>run</strong>,clump,beta,predict,quantify</td>
 <td align="center">prs-result</td>
 </tr>
 <tr>
 <td align="center"><strong>build-model</strong></td>
 <td align="center">Model Pop Data</td>
-<td align="center">clump,eval,test,prior</td>
+<td align="center">**run**clump,beta,optimize,prior</td>
 <td align="center">model-params</td>
 </tr>
 <tr>
 <td align="center"><strong>prs-port</strong></td>
-<td align="center">Primary Pop + Model Result</td>
-<td align="center">port,predict</td>
+<td align="center">Target Pop + Model Result</td>
+<td align="center"><strong>run</strong>,predict,quantify</td>
 <td align="center">prs-result</td>
 </tr>
 <tr>
 <td align="center"><strong>prs-prior</strong></td>
-<td align="center">Primary Pop + Model Result</td>
-<td align="center">inform,test,predict</td>
+<td align="center">Target Pop Data</td>
+<td align="center"><strong>run</strong>,clump,beta,test,predict</td>
 <td align="center">prs-result</td>
 </tr>
 <tr>
 <td align="center"><strong>analyze</strong></td>
 <td align="center">PRS Result Files</td>
-<td align="center">combine,plot</td>
-<td align="center">weighted prs-result</td>
+<td align="center">**run**result,combine</td>
+<td align="center">single-plot,weighted prs-result,weighted prs plot</td>
 </tr>
 </tbody>
 </table>
 <p>These programs can be called consecutively using the easyrun master-program 
 which will create the following directory structure: </p>
+<h2 id="prs-single">prs-single</h2>
+<p>The subprogram (<strong>prs-single</strong>) and subcommand (<strong>run</strong>) (<code>./bridgePRS prs-single run</code>) requires that the 
+following target population data be provided on the command line or inside of a configuration file: </p>
+<ol>
+<li><strong>--pop:</strong> The name of your target population </li>
+<li><strong>--ldpop:</strong> The ld reference name, if different from target population name </li>
+<li><strong>--sumstats_prefix:</strong> The path to GWAS data </li>
+<li><strong>--genotype_prefix:</strong> Path to target genotype data </li>
+<li><strong>--phenotype_files:</strong> Two target phenotype files (test and validate) </li>
+</ol>
+<h2 id="build-model">build-model</h2>
+<h2 id="prs-port">prs-port</h2>
+<h2 id="prs-prior">prs-prior</h2>
+<h2 id="analyze">analyze</h2>
 <p><img alt="Screenshot" src="../img/pipeline.png" /></p>
-<h2 id="1-bridgeprs-prs-single">1) BridgePRS prs-single</h2>
-<h2 id="2-bridgeprs-build-model">2) BridgePRS build-model</h2>
-<h2 id="3-bridgeprs-prs-port">3) BridgePRS prs-port</h2>
-<h2 id="4-bridgeprs-prs-prior">4) BridgePRS prs-prior</h2>
-<h2 id="5-bridgeprs-result-combine">5) BridgePRS result combine</h2>
               
             </div>
           </div><footer>
