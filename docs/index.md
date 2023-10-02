@@ -47,7 +47,7 @@ BridgePRS is a trans-ancestry software that improves PRS in diverse populations.
 
 ## Contact 
 For questions about the methodology, this website, or our manuscript please contact [Dr Clive Hoggart](http://www.pauloreilly.info/), 
-[Tade](http://www.pauloreilly.info/), or [Dr Paul O'Reilly](http://www.pauloreilly.info/). 
+[Dr Tade Souaiaia](http://www.pauloreilly.info/), or [Dr Paul O'Reilly](http://www.pauloreilly.info/). 
 
 
 ## Issues 
@@ -58,7 +58,7 @@ If you have problems, please feel free to submit an issues [here](https://github
 
 ## Acknowledgements
 
-We would like to thank Brian Fulton Howard for his expert programming advice. 
+We would like to thank Brian Fulton-Howard for his expert programming advice. 
 
 
 
