@@ -1,5 +1,6 @@
 site_name: BridgePRS 
 repo_url: https://github.com/tadesouaiaia/BridgePRS-Guide
+edit_url: blob/main/docs/
 site_author:  Tade Souaiaia 
 nav:
     - Home: index.md
@@ -8,12 +9,13 @@ nav:
         - Prep:     quikstart_prep.md 
         - Demo:     quikstart_demo.md 
         - Result:     quikstart_result.md 
+        - Training:     quikstart_training.md 
 
     - Guide:
         - Background:       guide_background.md
         - Requirements:       guide_requirements.md
         - Input Data:         guide_input.md
-        - Subprograms:       guide_commands.md
+        - Subprograms:       guide_subprograms.md
         - Output Data:        guide_output.md 
         - All Arguments:       guide_args.md
         - Customization:         guide_customization.md 
@@ -31,6 +33,7 @@ theme:
 
 markdown_extensions:
     - admonition
+    - attr_list
     - pymdownx.details
     - pymdownx.tabbed
     - pymdownx.superfences
