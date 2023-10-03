@@ -1,15 +1,14 @@
 site_name: BridgePRS 
 repo_url: https://github.com/tadesouaiaia/BridgePRS-Guide
-edit_url: blob/main/docs/
 site_author:  Tade Souaiaia 
 nav:
     - Home: index.md
     
     - Quick Start Tutorial:
-        - Prep:     quikstart_prep.md 
-        - Demo:     quikstart_demo.md 
-        - Result:     quikstart_result.md 
-        - Training:     quikstart_training.md 
+        - Before Running:      quikstart_prep.md 
+        - Toy-Data Demo:      quikstart_demo.md 
+        - User Challenges:    quikstart_result.md 
+        - Training:  quikstart_training.md 
 
     - Guide:
         - Background:       guide_background.md
@@ -23,6 +22,7 @@ nav:
 
     - Misc:
         - Frequently Asked Questions: misc_faq.md
+        - Mac Specific:               mac_specific.md
         - Update Log:                 misc_log.md
 
 
