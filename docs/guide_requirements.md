@@ -16,7 +16,7 @@ BridgePRS requires the following **R** [**version 3.6.3+**] ([Download](https://
     These packages can be installed from inside an R terminal using the command: 
         ```
         $ R 
-        > install.packages(c("BEDMatrix","boot","data.table","doMC","glmnet","MASS","optparse","parallel","R.utils")) 
+        install.packages(c("BEDMatrix","boot","data.table","doMC","glmnet","MASS","optparse","parallel","R.utils")) 
         ```
 
 
@@ -56,7 +56,7 @@ If python3+ is available, all other dependencies can be ran using the BridgePRS
     then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
     install missing software:  
     
-    === "$ ./bridgePRS check requirements" 
+    === "./bridgePRS check requirements" 
 
     ```
     BridgePRS Begins at Sat Sep 30 23:45:46 2023 
