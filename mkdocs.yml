@@ -7,8 +7,8 @@ nav:
     - Quick Start Tutorial:
         - Before Running:      quikstart_prep.md 
         - Toy-Data Demo:      quikstart_demo.md 
-        - User Challenges:    quikstart_result.md 
-        - Training:  quikstart_training.md 
+        - After Running:      quikstart_result.md 
+        - User Challenges:    quikstart_challenges.md 
 
     - Guide:
         - Background:       guide_background.md

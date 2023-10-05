@@ -46,34 +46,26 @@ following target population data be provided on the command line or inside of a 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ##build-model
 
-
+The subprogram 
 
 
 ##prs-port 
 
+The subprogram 
 
 
 ##prs-prior 
 
+The subprogram 
 
 
 
 ##analyze
 
 
+The subprogram 
 
 
 ![Screenshot](img/pipeline.png)

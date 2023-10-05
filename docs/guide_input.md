@@ -76,6 +76,9 @@ from the target population can be substituted, as shown in the two configuration
     SNP_FILE=pop_europe/snps.txt
     ```
 
+##The Configuration File
+
+For ease of use bridgePRS uses configuration files. 
 
 
 ## File Specifications 
