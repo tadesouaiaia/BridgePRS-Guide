@@ -10,7 +10,7 @@
 [//]: # (![Screenshot](img/bridge_logo3.png) 
 
 
-BridgePRS is a trans-ancestry software that improves PRS in diverse populations. 
+BridgePRS is a Bayesian-ridge (Bridge) approach, which "bridges" the PRS between two populations of different ancestries, developed to tackle the PRS portability problem that results in underrepresented ancestry population having inaccurate PRS due to the bias towards European ancestry in GWAS data collection. 
 
 # Package Downloads 
 | Operating System | Link |
