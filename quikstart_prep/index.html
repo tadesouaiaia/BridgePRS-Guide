@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Prep - BridgePRS</title>
+    <title>Before Running - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Prep";
+        var mkdocs_page_name = "Before Running";
         var mkdocs_page_input_path = "quikstart_prep.md";
         var mkdocs_page_url = null;
       </script>
@@ -54,15 +54,15 @@
               </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Prep</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Before Running</a>
     <ul class="current">
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Toy-Data Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">After Running</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_training/">Training</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_challenges/">User Challenges</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
@@ -88,6 +88,8 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_faq/">Frequently Asked Questions</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mac_specific/">Mac Specific</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_log/">Update Log</a>
                   </li>
               </ul>
@@ -106,7 +108,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Quick Start Tutorial &raquo;</li>
-      <li>Prep</li>
+      <li>Before Running</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_prep.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -150,17 +152,44 @@ For instructions on how to do so, please click <a href="../mac_specific/">here</
 </div>
 <h2 id="sample-data">Sample Data</h2>
 <p>Once you have confirmed that your system is up to date and libraries are installed, you 
-can begin the tutorial using the sample data located in the <strong>data</strong> directory: </p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>data/afr.config     #   A configuration file for a target population of African ancestry
-data/eur.config     #   A configuration file for a model population of European ancestry
+can locate the toy-data used in the demo.  Located in the <strong>data</strong> directory, these data 
+is formatted as population <a href="../guide_input/#the-configuration-file">configuaration files</a>, 
+that point to the files associated with the <strong>target</strong> and <strong>base</strong> populations being used to run bridgePRS: </p>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">target: data/afr.config</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>AFR
+LDPOP<span style="color: #666666">=</span>AFR
+SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
+GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>afr_genotypes
+PHENOTYPE_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat
+VALIDATION_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_validation.dat
+SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
 </pre></div>
-<p>For more information on config files, see <a href="../guide_input/">Guide: Input Data</a>, or go to the next page. </p>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">base: data/eur.config</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR
+LDPOP<span style="color: #666666">=</span>EUR
+SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
+SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
+GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>eur_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>eur_test.dat
+</pre></div>
+</div>
+</div>
+<p>Examining one the phenotype files pointed to by the configuration file, reveals the two variables (<strong>"y"</strong> and <strong>"y.binary"</strong>) used in the tutorial.  </p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">$ head -n1 pop_africa/phenotypes/afr_test.dat</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #666666">.</span>
+FID IID y y.binary
+</pre></div>
+</div>
+</div>
+<p>For more information on the configuration or phenotype filetype, see <a href="../guide_input/">Guide: Input Data</a>, 
+or to run the tutorial demo go to the next page. </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../quikstart_demo/" class="btn btn-neutral float-right" title="Demo">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_demo/" class="btn btn-neutral float-right" title="Toy-Data Demo">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
