@@ -19,10 +19,10 @@ BridgePRS consists of five related multi-function subprograms:
 
 |Subprogram|Input|Subcommands|Output|
 |:-:|:-:|:-:|:-:|
-|**prs-single**|Target Pop Data|**run**,clump,beta,predict,quantify|prs-result| 
-|**build-model**|Model Pop Data|**run**clump,beta,optimize,prior|model-params| 
-|**prs-port**|Target Pop + Model Result|**run**,predict,quantify|prs-result| 
-|**prs-prior**|Target Pop Data|**run**,clump,beta,test,predict|prs-result| 
+|**prs-single**                 |Target Pop Data|**run**,clump,beta,predict,quantify|prs-result| 
+|**build-model**|Model Pop Data|**run**clump,beta,predict,prior|model-params| 
+|**prs-port**|Target Pop + Model Result|**run**,predict,quantify|prs-port-result| 
+|**prs-prior**|Target Pop Data + Model Result|**run**,clump,beta,test,predict|prs-prior-result| 
 |**analyze**|PRS Result Files|**run**result,combine|single-plot,weighted prs-result,weighted prs plot| 
 
 
@@ -39,33 +39,49 @@ following target population data be provided on the command line or inside of a 
 
 1. **--pop:** The name of your target population 
 2. **--ldpop:** The ld reference name, if different from target population name 
-3. **--sumstats_prefix:** The path to GWAS data 
-4. **--genotype_prefix:** Path to target genotype data 
-5. **--phenotype_files:** Two target phenotype files (test and validate) 
+3. **--sumstats_prefix:** Sumstats data 
+4. **--genotype_prefix:** Target Genotype Data 
+5. **--phenotype_file:** Target Phenotype File 
 
-
+This subprogram performs single population **RidgePRS**. 
 
 
 ##build-model
 
-The subprogram 
+The subprogram is run on the base population (where the GWAS is larger). 
+
+1. **--pop:** The name of your target population 
+2. **--ldpop:** The ld reference name, if different from target population name 
+3. **--sumstats_prefix:** Base sumstats data 
+4. **--genotype_prefix:** Base Genotype Data (If available) 
+5. **--phenotype_file:** Base Phenotype File  (If available) 
+
+
+This program performs **RidgePRS** on the base population and then provides 
+a prior distribution for each SNP weight that can be passed onto the next programs. 
+
+
 
 
 ##prs-port 
 
-The subprogram 
+The subprogram uses the model result and the target population data to "port" the SNP 
+weights from the base population to make estimates in the target population.  
 
 
 ##prs-prior 
 
-The subprogram 
+The subprogram uses the model result and the target population data and uses the 
+the SNP weights from the base population to estimate a prior distribution to 
+make estimates in the target population.  
 
 
 
 ##analyze
 
 
-The subprogram 
+The analyze subprogram is used to either make a plot from a single result (above) or 
+to combine the results of all three. 
 
 
 ![Screenshot](img/pipeline.png)
