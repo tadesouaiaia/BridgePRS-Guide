@@ -73,17 +73,17 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#ld-reference-data-1000-genomes">LD Reference Data: 1000 Genomes</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#trait-data-gwas-sumstats-and-phenotype-data">Trait Data: GWAS Sumstats and Phenotype Data</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#the-configuration-file">The Configuration File</a>
+    <li class="toctree-l2"><a class="reference internal" href="#targetbase-population-data">Target/Base Population Data:</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#file-specifications">File Specifications</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-sumstats-data">1) Sumstats Data</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-phenotype-files">2) Phenotype Files</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-genotype-files">2) Genotype Files</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-qc-snp-list">3) QC SNP List</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-phenotype-files">3) Phenotype Files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-qc-snp-list">4) QC SNP List</a>
     </li>
         </ul>
     </li>
@@ -145,96 +145,122 @@ suitable for the <a href="../quikstart_prep/">quick start tutorial</a>. </p>
 <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">here</a> and unzipped into <strong>BRIDGEDIR/data/1000G_ref</strong> to enable full usage 
 of BridgePRS. </p>
 <p>To run BridgePRS using a custom LD reference please see <a href="../guide_customization/">customization</a>. </p>
-<h2 id="trait-data-gwas-sumstats-and-phenotype-data">Trait Data: GWAS Sumstats and Phenotype Data</h2>
-<p><strong>Target Data</strong> </p>
-<p>For the target population (where the trait is being estimated) BridgePRS requires GWAS summary stats
-and two phenotype files (for test and validation): </p>
+<h2 id="targetbase-population-data">Target/Base Population Data:</h2>
+<p>For the target and base populations bridgePRS requires that following files be supplied on the command 
+line or in a configuation file: </p>
 <table>
 <thead>
 <tr>
 <th align="center">Name</th>
 <th align="center">Command Line flag</th>
-<th align="center">Required</th>
+<th align="center">Target Default</th>
+<th align="center">Base Default</th>
 <th align="center">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td align="center">Pop Name</td>
+<td align="center">--pop</td>
+<td align="center">None (Required)</td>
+<td align="center">Required</td>
+<td align="center">Target/Base Population Name</td>
+</tr>
+<tr>
+<td align="center">LD-Ref Pop</td>
+<td align="center">--ld_pop</td>
+<td align="center">Pop Name</td>
+<td align="center">Pop Name</td>
+<td align="center">LD Ref Pop (AFR,EUR,EAS,AMR,SAS)</td>
+</tr>
+<tr>
 <td align="center">Sumstats</td>
 <td align="center">--sumstats_prefix</td>
-<td align="center">Yes</td>
-<td align="center">GWAS Summary Statsd</td>
+<td align="center">None (Required)</td>
+<td align="center">Required</td>
+<td align="center">GWAS Summary Stats (Text Format)</td>
 </tr>
 <tr>
-<td align="center">Phenotypes</td>
-<td align="center">--phenotype_files</td>
-<td align="center">Target Pop Only</td>
-<td align="center">Test And Validation Phenotype Files</td>
+<td align="center">Genotypes</td>
+<td align="center">--genotype_prefix</td>
+<td align="center">None (Required)</td>
+<td align="center">Target Genotypes</td>
+<td align="center">Individual Level Genotypes (Plink Format)</td>
 </tr>
 <tr>
-<td align="center">Snp List</td>
+<td align="center">Phenotype File</td>
+<td align="center">--phenotype_file</td>
+<td align="center">None (Required)</td>
+<td align="center">Target Phenotypes</td>
+<td align="center">Individual Level Phenotypes (Text File)</td>
+</tr>
+<tr>
+<td align="center">Validation File</td>
+<td align="center">--validation_file</td>
+<td align="center">Half of Phenotype File</td>
+<td align="center">None</td>
+<td align="center">Individual Level Phenotypes for Validation</td>
+</tr>
+<tr>
+<td align="center">QC-snp List</td>
 <td align="center">--snp_file</td>
-<td align="center">No</td>
+<td align="center">All Snps</td>
+<td align="center">All Snps</td>
 <td align="center">List QCed SNP ids</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Creating a Configuration File</p>
-<p>The following command will validate the input data supplied on the command line 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS check data -o out --pop AFR 
-                       --sumstats_prefix data/pop_africa/sumstats/afr.chr
-                       --phenotype_files data/pop_africa/phenotypes/afr_test.dat data/pop_africa/phenotypes/afr_validation.dat
+<p>The following command will validate the command line data and create a target configuration file 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS check pop -o out --pop AFR --sumstats_prefix data/pop_africa/sumstats/afr.chr  
+                                       --genotype_prefix data/pop_africa/genotypes/afr_genotypes 
+                                       --phenotype_file data/pop_africa/phenotypes/afr_test.dat
 </pre></div>
-And produce a configuration file for an african population that mirrors the supplied configuration file: </p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">$ cat data/afr_cont.config</label><div class="tabbed-content"></div>
+To create a target and base configuation file you can use the following command: 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS check pops -o out --pop AFR EUR --sumstats_prefix data/pop_africa/sumstats/afr.chr data/pop_europe/sumstats/eur.chr 
+                                            --genotype_prefix data/pop_africa/genotypes/afr_genotypes
+                                            --phenotype_file data/pop_africa/phenotypes/afr_pheno.dat
+</pre></div></p>
 </div>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span> <span style="color: #666666">.</span><span style="color: #008000; font-weight: bold">...</span>
- POP<span style="color: #666666">=</span>AFR
- SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>afr.chr
- PHENOTYPE_FILES<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat,pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_validation.dat
- SNP_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>snps.txt
-</pre></div>
-</div>
-<p><strong>Model Population</strong> </p>
-<p>For the model population (used to produce prior distributions) BridgePRS requries GWAS summary stats 
-and one phenotype file (if available).  If it is not available then the test file 
-from the target population can be substituted, as shown in the two configuration files: </p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">With Phenotype Data</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR 
-SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
-PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>eur_test.dat
-SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
+<p>This command will create target and base configuration files that can be observed below: </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cat out/save/target.AFR.config</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>AFR
+LDPOP<span style="color: #666666">=</span>AFR
+SUMSTATS_PREFIX<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>data<span style="color: #666666">/</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>afr.chr
+SUMSTATS_SUFFIX<span style="color: #666666">=.</span>glm.linear.gz
+SNP_FILE<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>out<span style="color: #666666">/</span><span style="color: #008000">save</span><span style="color: #666666">/</span>snps.AFR.txt
+GENOTYPE_PREFIX<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>data<span style="color: #666666">/</span>pop_africa<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>afr_genotypes
+PHENOTYPE_FILE<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>out<span style="color: #666666">/</span><span style="color: #008000">save</span><span style="color: #666666">/</span>AFR.test_phenos.dat
+VALIDATION_FILE<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>out<span style="color: #666666">/</span><span style="color: #008000">save</span><span style="color: #666666">/</span>AFR.valid_phenos.dat
 </pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Without Phenotype Data</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">cat out/save/base.EUR.config</label><div class="tabbed-content">
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR
-SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
-PHENOTYPE_FILES<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat
-SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
+LDPOP<span style="color: #666666">=</span>EUR
+SUMSTATS_PREFIX<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>data<span style="color: #666666">/</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
+SUMSTATS_SUFFIX<span style="color: #666666">=.</span>glm.linear.gz
+SNP_FILE<span style="color: #666666">=</span>out<span style="color: #666666">/</span><span style="color: #008000">save</span><span style="color: #666666">/</span>snps.EUR.txt
+GENOTYPE_PREFIX<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>data<span style="color: #666666">/</span>pop_africa<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>afr_genotypes
+PHENOTYPE_FILE<span style="color: #666666">=$</span>BRIDGEDIR<span style="color: #666666">/</span>data<span style="color: #666666">/</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_pheno.dat
 </pre></div>
 </div>
 </div>
-<h2 id="the-configuration-file">The Configuration File</h2>
-<p>For ease of use bridgePRS uses configuration files. </p>
 <h2 id="file-specifications">File Specifications</h2>
 <h3 id="1-sumstats-data">1) Sumstats Data</h3>
-<p>GWAS summary statistics can be provided using a prefix to multiple chromosome separated files with the <code>--sumstats_prefix</code> flag or 
-with using a single sumstats file with the <code>--sumstats_file</code> flag.  If a prefix is given, then a suffix can be provided as well <code>--sumstats_suffix</code>. 
-GWAS summary statistics must be provided as a whitespace delimited file containing association analysis results for SNPs on the base phenotype.
-BridgePRS has no problem reading in a gzipped base file (need to have a <strong>.gz</strong> suffix) or splitting the file by chromosome if necessary.<br />
-An example of a sumstats file with default column headers is shown: </p>
+<p>GWAS summary statistics are provided using a prefix to one or many (per chromosome) files with the <code>--sumstats_prefix</code> argument and the 
+<code>--sumstats_suffix</code> argument when nevecessary.  GWAS summary statistics must be provided as a whitespace delimited file containing 
+the results of an association study for a given phenotype.  BridgePRS has no problem reading in a gzipped base file 
+(need to have a <strong>.gz</strong> suffix) or splitting the file by chromosome if necessary.  An example of a sumstats file with default column headers is shown: </p>
 <table>
 <thead>
 <tr>
-<th align="center">#CHROM</th>
-<th align="center">POS</th>
+<th align="center">Default Headers</th>
+<th align="center">#CHR</th>
 <th align="center">ID</th>
 <th align="center">REF</th>
-<th align="center">ALT</th>
 <th align="center">A1</th>
 <th align="center">A1_FREQ</th>
-<th align="center">TEST</th>
 <th align="center">OBS_CT</th>
 <th align="center">BETA</th>
 <th align="center">SE</th>
@@ -245,14 +271,26 @@ An example of a sumstats file with default column headers is shown: </p>
 </thead>
 <tbody>
 <tr>
+<td align="center">Argument</td>
+<td align="center"></td>
+<td align="center">--ssf-snpid</td>
+<td align="center">--ssf-ref</td>
+<td align="center">--ssf-alt</td>
+<td align="center">--ssf-maf</td>
+<td align="center">--sdf-n</td>
+<td align="center">--ssf-beta</td>
+<td align="center">--ssf-se</td>
+<td align="center"></td>
+<td align="center">--ssf-p</td>
+<td align="center">.</td>
+</tr>
+<tr>
+<td align="center">Data</td>
 <td align="center">1</td>
-<td align="center">754105</td>
 <td align="center">rs12184325</td>
 <td align="center">T</td>
-<td align="center">C</td>
 <td align="center">G</td>
 <td align="center">0.0257573</td>
-<td align="center">ADD</td>
 <td align="center">4853</td>
 <td align="center">0.820864</td>
 <td align="center">0.413692</td>
@@ -261,14 +299,12 @@ An example of a sumstats file with default column headers is shown: </p>
 <td align="center">.</td>
 </tr>
 <tr>
+<td align="center">Data</td>
 <td align="center">1</td>
-<td align="center">840753</td>
 <td align="center">rs4970382</td>
 <td align="center">C</td>
-<td align="center">T</td>
-<td align="center">G</td>
+<td align="center">A</td>
 <td align="center">0.483495</td>
-<td align="center">ADD</td>
 <td align="center">4847</td>
 <td align="center">0.0011142</td>
 <td align="center">0.128347</td>
@@ -277,14 +313,12 @@ An example of a sumstats file with default column headers is shown: </p>
 <td align="center">.</td>
 </tr>
 <tr>
+<td align="center">Data</td>
 <td align="center">1</td>
-<td align="center">958905</td>
 <td align="center">rs2710890</td>
 <td align="center">G</td>
-<td align="center">A</td>
 <td align="center">G</td>
 <td align="center">0.424387</td>
-<td align="center">ADD</td>
 <td align="center">4814</td>
 <td align="center">0.108094</td>
 <td align="center">0.132225</td>
@@ -294,39 +328,10 @@ An example of a sumstats file with default column headers is shown: </p>
 </tr>
 </tbody>
 </table>
-<p>Column headers can be specified on the command line or in a configuration file using <code>--ssf</code> flags: 
-(<code>--ssf-chr</code>,<code>--ssf-p</code>, <code>--ssf-snpid</code>, <code>--ssf-se</code>, <code>--ssf-ss</code>, <code>--ssf-beta</code>, <code>--ssf-ref</code>, <code>--ssf-alt</code>, <code>--ssf-maf</code>.)</p>
-<table>
-<thead>
-<tr>
-<th align="center">Flag</th>
-<th align="center">--ssf-chr</th>
-<th align="center">--ssf-snpid</th>
-<th align="center">--ssf-ref</th>
-<th align="center">--ssf-alt</th>
-<th align="center">--ssf-maf</th>
-<th align="center">--ssf-ss</th>
-<th align="center">--ssf-beta</th>
-<th align="center">--ssf-se</th>
-<th align="center">--ssf-p</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Default</td>
-<td align="center">#CHROM</td>
-<td align="center">ID</td>
-<td align="center">REF</td>
-<td align="center">A1</td>
-<td align="center">A1_FREQ</td>
-<td align="center">OBS_CT</td>
-<td align="center">BETA</td>
-<td align="center">SE</td>
-<td align="center">P</td>
-</tr>
-</tbody>
-</table>
-<h3 id="2-phenotype-files">2) Phenotype Files</h3>
+<p>The <strong>--ssf</strong> arguments can be used to specify column headers for different files. </p>
+<h3 id="2-genotype-files">2) Genotype Files</h3>
+<p>Genotype files must be in Plink Format.  </p>
+<h3 id="3-phenotype-files">3) Phenotype Files</h3>
 <p>Phenotype files can be provided to BridgePRS using the <code>--phenotype_files</code> flag. 
 This must be a tab / space delimited file and missing data <strong>must</strong> be represented by either <code>NA</code> or <code>-9</code> (only for binary traits).
 The first two column of the phenotype file should be the FID and the IID, and the rest can be phenotypes/covariates:  </p>
@@ -380,15 +385,15 @@ The first two column of the phenotype file should be the FID and the IID, and th
 after the <code>--covariates</code> flag: </p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>```
 ./bridgePRS check data -o out --pop AFR --phenotype y --covariates PC1,PC2 
-                       --phenotype_files data/pop_africa/phenotypes/afr_test.dat data/pop_africa/phenotypes/afr_validation.dat
+                       --phenotype_file data/pop_africa/phenotypes/afr_pheno.dat 
 ```
 </pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The column name(s) should not contain <em>space</em> nor <em>comma</em></p>
 </div>
-<h3 id="3-qc-snp-list">3) QC SNP List</h3>
-<p>To select only SNPS that have passed QC, you can provide a file using the <code>--snp_file</code> flag. </p>
+<h3 id="4-qc-snp-list">4) QC SNP List</h3>
+<p>To select only SNPS that have passed QC, you can include a single column text file using the  <code>--snp_file</code> flag. </p>
               
             </div>
           </div><footer>
