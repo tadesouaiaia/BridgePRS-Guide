@@ -52,22 +52,27 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_prep/">System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_software/">Software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy-Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Toy-Data Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">After Running</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_challenges/">User Challenges</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Input Data</a>
     <ul class="current">
@@ -89,6 +94,8 @@
     </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_challenges/">Use Cases</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
@@ -103,8 +110,6 @@
               <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_faq/">Frequently Asked Questions</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../mac_specific/">Mac Specific</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_log/">Update Log</a>
                   </li>
@@ -135,15 +140,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="Screenshot" src="../img/slim/guide_logo3.png" /> </p>
+                <p><img alt="Screenshot" src="../img/slim/guide_logo2.png" /> </p>
 <h1 id="input-data">Input Data</h1>
 <h2 id="ld-reference-data-1000-genomes">LD Reference Data: 1000 Genomes</h2>
 <p>BridgePRS estimates SNP-specific LD in the clumping step from an population target data in PLINK binary format.  By default, the main 
 BridgePRS includes a sample LD reference panel (<strong>BRIDGEDIR/data/1000G_sample</strong>) for population super-groups <strong>AFR</strong> and <strong>EUR</strong> that is 
-suitable for the <a href="../quikstart_prep/">quick start tutorial</a>. </p>
+suitable for the <a href="../quikstart_data/">quick start tutorial</a>. </p>
 <p>A folder containing the full 1000 Genomes LD reference panel for populations <strong>AFR</strong>, <strong>EUR</strong>, <strong>EAS</strong>, <strong>SAS</strong>, and <strong>AMR</strong> can be downloaded 
-<a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">here</a> and unzipped into <strong>BRIDGEDIR/data/1000G_ref</strong> to enable full usage 
-of BridgePRS. </p>
+<a href="https://drive.google.com/file/d/1djAEwRiQsh4veinSLHO3laGjNF95vvN9/view?usp=drive_link">here</a>
+and unzipped into <strong>BRIDGEDIR/data/1000G_ref</strong> to enable full usage of BridgePRS. </p>
 <p>To run BridgePRS using a custom LD reference please see <a href="../guide_customization/">customization</a>. </p>
 <h2 id="targetbase-population-data">Target/Base Population Data:</h2>
 <p>For the target and base populations bridgePRS requires that following files be supplied on the command 
@@ -398,8 +403,8 @@ after the <code>--covariates</code> flag: </p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../guide_requirements/" class="btn btn-neutral float-left" title="Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../guide_subprograms/" class="btn btn-neutral float-right" title="Subprograms">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../guide_background/" class="btn btn-neutral float-left" title="Background"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_challenges/" class="btn btn-neutral float-right" title="Use Cases">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -426,10 +431,10 @@ after the <code>--covariates</code> flag: </p>
         </span>
     
     
-      <span><a href="../guide_requirements/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../guide_background/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../guide_subprograms/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_challenges/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

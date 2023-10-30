@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Mac Specific - BridgePRS</title>
+    <title>Software - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Mac Specific";
-        var mkdocs_page_input_path = "mac_specific.md";
+        var mkdocs_page_name = "Software";
+        var mkdocs_page_input_path = "req_software.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,24 +52,39 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../req_prep/">System</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Software</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#r">R</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#plink">Plink</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python">Python</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy-Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Toy-Data Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">After Running</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_challenges/">User Challenges</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_challenges/">Use Cases</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
@@ -83,18 +98,8 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_faq/">Frequently Asked Questions</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Mac Specific</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-default-settings">1- Default Settings</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-allowing-exceptions">2- Allowing Exceptions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-downstream-bridgeprs-errors">3- Downstream BridgePRS Errors</a>
-    </li>
-    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_log/">Update Log</a>
                   </li>
@@ -113,10 +118,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Misc &raquo;</li>
-      <li>Mac Specific</li>
+          <li>Requirements &raquo;</li>
+      <li>Software</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/mac_specific.md"
+        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/req_software.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -125,49 +130,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="Screenshot" src="../img/mac_plink.png" /></p>
-<h1 id="plink-developer-cannot-be-verified">Plink: Developer Cannot Be Verified</h1>
-<p>If you see this error, <strong>Do not click: Move To Trash</strong>. </p>
-<p>Instead click on the top right hand corner of the box, or stop running BridgePRS and follow these instructions 
-to give your system permission to call plink from BridgePRS:  </p>
-<h2 id="1-default-settings">1- Default Settings</h2>
-<p>By default macOS allows you to open apps from the official Mac App Store only, If you have this set as your default 
-you can change this if you: </p>
-<ol>
-<li>Open System Preferences.</li>
-<li>Go to the Security &amp; Privacy tab.</li>
-<li>Click on the lock and enter your password.</li>
-<li>Change settings to include identified developers (see below): </li>
-</ol>
-<p><img alt="Screenshot" src="../img/mac_plink2.png" /></p>
-<h2 id="2-allowing-exceptions">2- Allowing Exceptions</h2>
-<p>Expanding permissions to include "identified developers" is required but not sufficient.  To obtain 
-further permission to run <strong>Plink</strong> or any other unapproved program you can:  </p>
-<ol>
-<li>Open System Preferences.</li>
-<li>Go to Security &amp; Privacy and select the General tab.</li>
-<li>If this has happened within the hour, this page will give you an override button to open <strong>Open Anyway</strong>. </li>
-<li>Enter you password as above and click this button.</li>
-<li>You will be asked to once more which will create an exception allowing you to run Plink in the future. </li>
-</ol>
-<p><img alt="Screenshot" src="../img/mac_plink3.jpg" /></p>
-<h2 id="3-downstream-bridgeprs-errors">3- Downstream BridgePRS Errors</h2>
-<p>If you have moved plink to the trash you will have to recover it, additionally the empty 
-files created by a failed attempt to run Plink can cause problems if BridgePRS tries to recover your progress. </p>
-<div class="admonition tip">
-<p class="admonition-title">Restarting a bridgePRS run</p>
-<p>You can avoid this problem by manually deleting your output directory and starting over, or by using the restart flag: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y --restart
-</pre></div>
-This will force bridgePRS to restart every subprogram from the beginning.     </p>
+                <p><img alt="Screenshot" src="../img/slim/req_logo2.png" /></p>
+<h1 id="requirements">Requirements</h1>
+<p>BridgePRS depends on R, plink, and a python wrapper.  Installation is described in detail in the following sections.  Alternatively, if python3+ is already available, 
+the BridgePRS installer can be used to automate the process. </p>
+<h2 id="r">R</h2>
+<p>BridgePRS requires the following <strong>R</strong> [<strong>version 3.6.3+</strong>] (<a href="https://www.r-project.org/">Download</a>) packages: <br />
+<strong>BEDMatrix, boot, data.table, doMC, glmnet, MASS, optparse, parallel, and R.utils</strong></p>
+<div class="admonition tips">
+<p class="admonition-title">R Packages</p>
+<p>These packages can be installed from inside an R terminal using the command: 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ R 
+install.packages(c(&quot;BEDMatrix&quot;,&quot;boot&quot;,&quot;data.table&quot;,&quot;doMC&quot;,&quot;glmnet&quot;,&quot;MASS&quot;,&quot;optparse&quot;,&quot;parallel&quot;,&quot;R.utils&quot;)) 
+</pre></div></p>
 </div>
-<p><img alt="Screenshot" src="../img/bridgeSun.png" /></p>
+<h2 id="plink">Plink</h2>
+<p>BridgePRS requires a version of plink compatible with your machine. (<a href="https://www.cog-genomics.org/plink/">download</a>)</p>
+<p>By default BridgePRS includes a version of plink for Linux and MacOs and will attempt to locate the correct version. 
+To override this behavior and use a specific version of plink please use the flag <code>--plinkPath</code> $PLINKPATH to direct BridgePRS 
+to the file location.  </p>
+<div class="admonition warning">
+<p class="admonition-title">Extra MacOs Security:</p>
+<p>MacOs often block executables if they are not approved from the app store.                 </p>
+<p>You may have to change your settings to allow Plink to be called  </p>
+</div>
+<h2 id="python">Python</h2>
+<p>The BridgePRS wrapper requires python3+ (<a href="https://www.python.org/downloads/">download</a>) and matplotlib 
+package (<a href="https://matplotlib.org/stable/users/installing/index.html">download</a>) is required to create plots (options). </p>
+<p>If python3+ is not available, BridgePRS can be ran using shell scripts, as described in the README file.   </p>
+<p>If python3+ is available, all other dependencies can be ran using the BridgePRS </p>
+<div class="admonition note">
+<p class="admonition-title">BridgePRS check requirements</p>
+<p>If BridgePRS has been downloaded and made executable (as described <a href="../req_prep/">previousely</a>) 
+then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
+install missing software:  </p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">./bridgePRS check requirements</label><div class="tabbed-content"></div>
+</div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BridgePRS Begins at Sat Sep 30 23:45:46 2023 
+Bridge Command-Line:  ../bridgePRS check requirements
+Checking Requirements:
+           System:  platform=linux,  cores(available)=8,          cores(used)=1       (TIP: Using More Than One Core Will Improve Performace (e.g. ---cores 7))
+            Plink:  found=true,      path=/home/tade/Bin/plink
+                R:  found=true,      path=/usr/bin/R,             version=3.6.3       (packages=up to date)                                            
+          Python3:  found=true,      path=/usr/bin/python3,     matplotlib=true
+Complete
+</pre></div>
+</div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../misc_faq/" class="btn btn-neutral float-left" title="Frequently Asked Questions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../misc_log/" class="btn btn-neutral float-right" title="Update Log">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../req_prep/" class="btn btn-neutral float-left" title="System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../req_mac/" class="btn btn-neutral float-right" title="Mac Specific">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -194,10 +208,10 @@ This will force bridgePRS to restart every subprogram from the beginning.     </
         </span>
     
     
-      <span><a href="../misc_faq/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../req_prep/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../misc_log/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../req_mac/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
