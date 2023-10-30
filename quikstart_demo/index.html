@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Toy-Data Demo - BridgePRS</title>
+    <title>Demo - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Toy-Data Demo";
+        var mkdocs_page_name = "Demo";
         var mkdocs_page_input_path = "quikstart_demo.md";
         var mkdocs_page_url = null;
       </script>
@@ -52,26 +52,33 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_prep/">System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_software/">Software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy-Data</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Toy-Data Demo</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Demo</a>
     <ul class="current">
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">After Running</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_challenges/">User Challenges</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_challenges/">Use Cases</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
@@ -87,8 +94,6 @@
               <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_faq/">Frequently Asked Questions</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../mac_specific/">Mac Specific</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_log/">Update Log</a>
                   </li>
@@ -108,7 +113,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Quick Start Tutorial &raquo;</li>
-      <li>Toy-Data Demo</li>
+      <li>Demo</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_demo.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -126,7 +131,7 @@ can be run using the "Easyrun" Command.  To run BridgePRS using a continuous phe
 <div class="admonition tips">
 <p class="admonition-title">Easyrun Command: Continuous Trait (y)</p>
 <p>Run BridgePRS on the toy phenotype "y" with the following command: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS easyrun go -o out1 --config_files data/afr.config data/eur.config --phenotype y 
 </pre></div></p>
 </div>
 <p>And verify that a summary figure <code>out1/bridgeSummary.png</code> shown below is created.  Then repeat the 
@@ -134,19 +139,19 @@ process using a binary phenotype: </p>
 <div class="admonition tips">
 <p class="admonition-title">Easyrun Command</p>
 <p>Run BridgePRS on the toy binary phenotype "y.binary" with the following command: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS easyrun go -o out2 --pop_configs data/afr.config data/eur.config --phenotype y.binary
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>./bridgePRS easyrun go -o out2 --config_files data/afr.config data/eur.config --phenotype y.binary
 </pre></div></p>
 </div>
 <h2 id="demo-results">Demo Results:</h2>
-<p>On the next page we will discuss the results that bridgePRS generates and on the following page we will include 
-two challenge problems to make sure your expertise at bridgePRS is peak level. </p>
+<p>If bridgePRS runs successfully on the toy data, then you can go to the next page where we will discuss the results, or 
+if you would like, please consider the realistic (use cases scenarios)(guide_challenges.md) before running with real data. </p>
 <p><img alt="Screenshot" src="../img/combo1.png" /></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../quikstart_prep/" class="btn btn-neutral float-left" title="Before Running"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../quikstart_result/" class="btn btn-neutral float-right" title="After Running">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_data/" class="btn btn-neutral float-left" title="Toy-Data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../quikstart_result/" class="btn btn-neutral float-right" title="Results">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -173,7 +178,7 @@ two challenge problems to make sure your expertise at bridgePRS is peak level. <
         </span>
     
     
-      <span><a href="../quikstart_prep/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../quikstart_data/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../quikstart_result/" style="color: #fcfcfc">Next &raquo;</a></span>
