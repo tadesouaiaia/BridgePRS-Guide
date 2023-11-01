@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -117,12 +116,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Requirements &raquo;</li>
-      <li>Software</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Requirements</li>
+      <li class="breadcrumb-item active">Software</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/req_software.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/req_software.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -140,9 +138,9 @@ the BridgePRS installer can be used to automate the process. </p>
 <div class="admonition tips">
 <p class="admonition-title">R Packages</p>
 <p>These packages can be installed from inside an R terminal using the command: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ R 
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$ R 
 install.packages(c(&quot;BEDMatrix&quot;,&quot;boot&quot;,&quot;data.table&quot;,&quot;doMC&quot;,&quot;glmnet&quot;,&quot;MASS&quot;,&quot;optparse&quot;,&quot;parallel&quot;,&quot;R.utils&quot;)) 
-</pre></div></p>
+</code></pre></div></p>
 </div>
 <h2 id="plink">Plink</h2>
 <p>BridgePRS requires a version of plink compatible with your machine. (<a href="https://www.cog-genomics.org/plink/">download</a>)</p>
@@ -166,7 +164,7 @@ then the following command can be used to allow bridgePRS to check system compat
 install missing software:  </p>
 <div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">./bridgePRS check requirements</label><div class="tabbed-content"></div>
 </div>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BridgePRS Begins at Sat Sep 30 23:45:46 2023 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>BridgePRS Begins at Sat Sep 30 23:45:46 2023 
 Bridge Command-Line:  ../bridgePRS check requirements
 Checking Requirements:
            System:  platform=linux,  cores(available)=8,          cores(used)=1       (TIP: Using More Than One Core Will Improve Performace (e.g. ---cores 7))
@@ -174,7 +172,7 @@ Checking Requirements:
                 R:  found=true,      path=/usr/bin/R,             version=3.6.3       (packages=up to date)                                            
           Python3:  found=true,      path=/usr/bin/python3,     matplotlib=true
 Complete
-</pre></div>
+</code></pre></div>
 </div>
               
             </div>
@@ -215,16 +213,17 @@ Complete
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

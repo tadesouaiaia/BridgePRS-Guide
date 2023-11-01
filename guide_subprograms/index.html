@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -121,12 +120,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Guide &raquo;</li>
-      <li>Subprograms</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guide</li>
+      <li class="breadcrumb-item active">Subprograms</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_subprograms.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_subprograms.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -145,42 +143,42 @@
 <table>
 <thead>
 <tr>
-<th align="center">Subprogram</th>
-<th align="center">Input</th>
-<th align="center">Subcommands</th>
-<th align="center">Output</th>
+<th style="text-align: center;">Subprogram</th>
+<th style="text-align: center;">Input</th>
+<th style="text-align: center;">Subcommands</th>
+<th style="text-align: center;">Output</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><strong>prs-single</strong></td>
-<td align="center">Target Pop Data</td>
-<td align="center"><strong>run</strong>,clump,beta,predict,quantify</td>
-<td align="center">prs-result</td>
+<td style="text-align: center;"><strong>prs-single</strong></td>
+<td style="text-align: center;">Target Pop Data</td>
+<td style="text-align: center;"><strong>run</strong>,clump,beta,predict,quantify</td>
+<td style="text-align: center;">prs-result</td>
 </tr>
 <tr>
-<td align="center"><strong>build-model</strong></td>
-<td align="center">Model Pop Data</td>
-<td align="center">**run**clump,beta,predict,prior</td>
-<td align="center">model-params</td>
+<td style="text-align: center;"><strong>build-model</strong></td>
+<td style="text-align: center;">Model Pop Data</td>
+<td style="text-align: center;">**run**clump,beta,predict,prior</td>
+<td style="text-align: center;">model-params</td>
 </tr>
 <tr>
-<td align="center"><strong>prs-port</strong></td>
-<td align="center">Target Pop + Model Result</td>
-<td align="center"><strong>run</strong>,predict,quantify</td>
-<td align="center">prs-port-result</td>
+<td style="text-align: center;"><strong>prs-port</strong></td>
+<td style="text-align: center;">Target Pop + Model Result</td>
+<td style="text-align: center;"><strong>run</strong>,predict,quantify</td>
+<td style="text-align: center;">prs-port-result</td>
 </tr>
 <tr>
-<td align="center"><strong>prs-prior</strong></td>
-<td align="center">Target Pop Data + Model Result</td>
-<td align="center"><strong>run</strong>,clump,beta,test,predict</td>
-<td align="center">prs-prior-result</td>
+<td style="text-align: center;"><strong>prs-prior</strong></td>
+<td style="text-align: center;">Target Pop Data + Model Result</td>
+<td style="text-align: center;"><strong>run</strong>,clump,beta,test,predict</td>
+<td style="text-align: center;">prs-prior-result</td>
 </tr>
 <tr>
-<td align="center"><strong>analyze</strong></td>
-<td align="center">PRS Result Files</td>
-<td align="center">**run**result,combine</td>
-<td align="center">single-plot,weighted prs-result,weighted prs plot</td>
+<td style="text-align: center;"><strong>analyze</strong></td>
+<td style="text-align: center;">PRS Result Files</td>
+<td style="text-align: center;">**run**result,combine</td>
+<td style="text-align: center;">single-plot,weighted prs-result,weighted prs plot</td>
 </tr>
 </tbody>
 </table>
@@ -258,16 +256,17 @@ to combine the results of all three. </p>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

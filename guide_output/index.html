@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -111,12 +110,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Guide &raquo;</li>
-      <li>Output Data</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guide</li>
+      <li class="breadcrumb-item active">Output Data</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_output.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_output.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -131,31 +129,31 @@ output files.  Weighted combined versions of each files of also produced by Brid
 <table>
 <thead>
 <tr>
-<th align="center">Name</th>
-<th align="center">file extension</th>
-<th align="center">Brief Description</th>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">file extension</th>
+<th style="text-align: center;">Brief Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">SNP Weights</td>
-<td align="center">.snp_weights.dat</td>
-<td align="center">Snp weights</td>
+<td style="text-align: center;">SNP Weights</td>
+<td style="text-align: center;">.snp_weights.dat</td>
+<td style="text-align: center;">Snp weights</td>
 </tr>
 <tr>
-<td align="center">PRS Values</td>
-<td align="center">.preds.dat</td>
-<td align="center">Predicted Phenotypes</td>
+<td style="text-align: center;">PRS Values</td>
+<td style="text-align: center;">.preds.dat</td>
+<td style="text-align: center;">Predicted Phenotypes</td>
 </tr>
 <tr>
-<td align="center">Summary Result</td>
-<td align="center">.var_explained.txt</td>
-<td align="center">Performance Summary</td>
+<td style="text-align: center;">Summary Result</td>
+<td style="text-align: center;">.var_explained.txt</td>
+<td style="text-align: center;">Performance Summary</td>
 </tr>
 <tr>
-<td align="center">Progress Plot</td>
-<td align="center">bridgePRS-{subProgram}.png</td>
-<td align="center">Performance Summary</td>
+<td style="text-align: center;">Progress Plot</td>
+<td style="text-align: center;">bridgePRS-{subProgram}.png</td>
+<td style="text-align: center;">Performance Summary</td>
 </tr>
 </tbody>
 </table>
@@ -198,16 +196,17 @@ output files.  Weighted combined versions of each files of also produced by Brid
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -111,12 +110,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Quick Start Tutorial &raquo;</li>
-      <li>Toy-Data</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Quick Start Tutorial</li>
+      <li class="breadcrumb-item active">Toy-Data</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_data.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_data.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -131,29 +129,29 @@ can locate the toy-data used in the demo.  Located in the <strong>data</strong> 
 are formatted as population <a href="../guide_input/#the-configuration-file">configuaration files</a>, 
 that point to the files associated with the <strong>target</strong> and <strong>base</strong> populations being used to run bridgePRS: </p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">target: data/afr.config</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>AFR
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>AFR
 LDPOP<span style="color: #666666">=</span>AFR
 SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
 GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>afr_genotypes
 PHENOTYPE_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat
 VALIDATION_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_validation.dat
 SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
-</pre></div>
+</code></pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">base: data/eur.config</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>EUR
 LDPOP<span style="color: #666666">=</span>EUR
 SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
 SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
 GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>eur_genotypes
 PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>eur_test.dat
-</pre></div>
+</code></pre></div>
 </div>
 </div>
 <p>Examining one the phenotype files pointed to by the configuration file, reveals the two variables (<strong>"y"</strong> and <strong>"y.binary"</strong>) used in the tutorial.  </p>
 <div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">$ head -n1 pop_africa/phenotypes/afr_test.dat</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>FID IID y y.binary
-</pre></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>FID<span style="color: #bbbbbb"> </span>IID<span style="color: #bbbbbb"> </span>y<span style="color: #bbbbbb"> </span>y.binary
+</code></pre></div>
 </div>
 </div>
 <div class="admonition note">
@@ -161,7 +159,7 @@ PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color
 <p>Before running BridgePRS can be used to verify your population data by providing the following command: </p>
 <div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">./bridgePRS check data --config_files data/afr.config data/eur.config</label><div class="tabbed-content"></div>
 </div>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BridgePRS Begins at Mon Oct 30 16:14:18 2023 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>BridgePRS Begins at Mon Oct 30 16:14:18 2023 
 Bridge Command-Line:  ../bridgePRS check data -o out --config_files ../data/afr.config ../data/eur.config
 Checking Requirements:
            System:  platform=linux,  cores(available)=8,          cores(used)=1       (TIP: Using More Than One Core Will Improve Performace (e.g. ---cores 7))
@@ -185,7 +183,7 @@ Reading Population Data:
                Phenotypes:  PHENOTYPE_FILE=data/pop_europe/phenotypes/eur_test.dat  VARIABLES=y,y.binary     
        **Base Config Made:  out/save/base.EUR.config
 Complete
-</pre></div>
+</code></pre></div>
 </div>
 <p>For more information on the configuration or phenotype filetype, see <a href="../guide_input/">Guide: Input Data</a>, 
 or to run the tutorial demo go to the next page. </p>
@@ -228,16 +226,17 @@ or to run the tutorial demo go to the next page. </p>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

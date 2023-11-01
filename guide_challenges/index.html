@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -111,12 +110,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Guide &raquo;</li>
-      <li>Use Cases</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guide</li>
+      <li class="breadcrumb-item active">Use Cases</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_challenges.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_challenges.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -151,40 +149,40 @@ access to the 1000G reference panels, how can I analyze my data?</strong></p>
 </ol>
 <p>Can you fill out the configuration files to carry this out? </p>
 <div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Target Config File</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>
 LDPOP<span style="color: #666666">=</span>
 SUMSTATS_PREFIX<span style="color: #666666">=</span>
 GENOTYPE_PREFIX<span style="color: #666666">=</span>
 PHENOTYPE_FILE<span style="color: #666666">=</span>
 VALIDATION_FILE<span style="color: #666666">=</span>
-</pre></div>
+</code></pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">[Answer]</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>CAF
-LDPOP<span style="color: #666666">=</span>AFR 
-SUMSTATS_PREFIX<span style="color: #666666">=</span>yoruba<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>yoruba.chr 
-SUMSTATS_SUFFIX<span style="color: #666666">=.</span>glm.gz 
-GENOTYPE_PREFIX<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>caf_genotype 
-PHENOTYPE_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat  
-VALIDATION_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat 
-</pre></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>CAF
+LDPOP<span style="color: #666666">=</span>AFR<span style="color: #bbbbbb"> </span>
+SUMSTATS_PREFIX<span style="color: #666666">=</span>yoruba<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>yoruba.chr<span style="color: #bbbbbb"> </span>
+SUMSTATS_SUFFIX<span style="color: #666666">=</span>.glm.gz<span style="color: #bbbbbb"> </span>
+GENOTYPE_PREFIX<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>caf_genotype<span style="color: #bbbbbb"> </span>
+PHENOTYPE_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat<span style="color: #bbbbbb">  </span>
+VALIDATION_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat<span style="color: #bbbbbb"> </span>
+</code></pre></div>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Model Config FIle</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
-LDPOP<span style="color: #666666">=</span> 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>
+LDPOP<span style="color: #666666">=</span><span style="color: #bbbbbb"> </span>
 SUMSTATS_PREFIX<span style="color: #666666">=</span>
 GENOTYPE_PREFIX<span style="color: #666666">=</span>
 PHENOTYPE_FILES<span style="color: #666666">=</span>
-</pre></div>
+</code></pre></div>
 </div>
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Answer</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>EUR
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>EUR
 LDPOP<span style="color: #666666">=</span>EUR
 SUMSTATS_PREFIX<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>ukb.sumstats
-GENOTYPE_PREFIX<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>caf_genotype 
-PHENOTYPE_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat  
-VALIDATION_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat 
-</pre></div>
+GENOTYPE_PREFIX<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>caf_genotype<span style="color: #bbbbbb"> </span>
+PHENOTYPE_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_test.dat<span style="color: #bbbbbb">  </span>
+VALIDATION_FILE<span style="color: #666666">=</span>caf<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>caf_validation.dat<span style="color: #bbbbbb"> </span>
+</code></pre></div>
 </div>
 </div>
 <h2 id="challenge-2">Challenge 2:</h2>
@@ -200,40 +198,40 @@ I also have GWAS (4) and genotype/phenotype data from the UKB biobank (5,6) that
 <li>ukb/phenotypes/ukb_test.dat, ukb/phenotypes/ukb_validation.dat </li>
 </ol>
 <div class="tabbed-set" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Target Config File</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>
 LDPOP<span style="color: #666666">=</span>
 SUMSTATS_PREFIX<span style="color: #666666">=</span>
 GENOTYPE_PREFIX<span style="color: #666666">=</span>
 PHENOTYPE_FILE<span style="color: #666666">=</span>
 VALIDATION_FILE<span style="color: #666666">=</span>
-</pre></div>
+</code></pre></div>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">[Answer]</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>ukr
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>ukr
 LDPOP<span style="color: #666666">=</span>ukr<span style="color: #666666">*</span>
-SUMSTATS_PREFIX<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>ukr.sumstats  
+SUMSTATS_PREFIX<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>ukr.sumstats<span style="color: #bbbbbb">  </span>
 GENOTYPE_PREFIX<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>chr
-PHENOTYPE_FILE<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_test.dat 
+PHENOTYPE_FILE<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_test.dat<span style="color: #bbbbbb"> </span>
 VALIDATION_FILE<span style="color: #666666">=</span>ukr<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukr_validation.dat
-</pre></div>
+</code></pre></div>
 </div>
 <input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Model Config FIle</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>
 LDPOP<span style="color: #666666">=</span>
 SUMSTATS_PREFIX<span style="color: #666666">=</span>
 GENOTYPE_PREFIX<span style="color: #666666">=</span>
 PHENOTYPE_FILE<span style="color: #666666">=</span>
 VALIDATION_FILE<span style="color: #666666">=</span>
-</pre></div>
+</code></pre></div>
 </div>
 <input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">Answer</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>POP<span style="color: #666666">=</span>UKB
-LDPOP<span style="color: #666666">=</span>EUR 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>UKB
+LDPOP<span style="color: #666666">=</span>EUR<span style="color: #bbbbbb"> </span>
 SUMSTATS_PREFIX<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>ukb.sumstats
 GENOTYPE_PREFIX<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>chr
-PHENOTYPE_FILE<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukb_test.dat 
-VALIDATION_FILE<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukb_validation.dat 
-</pre></div>
+PHENOTYPE_FILE<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukb_test.dat<span style="color: #bbbbbb"> </span>
+VALIDATION_FILE<span style="color: #666666">=</span>ukb<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>ukb_validation.dat<span style="color: #bbbbbb"> </span>
+</code></pre></div>
 </div>
 </div>
               
@@ -275,16 +273,17 @@ VALIDATION_FILE<span style="color: #666666">=</span>ukb<span style="color: #6666
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
