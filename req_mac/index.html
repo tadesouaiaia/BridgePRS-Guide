@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -71,7 +70,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy-Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy Data</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
                   </li>
@@ -117,12 +116,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Requirements &raquo;</li>
-      <li>Mac Specific</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Requirements</li>
+      <li class="breadcrumb-item active">Mac Specific</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/req_mac.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/req_mac.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -163,8 +161,8 @@ files created by a failed attempt to run Plink can cause problems if BridgePRS t
 <div class="admonition tip">
 <p class="admonition-title">Restarting a bridgePRS run</p>
 <p>You can avoid this problem by manually deleting your output directory and starting over, or by using the restart flag: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y --restart
-</pre></div>
+    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$./bridgePRS easyrun go -o out1 --pop_configs data/afr.config data/eur.config --phenotype y --restart
+</code></pre></div>
 This will force bridgePRS to restart every subprogram from the beginning.     </p>
 </div>
               
@@ -172,7 +170,7 @@ This will force bridgePRS to restart every subprogram from the beginning.     </
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../req_software/" class="btn btn-neutral float-left" title="Software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../quikstart_data/" class="btn btn-neutral float-right" title="Toy-Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_data/" class="btn btn-neutral float-right" title="Toy Data">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -206,16 +204,17 @@ This will force bridgePRS to restart every subprogram from the beginning.     </
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
