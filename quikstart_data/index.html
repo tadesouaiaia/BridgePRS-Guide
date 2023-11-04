@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Toy-Data - BridgePRS</title>
+    <title>Toy Data - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Toy-Data";
+        var mkdocs_page_name = "Toy Data";
         var mkdocs_page_input_path = "quikstart_data.md";
         var mkdocs_page_url = null;
       </script>
@@ -62,7 +62,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Toy-Data</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Toy Data</a>
     <ul class="current">
     </ul>
                   </li>
@@ -112,7 +112,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Quick Start Tutorial</li>
-      <li class="breadcrumb-item active">Toy-Data</li>
+      <li class="breadcrumb-item active">Toy Data</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_data.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -123,68 +123,9 @@
             <div class="section" itemprop="articleBody">
               
                 <p><img alt="Screenshot" src="../img/slim/quikstart_logo1.png" /></p>
-<h2 id="sample-data">Sample Data</h2>
-<p>Once you have confirmed that your system is up to date and libraries are <a href="../req_prep/">installed</a>, you 
-can locate the toy-data used in the demo.  Located in the <strong>data</strong> directory, the data 
-are formatted as population <a href="../guide_input/#the-configuration-file">configuaration files</a>, 
-that point to the files associated with the <strong>target</strong> and <strong>base</strong> populations being used to run bridgePRS: </p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">target: data/afr.config</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>AFR
-LDPOP<span style="color: #666666">=</span>AFR
-SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
-GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>afr_genotypes
-PHENOTYPE_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat
-VALIDATION_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_validation.dat
-SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
-</code></pre></div>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">base: data/eur.config</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>EUR
-LDPOP<span style="color: #666666">=</span>EUR
-SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
-SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
-GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>eur_genotypes
-PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>eur_test.dat
-</code></pre></div>
-</div>
-</div>
-<p>Examining one the phenotype files pointed to by the configuration file, reveals the two variables (<strong>"y"</strong> and <strong>"y.binary"</strong>) used in the tutorial.  </p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">$ head -n1 pop_africa/phenotypes/afr_test.dat</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>FID<span style="color: #bbbbbb"> </span>IID<span style="color: #bbbbbb"> </span>y<span style="color: #bbbbbb"> </span>y.binary
-</code></pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">BridgePRS check data</p>
-<p>Before running BridgePRS can be used to verify your population data by providing the following command: </p>
-<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">./bridgePRS check data --config_files data/afr.config data/eur.config</label><div class="tabbed-content"></div>
-</div>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>BridgePRS Begins at Mon Oct 30 16:14:18 2023 
-Bridge Command-Line:  ../bridgePRS check data -o out --config_files ../data/afr.config ../data/eur.config
-Checking Requirements:
-           System:  platform=linux,  cores(available)=8,          cores(used)=1       (TIP: Using More Than One Core Will Improve Performace (e.g. ---cores 7))
-            Plink:  found=true,      path=/home/tade/Bin/plink
-                R:  found=true,      path=/usr/bin/R,             version=3.6.3       (packages=up to date)                                            
-          Python3:  found=true,      path=/usr/bin/python3,     matplotlib=true
-
-Reading Population Data:
-            Target Source:  POP=AFR                                                                      LDPOP=AFR                
-                 Sumstats:  SUMSTATS_PREFIX=/data/pop_africa/sumstats/afr.chr    SUMSTATS_SUFFIX=.glm.linear.gz          (WARNING: Not Given - Inferred From Directory)
-                  QC-Snps:  SNP_FILE=data/pop_africa/snps.txt                   TOTAL=19685              
-                Genotypes:  GENOTYPE_PREFIX=data/pop_africa/genotypes/afr_genotypes
-               Phenotypes:  PHENOTYPE_FILE=data/pop_africa/phenotypes/afr_test.dat  VARIABLES=y,y.binary     
-               Phenotypes:  VALIDATION_FILE=data/pop_africa/phenotypes/afr_validation.dat
-     **Target Config Made:  out/save/target.AFR.config
-
-              Base Source:  POP=EUR                                                                      LDPOP=EUR                
-                 Sumstats:  SUMSTATS_PREFIX=data/pop_europe/sumstats/eur.chr    SUMSTATS_SUFFIX=.glm.linear.gz          (WARNING: Not Given - Inferred From Directory)
-                  QC-Snps:  SNP_FILE=data/pop_africa/snps.txt                   TOTAL=19711              
-                Genotypes:  GENOTYPE_PREFIX=data/pop_europe/genotypes/chr
-               Phenotypes:  PHENOTYPE_FILE=data/pop_europe/phenotypes/eur_test.dat  VARIABLES=y,y.binary     
-       **Base Config Made:  out/save/base.EUR.config
-Complete
-</code></pre></div>
-</div>
+<h2 id="toy-data">Toy Data</h2>
+<p>Toy data reflecting African and European populations are located in <strong>data/pop_africa/</strong> and <strong>data/pop_europe/</strong>. The following 
+are contained in each folder:  GWAS summary stats, genotype data in plink format, and phenotype data in txt format. </p>
 <p>For more information on the configuration or phenotype filetype, see <a href="../guide_input/">Guide: Input Data</a>, 
 or to run the tutorial demo go to the next page. </p>
               

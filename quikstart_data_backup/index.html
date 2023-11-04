@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Software - BridgePRS</title>
+    <title>Quikstart data backup - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Software";
-        var mkdocs_page_input_path = "req_software.md";
+        var mkdocs_page_name = "Quikstart data backup";
+        var mkdocs_page_input_path = "quikstart_data_backup.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,18 +52,10 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Requirements</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../req_prep/">System</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Software</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#r">R</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#plink">Plink</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#python">Python</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_software/">Software</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../req_mac/">Mac Specific</a>
                   </li>
@@ -117,10 +109,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Requirements</li>
-      <li class="breadcrumb-item active">Software</li>
+      <li class="breadcrumb-item active">Quikstart data backup</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/req_software.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/quikstart_data_backup.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -128,59 +119,84 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="Screenshot" src="../img/slim/req_logo2.png" /></p>
-<h1 id="requirements">Requirements</h1>
-<p>BridgePRS depends on R, plink, and a python wrapper.  Installation is described in detail in the following sections.  Alternatively, if python3+ is already available, 
-the BridgePRS installer can be used to automate the process. </p>
-<h2 id="r">R</h2>
-<p>BridgePRS requires the following <strong>R</strong> [<strong>version 3.6.3+</strong>] (<a href="https://www.r-project.org/">Download</a>) packages: <br />
-<strong>BEDMatrix, boot, data.table, doMC, glmnet, MASS, optparse, parallel, and R.utils</strong></p>
-<div class="admonition tips">
-<p class="admonition-title">R Packages</p>
-<p>These packages can be installed from inside an R terminal using the command: 
-    <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$ R 
-install.packages(c(&quot;BEDMatrix&quot;,&quot;boot&quot;,&quot;data.table&quot;,&quot;doMC&quot;,&quot;glmnet&quot;,&quot;MASS&quot;,&quot;optparse&quot;,&quot;parallel&quot;,&quot;R.utils&quot;)) 
-</code></pre></div></p>
+                <p><img alt="Screenshot" src="../img/slim/quikstart_logo1.png" /></p>
+<h2 id="toy-data">Toy Data</h2>
+<p>BridgePRS requires multiple inputs (gwas summary stats and individual-level genotype/phenotype data) for each population.<br />
+Toy datas files for an African and European population are located in <strong>data/pop_africa/</strong> and <strong>data/pop_europe</strong>.<br />
+This demo can be ran using two population configuration files that point to the files: </p>
+<p>the files are listed in population configuration file 
+These files include gwas summary stats and individual level 
+genotype/phenotype data. </p>
+<p>In the toy data, these files are listed 
+in a single population 
+For typically,  each population GWAS summary statistics and individual 
+level genotype and phenotype data are required.<br />
+Once you have confirmed that your system is up to date and libraries are <a href="../req_prep/">installed</a>, you 
+can locate the toy data used in the demo.  Located in the <strong>data</strong> directory, the data 
+are formatted as population <a href="../guide_input/#the-configuration-file">configuaration files</a>, 
+that point to the files associated with the <strong>target</strong> and <strong>base</strong> populations being used to run bridgePRS: </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">base: data/eur.config</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>EUR
+LDPOP<span style="color: #666666">=</span>EUR
+SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
+SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
+GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>eur_genotypes
+PHENOTYPE_FILES<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>eur_test.dat
+</code></pre></div>
 </div>
-<h2 id="plink">Plink</h2>
-<p>BridgePRS requires a version of plink compatible with your machine. (<a href="https://www.cog-genomics.org/plink/">download</a>)</p>
-<p>By default BridgePRS includes a version of plink for Linux and MacOs and will attempt to locate the correct version. 
-To override this behavior and use a specific version of plink please use the flag <code>--plinkPath</code> $PLINKPATH to direct BridgePRS 
-to the file location.  </p>
-<div class="admonition warning">
-<p class="admonition-title">Extra MacOs Security:</p>
-<p>MacOs often block executables if they are not approved from the app store.                 </p>
-<p>You may have to change your settings to allow Plink to be called  </p>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">target: data/afr.config</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>POP<span style="color: #666666">=</span>AFR
+LDPOP<span style="color: #666666">=</span>AFR
+SUMSTATS_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>sumstats<span style="color: #666666">/</span>eur.chr
+GENOTYPE_PREFIX<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>genotypes<span style="color: #666666">/</span>afr_genotypes
+PHENOTYPE_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_test.dat
+VALIDATION_FILE<span style="color: #666666">=</span>pop_africa<span style="color: #666666">/</span>phenotypes<span style="color: #666666">/</span>afr_validation.dat
+SNP_FILE<span style="color: #666666">=</span>pop_europe<span style="color: #666666">/</span>snps.txt
+</code></pre></div>
 </div>
-<h2 id="python">Python</h2>
-<p>The BridgePRS wrapper requires python3+ (<a href="https://www.python.org/downloads/">download</a>) and matplotlib 
-package (<a href="https://matplotlib.org/stable/users/installing/index.html">download</a>) is required to create plots (options). </p>
-<p>If python3+ is not available, BridgePRS can be ran using shell scripts, as described in the README file.   </p>
-<p>If python3+ is available, all other dependencies can be ran using the BridgePRS </p>
+</div>
+<p>Examining one the phenotype files pointed to by the configuration file, reveals the two variables (<strong>"y"</strong> and <strong>"y.binary"</strong>) used in the tutorial.  </p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">$ head -n1 pop_africa/phenotypes/afr_test.dat</label><div class="tabbed-content">
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>FID<span style="color: #bbbbbb"> </span>IID<span style="color: #bbbbbb"> </span>y<span style="color: #bbbbbb"> </span>y.binary
+</code></pre></div>
+</div>
+</div>
 <div class="admonition note">
-<p class="admonition-title">BridgePRS check requirements</p>
-<p>If BridgePRS has been downloaded and made executable (as described <a href="../req_prep/">previousely</a>) 
-then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
-install missing software:  </p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">./bridgePRS check requirements</label><div class="tabbed-content"></div>
+<p class="admonition-title">BridgePRS check data</p>
+<p>Before running BridgePRS can be used to verify your population data by providing the following command: </p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">./bridgePRS check data --config_files data/afr.config data/eur.config</label><div class="tabbed-content"></div>
 </div>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>BridgePRS Begins at Sat Sep 30 23:45:46 2023 
-Bridge Command-Line:  ../bridgePRS check requirements
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>BridgePRS Begins at Mon Oct 30 16:14:18 2023 
+Bridge Command-Line:  ../bridgePRS check data -o out --config_files ../data/afr.config ../data/eur.config
 Checking Requirements:
            System:  platform=linux,  cores(available)=8,          cores(used)=1       (TIP: Using More Than One Core Will Improve Performace (e.g. ---cores 7))
             Plink:  found=true,      path=/home/tade/Bin/plink
                 R:  found=true,      path=/usr/bin/R,             version=3.6.3       (packages=up to date)                                            
           Python3:  found=true,      path=/usr/bin/python3,     matplotlib=true
+
+Reading Population Data:
+            Target Source:  POP=AFR                                                                      LDPOP=AFR                
+                 Sumstats:  SUMSTATS_PREFIX=/data/pop_africa/sumstats/afr.chr    SUMSTATS_SUFFIX=.glm.linear.gz          (WARNING: Not Given - Inferred From Directory)
+                  QC-Snps:  SNP_FILE=data/pop_africa/snps.txt                   TOTAL=19685              
+                Genotypes:  GENOTYPE_PREFIX=data/pop_africa/genotypes/afr_genotypes
+               Phenotypes:  PHENOTYPE_FILE=data/pop_africa/phenotypes/afr_test.dat  VARIABLES=y,y.binary     
+               Phenotypes:  VALIDATION_FILE=data/pop_africa/phenotypes/afr_validation.dat
+     **Target Config Made:  out/save/target.AFR.config
+
+              Base Source:  POP=EUR                                                                      LDPOP=EUR                
+                 Sumstats:  SUMSTATS_PREFIX=data/pop_europe/sumstats/eur.chr    SUMSTATS_SUFFIX=.glm.linear.gz          (WARNING: Not Given - Inferred From Directory)
+                  QC-Snps:  SNP_FILE=data/pop_africa/snps.txt                   TOTAL=19711              
+                Genotypes:  GENOTYPE_PREFIX=data/pop_europe/genotypes/chr
+               Phenotypes:  PHENOTYPE_FILE=data/pop_europe/phenotypes/eur_test.dat  VARIABLES=y,y.binary     
+       **Base Config Made:  out/save/base.EUR.config
 Complete
 </code></pre></div>
 </div>
+<p>For more information on the configuration or phenotype filetype, see <a href="../guide_input/">Guide: Input Data</a>, 
+or to run the tutorial demo go to the next page. </p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../req_prep/" class="btn btn-neutral float-left" title="System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../req_mac/" class="btn btn-neutral float-right" title="Mac Specific">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -206,10 +222,6 @@ Complete
         </span>
     
     
-      <span><a href="../req_prep/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../req_mac/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

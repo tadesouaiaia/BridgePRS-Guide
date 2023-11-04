@@ -64,7 +64,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy-Data</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy Data</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
                   </li>
@@ -125,13 +125,14 @@
                 <p><img alt="Screenshot" src="../img/slim/req_logo1.png" /></p>
 <h2 id="preparation">Preparation</h2>
 <p>After <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">downloading</a> and unzipping BridgePRS 
-into a suitable directory on your machine (referred to as <code>$BridgeDir</code>) you will observe the following file structure: </p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">$ ls</label><div class="tabbed-content">
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #bbbbbb"> </span>.<span style="color: #bbbbbb"> </span>
-<span style="color: #bbbbbb"> </span>bridgePRS<span style="color: #bbbbbb"> </span>data<span style="color: #666666">/</span><span style="color: #bbbbbb"> </span>src<span style="color: #666666">/</span><span style="color: #bbbbbb"> </span>LICENSE<span style="color: #bbbbbb"> </span>README.md<span style="color: #bbbbbb">  </span>
+into a suitable directory on your machine you will observe that the unzipped folder contains the following: </p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code> bridgePRS              &lt;--- program executable 
+ data/                  &lt;--- input data               
+ LICENSE
+ README.me 
+ src/                   &lt;--- source code 
+ tests/                 &lt;--- test directory
 </code></pre></div>
-</div>
-</div>
 <div class="admonition tip">
 <p class="admonition-title">Using the terminal, type the following command from within the directory:</p>
 <p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>chmod +x bridgePRS
@@ -143,7 +144,7 @@ to make bridgePRS and plink executable </p>
 <p>Next, confirm that the required libraries and dependencies are installed and available by following 
 the instructions in <a href="../req_software/">Software.</a> 
 Alternatively, you can type: </p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">./bridgePRS check requirements -o out</label><div class="tabbed-content"></div>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">./bridgePRS check requirements</label><div class="tabbed-content"></div>
 </div>
 <p>and bridgePRS will check your system provide further instructions to help you install missing dependencies. </p>
 <div class="admonition warning">
