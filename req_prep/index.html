@@ -5,19 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>About - BridgePRS</title>
+    <title>System - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "About";
-        var mkdocs_page_input_path = "about.md";
+        var mkdocs_page_name = "System";
+        var mkdocs_page_input_path = "req_prep.md";
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -52,24 +51,35 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">System</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_software/">Software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy Data</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_challenges/">Use Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
@@ -100,11 +110,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>About</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Requirements</li>
+      <li class="breadcrumb-item active">System</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/about.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/req_prep.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -112,32 +122,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="Screenshot" src="../img/bridgeSun.png" /> </p>
-<p>BridgePRS is a trans-ancestry PRS software which improves polygenic risk score analysis in diverse populations. </p>
-<ol>
-<li>Calculating PRS using Ridge Regression</li>
-<li>Porting a PRS model from one population to another</li>
-<li>Using European data as a prior to improve PRS in diverse populations</li>
-<li>Results plotted in several formats  </li>
-</ol>
-<div class="admonition important">
-<p class="admonition-title">Citation</p>
-<p>Please cite our publication in Nature Genetics: </p>
-<p><strong>BridgePRS</strong> </p>
+                <p><img alt="Screenshot" src="../img/slim/req_logo1.png" /></p>
+<h2 id="preparation">Preparation</h2>
+<p>After <a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">downloading</a> and unzipping BridgePRS 
+into a suitable directory on your machine you will observe that a folder with the following contents: </p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code> bridgePRS              &lt;--- program executable 
+ data/                  &lt;--- input data               
+ LICENSE
+ README.me 
+ src/                   &lt;--- source code 
+ tests/                 &lt;--- test directory
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Using the terminal, type the following command from within the directory:</p>
+<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>chmod +x bridgePRS
+chmod +x src/Python/Xtra/plink*
+</code></pre></div>
+to make bridgePRS and plink executable </p>
 </div>
-<h2 id="authors">Authors</h2>
-<p>For more details on the authors, see:</p>
-<ul>
-<li><a href="http://www.pauloreilly.info/">Dr Clive Hoggart</a></li>
-<li><a href="http://www.pauloreilly.info/">Tade</a></li>
-<li><a href="http://www.pauloreilly.info/">Dr Paul O'Reilly</a></li>
-</ul>
-<h2 id="acknowledgement">Acknowledgement</h2>
-<p>BridgePRS is a software package written in R (main) and Python (wrapper, plotting).
-The code relies on PLINK by <a href="https://www.cog-genomics.org/software">Christopher Chang</a>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Next, confirm that the required libraries and dependencies are installed and available by following 
+the instructions in <a href="../req_software/">Software.</a> 
+Alternatively, you can type: </p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">./bridgePRS check requirements</label><div class="tabbed-content"></div>
+</div>
+<p>and bridgePRS will check your system and provide further instructions to help you install missing dependencies. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning: Extra MacOs Security:</p>
+<p>If you see this msg when running 'check requirements' (or any other time): 
+<img alt="Error" src="../img/mac_plink.png" /></p>
+<p>You will have to change your system settings to allow bridgePRS to call plink.<br />
+For instructions on how to do so, please click <a href="../req_mac/">here</a>. </p>
+</div>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../req_software/" class="btn btn-neutral float-right" title="Software">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -163,19 +186,24 @@ The code relies on PLINK by <a href="https://www.cog-genomics.org/software">Chri
         </span>
     
     
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../req_software/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

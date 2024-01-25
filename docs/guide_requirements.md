@@ -44,12 +44,7 @@ If python3+ is available, all other dependencies can be ran using the BridgePRS
 
 
 
-
-
-
-## BridgePRS Installer 
-
-!!! Note "The BridgePRS Installer" 
+!!! Note "BridgePRS check requirements" 
 
 
     If BridgePRS has been downloaded and made executable (as described in our [quickstart tutorial](quikstart_prep.md)) 

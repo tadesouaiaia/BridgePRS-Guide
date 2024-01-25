@@ -60,6 +60,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_training/">Training</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
@@ -79,7 +81,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_commands/">Subprograms</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
@@ -123,7 +125,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="requirements">Requirements</h1>
+                <p><img alt="Screenshot" src="../img/slim/guide_logo2.png" /></p>
+<h1 id="requirements">Requirements</h1>
 <p>BridgePRS depends on R, plink, and a python wrapper.  Installation is described in detail in the following sections.  Alternatively, if python3+ is already available, 
 the BridgePRS installer can be used to automate the process. </p>
 <h2 id="r">R</h2>
@@ -133,7 +136,7 @@ the BridgePRS installer can be used to automate the process. </p>
 <p class="admonition-title">R Packages</p>
 <p>These packages can be installed from inside an R terminal using the command: 
     <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ R 
-&gt; install.packages(c(&quot;BEDMatrix&quot;,&quot;boot&quot;,&quot;data.table&quot;,&quot;doMC&quot;,&quot;glmnet&quot;,&quot;MASS&quot;,&quot;optparse&quot;,&quot;parallel&quot;,&quot;R.utils&quot;)) 
+install.packages(c(&quot;BEDMatrix&quot;,&quot;boot&quot;,&quot;data.table&quot;,&quot;doMC&quot;,&quot;glmnet&quot;,&quot;MASS&quot;,&quot;optparse&quot;,&quot;parallel&quot;,&quot;R.utils&quot;)) 
 </pre></div></p>
 </div>
 <h2 id="plink">Plink</h2>
@@ -154,24 +157,18 @@ package (<a href="https://matplotlib.org/stable/users/installing/index.html">dow
 <h2 id="bridgeprs-installer">BridgePRS Installer</h2>
 <div class="admonition note">
 <p class="admonition-title">The BridgePRS Installer</p>
-<p>If BridgePRS has been downloaded and made executable (as described in our <a href="quikstart_prep">quickstart tutorial</a>) 
+<p>If BridgePRS has been downloaded and made executable (as described in our <a href="../quikstart_prep/">quickstart tutorial</a>) 
 then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
 install missing software:  </p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">$ ./bridgePRS check requirements</label><div class="tabbed-content"></div>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">./bridgePRS check requirements</label><div class="tabbed-content"></div>
 </div>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BridgePRS Begins... 
-Bridge Command-Line: ../../bridgePRS check requirements
-Module: check
-    Command: requirements
-           System:  cores=7,  platform=linux,  plinkpath=src/Python/Xtra,  rpath=src/Rscripts
-           Options:  fst=0.15,  outpath=out,  tgpath=/home/tade/Current/bridgePRS/repo/BridgePRS/data/sampleKg
-             JOB1: Checking Requirements.....................................................
-                   Python Found: /usr/bin/python3
-                   Matplotlib: Found
-                   R Found: /usr/bin/R
-                   R Version: 3.6.3
-                   R packages: Up To Date
-
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BridgePRS Begins at Sat Sep 30 23:45:46 2023 
+Bridge Command-Line:  ../bridgePRS check requirements
+Checking Requirements:
+           System:  platform=linux,  cores(available)=8,          cores(used)=1       (TIP: Using More Than One Core Will Improve Performace (e.g. ---cores 7))
+            Plink:  found=true,      path=/home/tade/Bin/plink
+                R:  found=true,      path=/usr/bin/R,             version=3.6.3       (packages=up to date)                                            
+          Python3:  found=true,      path=/usr/bin/python3,     matplotlib=true
 Complete
 </pre></div>
 </div>

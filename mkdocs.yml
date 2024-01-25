@@ -5,15 +5,16 @@ nav:
     - Home: index.md
     
     - Quick Start Tutorial:
-        - Prep:     quikstart_prep.md 
-        - Demo:     quikstart_demo.md 
-        - Result:     quikstart_result.md 
+        - Before Running:      quikstart_prep.md 
+        - Toy-Data Demo:      quikstart_demo.md 
+        - After Running:      quikstart_result.md 
+        - User Challenges:    quikstart_challenges.md 
 
     - Guide:
         - Background:       guide_background.md
         - Requirements:       guide_requirements.md
         - Input Data:         guide_input.md
-        - Subprograms:       guide_commands.md
+        - Subprograms:       guide_subprograms.md
         - Output Data:        guide_output.md 
         - All Arguments:       guide_args.md
         - Customization:         guide_customization.md 
@@ -21,6 +22,7 @@ nav:
 
     - Misc:
         - Frequently Asked Questions: misc_faq.md
+        - Mac Specific:               mac_specific.md
         - Update Log:                 misc_log.md
 
 
@@ -31,6 +33,7 @@ theme:
 
 markdown_extensions:
     - admonition
+    - attr_list
     - pymdownx.details
     - pymdownx.tabbed
     - pymdownx.superfences

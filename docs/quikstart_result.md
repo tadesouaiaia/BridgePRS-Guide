@@ -23,3 +23,22 @@ The directory structure created by this command is shown below:
 
 ![Screenshot](img/pipeline.png)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,7 +15,7 @@ To pass user supplied LD reference data, for a custom population named **POP**, 
 - A **.bed**, **.bim**, and **.fam** file for each chromosome with format "chr"[1-22]".ext"
 - **POP.ids.txt**, a txt file that lists all the sample IDs for your population
 
-Then use the command line argument `--ldPath` to point to the location of this folder on your computer. 
+Then use the command line argument `--ld_path` to point to the location of this folder on your computer. 
 
 
 

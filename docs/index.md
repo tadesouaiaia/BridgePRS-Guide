@@ -7,6 +7,7 @@
  
 ![Screenshot](img/bridge_logo2.png) 
 
+
 [//]: # (![Screenshot](img/bridge_logo3.png) 
 
 
@@ -26,7 +27,8 @@ BridgePRS is a Bayesian-ridge (Bridge) approach, which "bridges" the PRS between
 
 # Quick Start
 - Get started right away using sample data with our [Quick Start Tutorial!](quikstart_prep.md).
-- Completing the tutorial and [training](quikstart_training.md) is often sufficient to begin using BridgePRS!
+- Completing the [Toy-Data Demo](quikstart_demo.md) and [User Challenges](quikstart_challenges.md) portions of the tutorial will provide sufficient 
+skill to being using BridgePRS with your own data right away! 
 
 
 
