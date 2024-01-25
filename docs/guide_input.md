@@ -1,4 +1,4 @@
-![Screenshot](img/slim/guide_logo3.png) 
+![Screenshot](img/slim/guide_logo2.png) 
 # Input Data
 
 
@@ -6,11 +6,11 @@
 
 BridgePRS estimates SNP-specific LD in the clumping step from an population target data in PLINK binary format.  By default, the main 
 BridgePRS includes a sample LD reference panel (**BRIDGEDIR/data/1000G_sample**) for population super-groups **AFR** and **EUR** that is 
-suitable for the [quick start tutorial](quikstart_prep.md). 
+suitable for the [quick start tutorial](quikstart_data.md). 
 
 A folder containing the full 1000 Genomes LD reference panel for populations **AFR**, **EUR**, **EAS**, **SAS**, and **AMR** can be downloaded 
-[here](https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip) and unzipped into **BRIDGEDIR/data/1000G_ref** to enable full usage 
-of BridgePRS. 
+[here](https://drive.google.com/file/d/1djAEwRiQsh4veinSLHO3laGjNF95vvN9/view?usp=drive_link)
+and unzipped into **BRIDGEDIR/data/1000G_ref** to enable full usage of BridgePRS. 
 
 To run BridgePRS using a custom LD reference please see [customization](guide_customization.md). 
 

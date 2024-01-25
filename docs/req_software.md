@@ -1,10 +1,8 @@
-![Screenshot](img/slim/guide_logo2.png)
+![Screenshot](img/slim/req_logo2.png)
 
 # Requirements 
 
-BridgePRS depends on R, plink, and a python wrapper.  Installation is described in detail in the following sections.  Alternatively, if python3+ is already available, 
-the BridgePRS installer can be used to automate the process. 
-
+BridgePRS depends on R, plink, and runs using a Python3 wrapper. 
 
 
 ## R 
@@ -23,31 +21,30 @@ BridgePRS requires the following **R** [**version 3.6.3+**] ([Download](https://
 ## Plink 
 BridgePRS requires a version of plink compatible with your machine. ([download](https://www.cog-genomics.org/plink/))
 
-By default BridgePRS includes a version of plink for Linux and MacOs and will attempt to locate the correct version. 
+By default BridgePRS includes versions of plink for Linux and MacOs and will attempt to locate the correct version. 
 To override this behavior and use a specific version of plink please use the flag `--plinkPath` $PLINKPATH to direct BridgePRS 
 to the file location.  
 
 !!! warning "Extra MacOs Security:"   
-    MacOs often block executables if they are not approved from the app store.                 
-
+    MacOs often block executables if they are not approved from the app store.
     You may have to change your settings to allow Plink to be called  
+    For instructions on how to do so, please click [here](req_mac.md).   
+
 
 
 
 ## Python
-The BridgePRS wrapper requires python3+ ([download](https://www.python.org/downloads/)) and matplotlib 
-package ([download](https://matplotlib.org/stable/users/installing/index.html)) is required to create plots (options). 
+The BridgePRS wrapper requires python3+ ([download](https://www.python.org/downloads/)) and the matplotlib 
+library ([download](https://matplotlib.org/stable/users/installing/index.html)) is required to create plots (options). 
 
-If python3+ is not available, BridgePRS can be ran using shell scripts, as described in the README file.   
-
-If python3+ is available, all other dependencies can be ran using the BridgePRS 
-
+If Python3+ is not available, BridgePRS can be ran using shell scripts, as described in the README file.   
+If Python3+ is available, all other dependencies can be ran using the BridgePRS 
 
 
 !!! Note "BridgePRS check requirements" 
 
 
-    If BridgePRS has been downloaded and made executable (as described in our [quickstart tutorial](quikstart_prep.md)) 
+    If BridgePRS has been downloaded and made executable (as described [previousely](req_prep.md)) 
     then the following command can be used to allow bridgePRS to check system compatibility and prompt you to 
     install missing software:  
     

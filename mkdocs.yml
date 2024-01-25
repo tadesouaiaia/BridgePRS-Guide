@@ -4,25 +4,27 @@ site_author:  Tade Souaiaia
 nav:
     - Home: index.md
     
+    - Requirements:
+        - System:              req_prep.md 
+        - Software:            req_software.md 
+        - Mac Specific:        req_mac.md
     - Quick Start Tutorial:
-        - Before Running:      quikstart_prep.md 
-        - Toy-Data Demo:      quikstart_demo.md 
-        - After Running:      quikstart_result.md 
-        - User Challenges:    quikstart_challenges.md 
+        - Toy Data:           quikstart_data.md 
+        - Demo:               quikstart_demo.md 
+        - Results:      quikstart_result.md 
 
     - Guide:
-        - Background:       guide_background.md
-        - Requirements:       guide_requirements.md
-        - Input Data:         guide_input.md
-        - Subprograms:       guide_subprograms.md
-        - Output Data:        guide_output.md 
-        - All Arguments:       guide_args.md
-        - Customization:         guide_customization.md 
-        - Using Bash:         guide_shell.md 
+        - Background:           guide_background.md
+        - Input Data:           guide_input.md
+        - Use Cases:            guide_challenges.md 
+        - Subprograms:          guide_subprograms.md
+        - Output Data:          guide_output.md 
+        - All Arguments:        guide_args.md
+        - Customization:        guide_customization.md 
+        - Using Bash:           guide_shell.md 
 
     - Misc:
         - Frequently Asked Questions: misc_faq.md
-        - Mac Specific:               mac_specific.md
         - Update Log:                 misc_log.md
 
 

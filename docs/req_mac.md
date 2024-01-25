@@ -1,8 +1,9 @@
-
-![Screenshot](img/mac_plink.png)
+![Screenshot](img/slim/req_logo2.png) 
 
 
 # Plink: Developer Cannot Be Verified 
+
+![Screenshot](img/mac_plink.png)
 
 If you see this error, **Do not click: Move To Trash**. 
 
@@ -62,6 +63,4 @@ files created by a failed attempt to run Plink can cause problems if BridgePRS t
 
 
 
-
  
-![Screenshot](img/bridgeSun.png)

@@ -5,62 +5,65 @@
 [//]: # (![Screenshot](img/bridge_logo1.png) 
 [//]: # (![Screenshot](img/bridge_logo2.png)
  
-![Screenshot](img/bridge_logo2.png) 
+
+![Screenshot](img/fat_logo.png) 
 
 
 [//]: # (![Screenshot](img/bridge_logo3.png) 
 
 
-BridgePRS is a Bayesian-ridge (Bridge) approach, which "bridges" the PRS between two populations of different ancestries, developed to tackle the PRS portability problem that results in underrepresented ancestry population having inaccurate PRS due to the bias towards European ancestry in GWAS data collection. 
+BridgePRS is a Bayesian-ridge (Bridge) approach, which "bridges" the PRS between two populations of different ancestry, developed to 
+tackle the "PRS Portability Problem".  The PRS Portability Problem causes lower accuracy PRS in underrepresented
+populations due to the biased sampling in GWAS data collection. 
+
 
 # Package Downloads 
-| Operating System | Link |
-| -----------------|:----:|
-| Linux  64-bit | [v2.3.3](https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip) |
-| Mac  64-bit   | [v2.3.3](https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip) |
-| Windows   | Not available |
+| Operating System | Link | Notes | 
+| -----------------|:----------:|:----:| 
+| Linux  64-bit | [v1.0.2](https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip) | Updated 1-20-2024 |  
+| Mac  64-bit   | [v1.0.2](https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip) | Updated 1-20-2024 | 
+| Windows       | NA     | Not Available | 
+| 1000G Ref Panel | [1000G_ref.tar.gz](https://drive.google.com/file/d/1djAEwRiQsh4veinSLHO3laGjNF95vvN9/view?usp=drive_link) | Optional (Unzip into data directory to use) |    
+
+
+
+
 
 !!! Note "Latest Updates"
     # 2023-09-15 (v0.1.7)
     - We have added sample thousand genomes data. 
     - update log can be found [here](misc_log.md)
 
-# Quick Start
-- Get started right away using sample data with our [Quick Start Tutorial!](quikstart_prep.md).
-- Completing the [Toy-Data Demo](quikstart_demo.md) and [User Challenges](quikstart_challenges.md) portions of the tutorial will provide sufficient 
-skill to being using BridgePRS with your own data right away! 
+# Overview 
+
+- BridgePRS is a software package written in R (main) and Python (wrapper) that depends on [Plink.](https://www.cog-genomics.org/software) 
+  For more information on installing dependencies, please refer to [Requirements](req_software.md). 
+- To get bridgePRS running using toy data see our [Quick Start Tutorial.](quikstart_data.md).
+- Following the Quick Start, the full guide provides more [realistic examples](guide_challenges.md) to help you get started with your own data. 
 
 
 
-# Information 
-- BridgePRS is a software package written in R (main) and Python (wrapper) that depends on Plink (by [Christopher Chang](https://www.cog-genomics.org/software)). 
-  For more information on installing dependencies, please refer to [Requirements](guide_requirements.md). 
-- To learn more about BridgePRS see our complete [Guide.](guide_background.md)
 
 
-!!! Caution "Citation: Our Manuscript is in press at [Nature Genetics](yo)"  
-    Please cite our [preprint](https://pubmed.ncbi.nlm.nih.gov/36865148/):
-    
-    Hoggart C, Choi SW, García-González J, Souaiaia T, Preuss M, O'Reilly P. BridgePRS : A powerful trans-ancestry Polygenic Risk Score method.
-    bioRxiv (2023). doi: 10.1101/2023.02.17.528938. 
+!!! Warning "Citation: Our Manuscript is published in Nature Genetics" 
+    Please cite our [paper](https://www.nature.com/articles/s41588-023-01583-9): 
+ 
+    Hoggart C, Choi SW, García-González J, Souaiaia T, Preuss M, O'Reilly P. BridgePRS leverages shared genetic effects across ancestries to increase polygenic risk score portability. Nat Genet 56, 180–186 (2024).
+    https://doi.org/10.1038/s41588-023-01583-9
+
 
 
 
 
 ## Contact 
 For questions about the methodology, this website, or our manuscript please contact [Dr Clive Hoggart](http://www.pauloreilly.info/), 
-[Dr Tade Souaiaia](http://www.pauloreilly.info/), or [Dr Paul O'Reilly](http://www.pauloreilly.info/). 
-
-
-## Issues 
-
-This wiki should cover basic usage for BridgePRS. 
-If you have problems, please feel free to submit an issues [here](https://github.com/tadesouaiaia/BridgePRS-guide/issues) or visit our [google group](https://groups.google.com/forum/#!forum/bridgePRS).
+[Dr Tade Souaiaia](http://www.pauloreilly.info/), or [Dr Paul O'Reilly](http://www.pauloreilly.info/).  For source code and coding 
+issues please visit the bridgePRS github [here](https://github.com/clivehoggart/BridgePRS). 
 
 
 ## Acknowledgements
 
-We would like to thank Brian Fulton-Howard for his expert programming advice. 
+We would like to thank Brian Fulton-Howard for his feedback and help with testing. 
 
 
 
