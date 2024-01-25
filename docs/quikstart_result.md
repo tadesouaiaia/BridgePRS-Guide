@@ -5,11 +5,11 @@
 The easyrun command used in the previous step sequentially runs five different [subprograms](guide_subprograms.md) in 
 output directory supplied on the command line (eg. **out1** and **out2**): 
 
-1. `prs-single:   `   [Run PRS using the target population only (AFR).](guide_subprograms.md#prs-single) 
+1. `prs-single (stage 1):   ` [Run PRS using the target population only (AFR).](guide_subprograms.md#prs-single) 
 2. `build-model:`     [Estimate SNP weights & prior params from model pop (EUR).](guide_subprograms.md#build-model)
-3. `prs-port:   `     [Run target-PRS using the model snp weights.](guide_subprograms#prs-port) 
-4. `prs-prior:`       [Run target-PRS using model prior distributions.](guide_subprograms#prs-prior)  
-5. `analyze`          [Combine results to produce a weighted target PRS result.](guide_subprograms#prs-prior) 
+3. `prs-port (stage 1.5):   `     [Run target-PRS using the model snp weights.](guide_subprograms.md#prs-port) 
+4. `prs-prior (stage 2):`   [Run target-PRS using model prior distributions.](guide_subprograms.md#prs-prior)  
+5. `analyze`          [Combine results to produce a weighted target PRS result.](guide_subprograms.md#prs-prior) 
 
 And produces output in the following five subdirectories: 
 
