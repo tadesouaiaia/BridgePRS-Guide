@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -52,24 +51,31 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_prep/">System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_software/">Software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Prep</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy Data</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Result</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_training/">Training</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_challenges/">Use Cases</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
@@ -106,12 +112,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Guide &raquo;</li>
-      <li>Customization</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guide</li>
+      <li class="breadcrumb-item active">Customization</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_customization.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_customization.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -132,7 +137,7 @@ full use of BridgePRS for the above populations (AFR, EUR, EAS, SAS). </p>
 <li>A <strong>.bed</strong>, <strong>.bim</strong>, and <strong>.fam</strong> file for each chromosome with format "chr"[1-22]".ext"</li>
 <li><strong>POP.ids.txt</strong>, a txt file that lists all the sample IDs for your population</li>
 </ul>
-<p>Then use the command line argument <code>--ldPath</code> to point to the location of this folder on your computer. </p>
+<p>Then use the command line argument <code>--ld_path</code> to point to the location of this folder on your computer. </p>
               
             </div>
           </div><footer>
@@ -172,16 +177,17 @@ full use of BridgePRS for the above populations (AFR, EUR, EAS, SAS). </p>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
