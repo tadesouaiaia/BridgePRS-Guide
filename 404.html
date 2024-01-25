@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/css/theme_extra.css" />
         <link href="/css/extra.css" rel="stylesheet" />
     
-    <script src="/js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="/js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -20,7 +19,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -35,7 +34,7 @@
           <a href="/." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="//search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -45,24 +44,31 @@
                 <li class="toctree-l1"><a class="reference internal" href="/.">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="/req_prep/">System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="/req_software/">Software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="/req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="/quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="/quikstart_data/">Toy Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/quikstart_demo/">Toy-Data Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="/quikstart_demo/">Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/quikstart_result/">After Running</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/quikstart_challenges/">User Challenges</a>
+                  <li class="toctree-l1"><a class="reference internal" href="/quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="/guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/guide_requirements/">Requirements</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="/guide_input/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="/guide_challenges/">Use Cases</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="/guide_subprograms/">Subprograms</a>
                   </li>
@@ -78,8 +84,6 @@
               <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="/misc_faq/">Frequently Asked Questions</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/mac_specific/">Mac Specific</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="/misc_log/">Update Log</a>
                   </li>
@@ -97,7 +101,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="/." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="/." class="icon icon-home" aria-label="Docs"></a></li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -142,16 +146,17 @@
     
   </span>
 </div>
-    <script>var base_url = '/';</script>
-    <script src="/js/theme_extra.js" defer></script>
-    <script src="/js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="/javascripts/details.js" defer></script>
-      <script src="/search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "/";</script>
+    <script src="/js/theme_extra.js"></script>
+    <script src="/js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="/javascripts/details.js"></script>
+      <script src="/search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

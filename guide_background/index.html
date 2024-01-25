@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href=".." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -52,15 +51,22 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_prep/">System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_software/">Software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_data/">Toy Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Toy-Data Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_demo/">Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">After Running</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_challenges/">User Challenges</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
@@ -73,9 +79,9 @@
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_requirements/">Requirements</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_challenges/">Use Cases</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
@@ -91,8 +97,6 @@
               <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_faq/">Frequently Asked Questions</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../mac_specific/">Mac Specific</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../misc_log/">Update Log</a>
                   </li>
@@ -110,12 +114,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Guide &raquo;</li>
-      <li>Background</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guide</li>
+      <li class="breadcrumb-item active">Background</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_background.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_background.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -152,42 +155,42 @@ signficance of the realtionship at each SNP. </li>
 <table>
 <thead>
 <tr>
-<th align="center">SNP</th>
-<th align="center">BP</th>
-<th align="center">REF</th>
-<th align="center">ALT</th>
-<th align="center">BETA</th>
-<th align="center">PV</th>
-<th align="center">NOTES</th>
+<th style="text-align: center;">SNP</th>
+<th style="text-align: center;">BP</th>
+<th style="text-align: center;">REF</th>
+<th style="text-align: center;">ALT</th>
+<th style="text-align: center;">BETA</th>
+<th style="text-align: center;">PV</th>
+<th style="text-align: center;">NOTES</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">rs3094315</td>
-<td align="center">10523</td>
-<td align="center">A</td>
-<td align="center">G</td>
-<td align="center">1.491</td>
-<td align="center">0.0029</td>
-<td align="center">Positive (<span class="arithmatex">\(&gt;1\)</span>) Trait Association</td>
+<td style="text-align: center;">rs3094315</td>
+<td style="text-align: center;">10523</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">1.491</td>
+<td style="text-align: center;">0.0029</td>
+<td style="text-align: center;">Positive (<span class="arithmatex">\(&gt;1\)</span>) Trait Association</td>
 </tr>
 <tr>
-<td align="center">rs3131972</td>
-<td align="center">91345</td>
-<td align="center">A</td>
-<td align="center">G</td>
-<td align="center">0.817</td>
-<td align="center">0.0008</td>
-<td align="center">Negative (<span class="arithmatex">\(&lt;1\)</span>) Trait Association</td>
+<td style="text-align: center;">rs3131972</td>
+<td style="text-align: center;">91345</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">0.817</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">Negative (<span class="arithmatex">\(&lt;1\)</span>) Trait Association</td>
 </tr>
 <tr>
-<td align="center">rs3131971</td>
-<td align="center">23040</td>
-<td align="center">T</td>
-<td align="center">C</td>
-<td align="center">1.001</td>
-<td align="center">0.5332</td>
-<td align="center">Insignificant (<span class="arithmatex">\(PV&gt;0.05\)</span>) Association</td>
+<td style="text-align: center;">rs3131971</td>
+<td style="text-align: center;">23040</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">1.001</td>
+<td style="text-align: center;">0.5332</td>
+<td style="text-align: center;">Insignificant (<span class="arithmatex">\(PV&gt;0.05\)</span>) Association</td>
 </tr>
 </tbody>
 </table>
@@ -223,8 +226,8 @@ then validated on an out of sample dataset of genotypes and phenotypes. </li>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../quikstart_challenges/" class="btn btn-neutral float-left" title="User Challenges"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../guide_requirements/" class="btn btn-neutral float-right" title="Requirements">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_result/" class="btn btn-neutral float-left" title="Results"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_input/" class="btn btn-neutral float-right" title="Input Data">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -251,23 +254,24 @@ then validated on an out of sample dataset of genotypes and phenotypes. </li>
         </span>
     
     
-      <span><a href="../quikstart_challenges/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../quikstart_result/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../guide_requirements/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_input/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="../javascripts/details.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../javascripts/details.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

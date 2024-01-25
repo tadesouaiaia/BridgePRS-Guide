@@ -17,7 +17,6 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -27,7 +26,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-113286405-1', 'auto');
+        ga('create', "UA-113286405-1", "auto");
         ga('send', 'pageview');
       </script>
     
@@ -42,7 +41,7 @@
           <a href="." class="icon icon-home"> BridgePRS
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -54,24 +53,31 @@
     </ul>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Requirements</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="req_prep/">System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="req_software/">Software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="req_mac/">Mac Specific</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Quick Start Tutorial</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="quikstart_prep/">Before Running</a>
+                  <li class="toctree-l1"><a class="reference internal" href="quikstart_data/">Toy Data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="quikstart_demo/">Toy-Data Demo</a>
+                  <li class="toctree-l1"><a class="reference internal" href="quikstart_demo/">Demo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="quikstart_result/">After Running</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="quikstart_challenges/">User Challenges</a>
+                  <li class="toctree-l1"><a class="reference internal" href="quikstart_result/">Results</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="guide_background/">Background</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="guide_requirements/">Requirements</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="guide_input/">Input Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="guide_challenges/">Use Cases</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="guide_subprograms/">Subprograms</a>
                   </li>
@@ -87,8 +93,6 @@
               <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="misc_faq/">Frequently Asked Questions</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="mac_specific/">Mac Specific</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="misc_log/">Update Log</a>
                   </li>
@@ -106,11 +110,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Home</li>
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/index.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/index.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -118,28 +121,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="Screenshot" src="img/bridge_logo2.png" /> </p>
-<p>BridgePRS is a trans-ancestry software that improves PRS in diverse populations. </p>
+                <p><img alt="Screenshot" src="img/fat_logo.png" /> </p>
+<p>BridgePRS is a Bayesian-ridge (Bridge) approach, which "bridges" the PRS between two populations of different ancestry, developed to 
+tackle the "PRS Portability Problem".  The PRS Portability Problem causes lower accuracy PRS in underrepresented
+populations due to the biased sampling in GWAS data collection. </p>
 <h1 id="package-downloads">Package Downloads</h1>
 <table>
 <thead>
 <tr>
 <th>Operating System</th>
-<th align="center">Link</th>
+<th style="text-align: center;">Link</th>
+<th style="text-align: center;">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Linux  64-bit</td>
-<td align="center"><a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">v2.3.3</a></td>
+<td style="text-align: center;"><a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">v1.0.2</a></td>
+<td style="text-align: center;">Updated 1-20-2024</td>
 </tr>
 <tr>
 <td>Mac  64-bit</td>
-<td align="center"><a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">v2.3.3</a></td>
+<td style="text-align: center;"><a href="https://github.com/clivehoggart/BridgePRS/archive/refs/heads/main.zip">v1.0.2</a></td>
+<td style="text-align: center;">Updated 1-20-2024</td>
 </tr>
 <tr>
 <td>Windows</td>
-<td align="center">Not available</td>
+<td style="text-align: center;">NA</td>
+<td style="text-align: center;">Not Available</td>
+</tr>
+<tr>
+<td>1000G Ref Panel</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1djAEwRiQsh4veinSLHO3laGjNF95vvN9/view?usp=drive_link">1000G_ref.tar.gz</a></td>
+<td style="text-align: center;">Optional (Unzip into data directory to use)</td>
 </tr>
 </tbody>
 </table>
@@ -151,37 +165,30 @@
 <li>update log can be found <a href="misc_log/">here</a></li>
 </ul>
 </div>
-<h1 id="quick-start">Quick Start</h1>
+<h1 id="overview">Overview</h1>
 <ul>
-<li>Get started right away using sample data with our <a href="quikstart_prep/">Quick Start Tutorial!</a>.</li>
-<li>Completing the <a href="quikstart_demo/">Toy-Data Demo</a> and <a href="quikstart_challenges/">User Challenges</a> portions of the tutorial will provide sufficient 
-skill to being using BridgePRS with your own data right away! </li>
+<li>BridgePRS is a software package written in R (main) and Python (wrapper) that depends on <a href="https://www.cog-genomics.org/software">Plink.</a> 
+  For more information on installing dependencies, please refer to <a href="req_software/">Requirements</a>. </li>
+<li>To get bridgePRS running using toy data see our <a href="quikstart_data/">Quick Start Tutorial.</a>.</li>
+<li>Following the Quick Start, the full guide provides more <a href="guide_challenges/">realistic examples</a> to help you get started with your own data. </li>
 </ul>
-<h1 id="information">Information</h1>
-<ul>
-<li>BridgePRS is a software package written in R (main) and Python (wrapper) that depends on Plink (by <a href="https://www.cog-genomics.org/software">Christopher Chang</a>). 
-  For more information on installing dependencies, please refer to <a href="guide_requirements/">Requirements</a>. </li>
-<li>To learn more about BridgePRS see our complete <a href="guide_background/">Guide.</a></li>
-</ul>
-<div class="admonition caution">
-<p class="admonition-title">Citation: Our Manuscript is in press at <a href="yo">Nature Genetics</a></p>
-<p>Please cite our <a href="https://pubmed.ncbi.nlm.nih.gov/36865148/">preprint</a>:</p>
-<p>Hoggart C, Choi SW, García-González J, Souaiaia T, Preuss M, O'Reilly P. BridgePRS : A powerful trans-ancestry Polygenic Risk Score method.
-bioRxiv (2023). doi: 10.1101/2023.02.17.528938. </p>
+<div class="admonition warning">
+<p class="admonition-title">Citation: Our Manuscript is published in Nature Genetics</p>
+<p>Please cite our <a href="https://www.nature.com/articles/s41588-023-01583-9">paper</a>: </p>
+<p>Hoggart C, Choi SW, García-González J, Souaiaia T, Preuss M, O'Reilly P. BridgePRS leverages shared genetic effects across ancestries to increase polygenic risk score portability. Nat Genet 56, 180–186 (2024).
+https://doi.org/10.1038/s41588-023-01583-9</p>
 </div>
 <h2 id="contact">Contact</h2>
 <p>For questions about the methodology, this website, or our manuscript please contact <a href="http://www.pauloreilly.info/">Dr Clive Hoggart</a>, 
-<a href="http://www.pauloreilly.info/">Dr Tade Souaiaia</a>, or <a href="http://www.pauloreilly.info/">Dr Paul O'Reilly</a>. </p>
-<h2 id="issues">Issues</h2>
-<p>This wiki should cover basic usage for BridgePRS. 
-If you have problems, please feel free to submit an issues <a href="https://github.com/tadesouaiaia/BridgePRS-guide/issues">here</a> or visit our <a href="https://groups.google.com/forum/#!forum/bridgePRS">google group</a>.</p>
+<a href="http://www.pauloreilly.info/">Dr Tade Souaiaia</a>, or <a href="http://www.pauloreilly.info/">Dr Paul O'Reilly</a>.  For source code and coding 
+issues please visit the bridgePRS github <a href="https://github.com/clivehoggart/BridgePRS">here</a>. </p>
 <h2 id="acknowledgements">Acknowledgements</h2>
-<p>We would like to thank Brian Fulton-Howard for his expert programming advice. </p>
+<p>We would like to thank Brian Fulton-Howard for his feedback and help with testing. </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="quikstart_prep/" class="btn btn-neutral float-right" title="Before Running">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="req_prep/" class="btn btn-neutral float-right" title="System">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -209,26 +216,27 @@ If you have problems, please feel free to submit an issues <a href="https://gith
     
     
     
-      <span><a href="quikstart_prep/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="req_prep/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme_extra.js" defer></script>
-    <script src="js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-      <script src="javascripts/details.js" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="javascripts/details.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 1.3.1
-Build Date UTC : 2023-10-05 22:22:47.446699+00:00
+MkDocs version : 1.5.3
+Build Date UTC : 2024-01-25 16:12:16.783328+00:00
 -->
