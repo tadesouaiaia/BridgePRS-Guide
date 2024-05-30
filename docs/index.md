@@ -12,9 +12,12 @@
 [//]: # (![Screenshot](img/bridge_logo3.png) 
 
 
-BridgePRS is a Bayesian-ridge (Bridge) approach, which "bridges" the PRS between two populations of different ancestry, developed to 
-tackle the "PRS Portability Problem".  The PRS Portability Problem causes lower accuracy PRS in underrepresented
-populations due to the biased sampling in GWAS data collection. 
+BridgePRS is a Bayesian-ridge (Bridge) method that "bridges" the PRS between two populations of different ancestry, developed to 
+tackle the "PRS Portability Problem".  The PRS portability problem causes lower PRS accuracy in target
+populations which were not included in the GWAS summary statistics base populations used to estimate the PRS. This is because of differences in linkage disequilibrium
+(LD), differences in allele frequency driven by genetic drift and
+natural selection, and gene–environment interactions affecting causal
+effect sizes between the base and target populations.
 
 
 # Package Downloads 
@@ -38,7 +41,7 @@ populations due to the biased sampling in GWAS data collection.
 
 - BridgePRS is a software package written in R (main) and Python (wrapper) that depends on [Plink.](https://www.cog-genomics.org/software) 
   For more information on installing dependencies, please refer to [Requirements](req_software.md). 
-- To get bridgePRS running using toy data see our [Quick Start Tutorial.](quikstart_data.md).
+- To get BridgePRS running using toy data see our [Quick Start Tutorial.](quikstart_data.md).
 - Following the Quick Start, the full guide provides more [realistic examples](guide_challenges.md) to help you get started with your own data. 
 
 
