@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tade Souaiaia" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Subprograms - BridgePRS</title>
+    <title>Background - BridgePRS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Subprograms";
-        var mkdocs_page_input_path = "guide_subprograms.md";
+        var mkdocs_page_name = "Background";
+        var mkdocs_page_input_path = "guide_background.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -71,25 +71,19 @@
               </ul>
               <p class="caption"><span class="caption-text">Guide</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_background/">Background</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Background</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#single-population-analysis">Single Population Analysis</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cross-population-analysis">Cross Population Analysis</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_input/">Input Data</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_challenges/">Use Cases</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Subprograms</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#prs-single">prs-single</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#build-model">build-model</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#prs-port">prs-port</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#prs-prior">prs-prior</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#analyze">analyze</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_subprograms/">Subprograms</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../guide_output/">Output Data</a>
                   </li>
@@ -122,9 +116,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Guide</li>
-      <li class="breadcrumb-item active">Subprograms</li>
+      <li class="breadcrumb-item active">Background</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_subprograms.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/tadesouaiaia/BridgePRS-Guide/edit/master/docs/guide_background.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -132,97 +126,108 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="Screenshot" src="../img/slim/guide_logo4.png" /> </p>
-<h1 id="subprograms">Subprograms</h1>
-<p>BridgePRS consists of five related multi-function subprograms: </p>
-<p>1) <strong>BridgePRS prs-single</strong><br />
-2) <strong>BridgePRS build-model</strong><br />
-3) <strong>BridgePRS prs-port</strong>  <br />
-4) <strong>BridgePRS prs-prior</strong> <br />
-5) <strong>BridgePRS analyze combine</strong></p>
+                <p><img alt="Screenshot" src="../img/slim/guide_logo1.png" /></p>
+<p>BridgePRS is a trans-ancestry PRS software which improves polygenic risk score analysis in diverse populations.</p>
+<ol>
+<li>Calculating PRS using Ridge Regression</li>
+<li>Porting a PRS model from one population to another</li>
+<li>Using European data as a prior to improve PRS in diverse populations</li>
+<li>Results plotted in several formats</li>
+</ol>
+<h1 id="background">Background</h1>
+<p>You will need to have basic understanding of Genome Wide Association Studies (GWAS) and polygenic scoring (PRS) to be able to use BridgePRS. 
+If you are unfamiliar with GWAS, you can consider reading <a href="https://www.ncbi.nlm.nih.gov/pubmed/29484742">this paper</a>.  If you have familiarity 
+but need a crash refresher then reading the following section will be helpful. </p>
+<h2 id="single-population-analysis">Single Population Analysis</h2>
+<p><strong>GWAS</strong> </p>
+<ul>
+<li>Genome wide association studies (GWAS) involve analyzing the genomes of a larger group of individuals.  This involves looking screening 
+millions of genetic variants (SNP) for association with a particular trait.  </li>
+<li>For a binary trait (like blue or brown eyes) this involves comparing the frequency of genetic variations in each group to produce an odds-ratio (measure of association) and a p-value to measure the 
+signficance of the realtionship at each SNP. </li>
+<li>
+<p>For continuous measures (like height) this results in an effect size (measure of continuous association) and p-value that measure the significance of our relationship.   </p>
+</li>
+<li>
+<p>GWAS results can be summarized in a sumstats file which looks like this: </p>
+</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Subprogram</th>
-<th style="text-align: center;">Input</th>
-<th style="text-align: center;">Subcommands</th>
-<th style="text-align: center;">Output</th>
+<th style="text-align: center;">SNP</th>
+<th style="text-align: center;">BP</th>
+<th style="text-align: center;">REF</th>
+<th style="text-align: center;">ALT</th>
+<th style="text-align: center;">BETA</th>
+<th style="text-align: center;">PV</th>
+<th style="text-align: center;">NOTES</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><strong>prs-single</strong></td>
-<td style="text-align: center;">Target Pop Data</td>
-<td style="text-align: center;"><strong>run</strong>,clump,beta,predict,quantify</td>
-<td style="text-align: center;">prs-result</td>
+<td style="text-align: center;">rs3094315</td>
+<td style="text-align: center;">10523</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">1.491</td>
+<td style="text-align: center;">0.0029</td>
+<td style="text-align: center;">Positive (<span class="arithmatex">\(&gt;1\)</span>) Trait Association</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>build-model</strong></td>
-<td style="text-align: center;">Model Pop Data</td>
-<td style="text-align: center;">**run**clump,beta,predict,prior</td>
-<td style="text-align: center;">model-params</td>
+<td style="text-align: center;">rs3131972</td>
+<td style="text-align: center;">91345</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">0.817</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">Negative (<span class="arithmatex">\(&lt;1\)</span>) Trait Association</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>prs-port</strong></td>
-<td style="text-align: center;">Target Pop + Model Result</td>
-<td style="text-align: center;"><strong>run</strong>,predict,quantify</td>
-<td style="text-align: center;">prs-port-result</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>prs-prior</strong></td>
-<td style="text-align: center;">Target Pop Data + Model Result</td>
-<td style="text-align: center;"><strong>run</strong>,clump,beta,test,predict</td>
-<td style="text-align: center;">prs-prior-result</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>analyze</strong></td>
-<td style="text-align: center;">PRS Result Files</td>
-<td style="text-align: center;">**run**result,combine</td>
-<td style="text-align: center;">single-plot,weighted prs-result,weighted prs plot</td>
+<td style="text-align: center;">rs3131971</td>
+<td style="text-align: center;">23040</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">1.001</td>
+<td style="text-align: center;">0.5332</td>
+<td style="text-align: center;">Insignificant (<span class="arithmatex">\(PV&gt;0.05\)</span>) Association</td>
 </tr>
 </tbody>
 </table>
-<p>These programs can be called consecutively using the easyrun master-program 
-which will create the following directory structure: </p>
-<h2 id="prs-single">prs-single</h2>
-<p>The subprogram (<strong>prs-single</strong>) and subcommand (<strong>run</strong>) (<code>./bridgePRS prs-single run</code>) requires that the 
-following target population data be provided on the command line or inside of a configuration file: </p>
-<ol>
-<li><strong>--pop:</strong> The name of your target population </li>
-<li><strong>--ldpop:</strong> The ld reference name, if different from target population name </li>
-<li><strong>--sumstats_prefix:</strong> Sumstats data </li>
-<li><strong>--genotype_prefix:</strong> Target Genotype Data </li>
-<li><strong>--phenotype_file:</strong> Target Phenotype File </li>
-</ol>
-<p>This subprogram performs single population <strong>RidgePRS</strong>. </p>
-<h2 id="build-model">build-model</h2>
-<p>The subprogram is run on the base population (where the GWAS is larger). </p>
-<ol>
-<li><strong>--pop:</strong> The name of your target population </li>
-<li><strong>--ldpop:</strong> The ld reference name, if different from target population name </li>
-<li><strong>--sumstats_prefix:</strong> Base sumstats data </li>
-<li><strong>--genotype_prefix:</strong> Base Genotype Data (If available) </li>
-<li><strong>--phenotype_file:</strong> Base Phenotype File  (If available) </li>
-</ol>
-<p>This program performs <strong>RidgePRS</strong> on the base population and then provides 
-a prior distribution for each SNP weight that can be passed onto the next programs. </p>
-<h2 id="prs-port">prs-port</h2>
-<p>The subprogram uses the model result and the target population data to "port" the SNP 
-weights from the base population to make estimates in the target population.  </p>
-<h2 id="prs-prior">prs-prior</h2>
-<p>The subprogram uses the model result and the target population data and uses the 
-the SNP weights from the base population to estimate a prior distribution to 
-make estimates in the target population.  </p>
-<h2 id="analyze">analyze</h2>
-<p>The analyze subprogram is used to either make a plot from a single result (above) or 
-to combine the results of all three. </p>
-<p><img alt="Screenshot" src="../img/pipeline.png" /></p>
+<p><strong>PRS</strong></p>
+<ul>
+<li>Creating individual polygenic scores involves combine information across many genetic variants.  A score is calculated summing the genetic association values (beta-weights) 
+for each allele in an individual.  This means that variants with stronger associations have a larger impact on the overall score.  </li>
+<li>Usually, variant selection and assignment of SNP weights are determined using a very large "test dataset" of individual genotypes and phenotypes and 
+then validated on an out of sample dataset of genotypes and phenotypes. </li>
+<li>The correlation between the out of sample inidividual phenotypes and their predicted values (PRS scores) can be measured (<span class="arithmatex">\(R^2\)</span>) to assess how predictive the PRS model is. </li>
+</ul>
+<h2 id="cross-population-analysis">Cross Population Analysis</h2>
+<p><strong>The PRS Portability Problem</strong></p>
+<ul>
+<li>Often when PRS results from a large test population (usually of European ancestry) are validated to an out of sample population of different ancestry the PRS model is not predictive.  </li>
+<li>Unfortunately, there is not enough data in the non-european population to produce a reliabile "test dataset" so researchers have to either accept either: <ul>
+<li>An underpowered PRS model made using only the non-european population. </li>
+<li>A large PRS model based on European test data that doesn't perform well. </li>
+</ul>
+</li>
+</ul>
+<p><strong>The BridgePRS Solution</strong></p>
+<ul>
+<li>BridgePRS solves this problem by first running producing three different PRS-models. <ul>
+<li>PRS ran using only the target (Non-European) dataset  </li>
+<li>PRS ran using SNP-weights calculated from the European Model </li>
+<li>PRS ran using a prior effect-size distribution from the European Model  </li>
+</ul>
+</li>
+<li>Then BridgePRS combines these results to produce a weighted PRS solution. </li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../guide_challenges/" class="btn btn-neutral float-left" title="Use Cases"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../guide_output/" class="btn btn-neutral float-right" title="Output Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quikstart_result/" class="btn btn-neutral float-left" title="Results"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guide_input/" class="btn btn-neutral float-right" title="Input Data">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -249,10 +254,10 @@ to combine the results of all three. </p>
         </span>
     
     
-      <span><a href="../guide_challenges/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../quikstart_result/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../guide_output/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../guide_input/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
